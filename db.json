@@ -1,0 +1,52 @@
+{
+  "rooms": [
+    {
+      "id": "1",
+      "roomType": "Deluxe Room",
+      "amenities": "Air Conditioner, Free Wi-Fi, TV, Bathroom, Kitchen",
+      "price": 500,
+      "photos": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+      "checkinTime": "11-Nov-2021",
+      "checkoutTime": "12-Nov-2021",
+      "rating": 4.5
+    },
+    {
+      "id": "2",
+      "roomType": "Deluxe Room",
+      "amenities": "Air Conditioner, Free Wi-Fi, TV, Bathroom, Kitchen",
+      "price": 1000,
+      "photos": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+      "checkinTime": "11-Nov-2021",
+      "checkoutTime": "12-Nov-2021",
+      "rating": 3.45654
+    },
+    {
+      "id": "3",
+      "roomType": "Private Suite",
+      "amenities": "Air Conditioner, Free Wi-Fi, TV, Bathroom, Kitchen",
+      "price": 15000,
+      "photos": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+      "checkinTime": "11-Nov-2021",
+      "checkoutTime": "12-Nov-2021",
+      "rating": 2.6
+    },
+    {
+      "roomType": "regular",
+      "price": 4000,
+      "rating": 5,
+      "checkinTime": "2022-02-01",
+      "checkoutTime": "2022-03-10",
+      "id": "WB53blB"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

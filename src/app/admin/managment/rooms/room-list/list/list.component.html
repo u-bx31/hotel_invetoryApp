@@ -1,0 +1,21 @@
+<table class="mx-auto w-100 border border-2">
+    <tr class="border border-2">
+      <th>Index</th>
+      <th>id</th>
+      <th>Type</th>
+      <th>Price</th>
+      <th>CheckIn Time</th>
+    </tr>
+  
+    <tr *ngFor="let room of rooms; let i = index">
+      <td>{{ i }}</td>
+      <td>{{ room.id }}</td>
+      <td>{{ room.roomType }}</td>
+      <td>{{ room.price | currency }}</td>
+      <td>{{ room.checkinTime | date }}</td>
+      <td>{{ room.rating | number : "1.1-2" }}</td>
+      <td><a class="btn btn-outline-dark" [routerLink]="[room.id]" >Edit</a></td>
+      <td><button class="btn btn-outline-danger" (click)="handleDelete(room.id || '2')">Delete</button></td>
+      
+    </tr>
+  </table>

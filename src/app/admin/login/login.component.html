@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row">
+      <h2 class="text-center">Login</h2>
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card border-0 shadow rounded-3 my-5 p-3">
+          <form
+            [className]="
+              valid ? 'needs-validation card-body' : 'needs-validation was-validated card-body'
+            "
+            #loginForm="ngForm"
+            (ngSubmit)="login(loginForm)"
+          >
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label"
+                >Email address</label
+              >
+              <input
+                type="email"
+                appHover
+                appEmailValidater
+                class="form-control"
+                #emailInput="ngModel"
+                name="email"
+                [(ngModel)]="email"
+                placeholder="Email"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label"
+                >Password</label
+              >
+              <input
+                type="password"
+                name="password"
+                minlength="5"
+                [(ngModel)]="password"
+                class="form-control"
+                placeholder="Password"
+                required
+              />
+            </div>
+            <button type="submit" class="btn btn-primary w-100 fw-bold fs-5">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  

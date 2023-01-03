@@ -1,0 +1,7 @@
+<a class="btn btn-outline-primary w-100" [routerLink]="'add'" >Add Room</a>
+
+<div class="">
+    <h2>Rooms : {{numberRooms  }}</h2>
+    <app-list [rooms]="roomList" (handleDeleted)="handleDelete($event)"></app-list>
+
+</div>
