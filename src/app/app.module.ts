@@ -7,11 +7,26 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home/home.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AboutComponent } from './home/about/about.component';
+import { RoomsComponent } from './home/rooms/rooms.component';
+import { ContactComponent } from './home/contact/contact.component';
+import { HeaderComponent } from './home/header/header.component';
+import { FooterComponent } from './home/footer/footer.component';
+import { IndexComponent } from './home/index/index.component';
+import { NgMaterialModule } from './ng-material/ng-material.module';
+import { RoomViewComponent } from './home/rooms/room-view/room-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    AboutComponent,
+    RoomsComponent,
+    ContactComponent,
+    HeaderComponent,
+    FooterComponent,
+    IndexComponent,
+    RoomViewComponent
   ],
   imports: [
     BrowserModule,
@@ -20,6 +35,7 @@ import { HttpClientModule } from '@angular/common/http';
     NgbModule,
     BrowserAnimationsModule,
     FormsModule,
+    NgMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

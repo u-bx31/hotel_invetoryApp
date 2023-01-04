@@ -27,7 +27,6 @@ export class RoomListComponent implements OnInit {
   private getAllRooms(){
     this.roomService.getRooms$.subscribe((rooms) => {
       this.roomList = rooms;
-       
       this.numberRooms = rooms.length;
     });
   }

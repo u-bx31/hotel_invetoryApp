@@ -6,7 +6,6 @@ import { AddRoomComponent } from './add-room/add-room.component';
 import { RoomListComponent } from './room-list/room-list.component';
 import { ListComponent } from './room-list/list/list.component';
 import { FormsModule } from '@angular/forms';
-import { EditRoomComponent } from './edit-room/edit-room.component';
 
 
 @NgModule({
@@ -14,7 +13,6 @@ import { EditRoomComponent } from './edit-room/edit-room.component';
     AddRoomComponent,
     RoomListComponent,
     ListComponent,
-    EditRoomComponent
   ],
   imports: [
     CommonModule,
