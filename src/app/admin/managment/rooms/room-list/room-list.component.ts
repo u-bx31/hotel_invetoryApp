@@ -11,13 +11,6 @@ import { RoomService } from '../service/room.service';
 export class RoomListComponent implements OnInit {
   numberRooms!: number;
   roomList: RoomList[] = [];
-  room: RoomList = {
-    roomType: '',
-    price: 0,
-    rating: 0,
-    checkinTime: new Date(),
-    checkoutTime: new Date(),
-  };
   
   constructor(private roomService: RoomService) {}
   ngOnInit() {

@@ -8,7 +8,8 @@
       "photos": "assets/images/room1.png",
       "checkinTime": "11-Nov-2021",
       "checkoutTime": "12-Nov-2021",
-      "rating": 4.5
+      "rating": 4.5,
+      "avaible": true
     },
     {
       "id": "2",
@@ -18,7 +19,8 @@
       "photos": "assets/images/room2.png",
       "checkinTime": "11-Nov-2021",
       "checkoutTime": "12-Nov-2021",
-      "rating": 3.45654
+      "rating": 3.45654,
+      "avaible": false
     },
     {
       "id": "3",
@@ -28,7 +30,8 @@
       "photos": "assets/images/room3.png",
       "checkinTime": "11-Nov-2021",
       "checkoutTime": "12-Nov-2021",
-      "rating": 2.6
+      "rating": 2.6,
+      "avaible": true
     },
     {
       "id": "3",
@@ -38,7 +41,17 @@
       "photos": "assets/images/room4.png",
       "checkinTime": "11-Nov-2021",
       "checkoutTime": "12-Nov-2021",
-      "rating": 2.6
+      "rating": 2.6,
+      "avaible": true
+    },
+    {
+      "avaible": true,
+      "roomType": "eco23",
+      "price": 213,
+      "rating": 3,
+      "checkinTime": "2023-01-05",
+      "checkoutTime": "2023-01-07",
+      "id": "AYPVMfK"
     }
   ],
   "comments": [

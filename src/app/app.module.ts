@@ -15,6 +15,8 @@ import { FooterComponent } from './home/footer/footer.component';
 import { IndexComponent } from './home/index/index.component';
 import { NgMaterialModule } from './ng-material/ng-material.module';
 import { RoomViewComponent } from './home/rooms/room-view/room-view.component';
+import { DialogBoxComponent } from './home/rooms/dialog-box/dialog-box.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -24,9 +26,11 @@ import { RoomViewComponent } from './home/rooms/room-view/room-view.component';
     RoomsComponent,
     ContactComponent,
     HeaderComponent,
+
     FooterComponent,
     IndexComponent,
-    RoomViewComponent
+    RoomViewComponent,
+    DialogBoxComponent
   ],
   imports: [
     BrowserModule,

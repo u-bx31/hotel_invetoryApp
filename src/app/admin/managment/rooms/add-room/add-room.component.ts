@@ -45,7 +45,9 @@ export class AddRoomComponent implements OnInit {
     }
     else{
       this.type = 'Add'
-      this.room = {};
+      this.room = {
+        avaible : true
+      };
     }
   }
   addRoom(roomForm: NgForm) {
