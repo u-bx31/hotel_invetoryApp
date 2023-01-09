@@ -1,28 +1,37 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent {
+export default class LoginComponent implements OnInit {
   valid : boolean = true;
 
   email: string = '';
   password: string = '';
   
-  constructor(private router: Router) { }
+  constructor(private router: Router,private auth : AuthService) { }
+  ngOnInit(): void {
+    
+    if(this.auth.isLoggedIn()){
+      this.router.navigate(['/admin/management'])
+    }
+  }
 
   login(loginForm : NgForm){
     if(loginForm.valid){
-      if(this.email==="admin@gmail.com" && this.password ==='admin321'){
-        this.router.navigate(['/admin/management'])
-      }
-      else{
-        alert('error')
-      }
+      this.auth.logIn(this.email,this.password).subscribe(
+        (result)=>{
+          this.router.navigate(['/admin/management'])
+        }
+        ,(err : Error) =>{
+          alert(err.message)
+        }
+      )
     }
     else{
       this.valid = false;

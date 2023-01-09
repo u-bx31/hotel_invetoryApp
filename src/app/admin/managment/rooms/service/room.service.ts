@@ -10,10 +10,16 @@ export class RoomService {
 
   constructor(private service : HttpClient) {}
 
-
+  url : string  = 'http://localhost:3000';
 
   error$ = new Subject<string>;
-  getRooms$ = this.service.get<RoomList[]>('http://localhost:3000/rooms').pipe(
+  getRooms$ = this.service.get<RoomList[]>(`${this.url}/rooms`).pipe(
+    catchError((err)=>{
+      console.log('error',err.message);
+      return of([]);
+    })
+  );
+  getRoomsType$ = this.service.get<any>(`${this.url}/roomType`).pipe(
     catchError((err)=>{
       console.log('error',err.message);
       return of([]);
@@ -21,16 +27,16 @@ export class RoomService {
   );
 
   getRoom(id : string){
-    return this.service.get<RoomList>(`http://localhost:3000/rooms/${id}`);
+    return this.service.get<RoomList>(`${this.url}/rooms/${id}`);
   }
 
   addRooms(room : RoomList){
-    return this.service.post<any>('http://localhost:3000/rooms',room);
+    return this.service.post<any>(`${this.url}/rooms`,room);
   }
   editRooms(room : RoomList){
-    return this.service.put<any>(`http://localhost:3000/rooms/${room.id}`,room);
+    return this.service.put<any>(`${this.url}/rooms/${room.id}`,room);
   }
   deleteRooms(id : string){
-    return this.service.delete<any>(`http://localhost:3000/rooms/${id}`);
+    return this.service.delete<any>(`${this.url}/rooms/${id}`);
   }
 }

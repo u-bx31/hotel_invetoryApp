@@ -46,7 +46,7 @@
     },
     {
       "avaible": true,
-      "roomType": "eco23",
+      "roomType": "regular Room",
       "price": 213,
       "rating": 3,
       "checkinTime": "2023-01-05",
@@ -54,11 +54,21 @@
       "id": "AYPVMfK"
     }
   ],
-  "comments": [
+  "roomType": [
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "type": "Deluxe Room"
+    },
+    {
+      "type": "regular Room"
+    },
+    {
+      "type": "Private Suite"
+    },
+    {
+      "type": "Suite"
+    },
+    {
+      "type": "Double Beds"
     }
   ],
   "profile": {

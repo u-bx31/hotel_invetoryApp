@@ -8,28 +8,29 @@
   #roomForm="ngForm"
   (ngSubmit)="addRoom(roomForm)"
 >
-  <a class="btn btn-outline-danger" routerLink="../">Back</a>
-  <h2>{{ type }} Room</h2>
+  <a class="btn btn-outline-danger" routerLink="../">
+    <div class="d-flex">
+      <mat-icon aria-hidden="false" fontIcon="arrow_back"></mat-icon> Back
+    </div>
+  </a>
+  <h2 class="text-center">{{ type }} Room</h2>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Room Type :</label>
-    <input
+    <!-- <input
       class="form-control"
       #typeInput="ngModel"
       [(ngModel)]="room.roomType"
       name="roomType"
-    />
-    <!-- <select
+    /> -->
+    <select
       class="form-select"
       #typeInput="ngModel"
       [(ngModel)]="room.roomType"
       name="roomType"
     >
-    <option value="" disabled selected>Room Type </option>
-      <option value="Deluxe">Deluxe</option>
-      <option value="Economy">Economy</option>
-      <option value="Regular">Regular</option>
-      <option value="Suit">Suit</option>
-    </select> -->
+      <option value="" disabled selected>Room Type </option>
+      <option *ngFor="let rooms of typeRooms" [value]="rooms.type">{{rooms.type}}</option>
+    </select>
     <div [className]="typeInput.valid ? 'valid-feedback' : 'invalid-feedback'">
       <p>
         {{ typeInput.valid ? "Looks good!" : "Please select a valid state." }}

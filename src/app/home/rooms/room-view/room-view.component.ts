@@ -30,7 +30,8 @@ export class RoomViewComponent implements OnInit {
 
   openDialog(){
      this.dialog.open(DialogBoxComponent,{
-      width : '500px',
+      width : '900px',
+      height : '500px',
       data : {room : this.room}
     })
   }

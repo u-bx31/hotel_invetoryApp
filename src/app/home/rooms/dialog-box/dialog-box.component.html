@@ -1,11 +1,74 @@
-
-<div class="top d-flex justify-content-end w-100 h-100">
-    <a (click)="onCancel()"><mat-icon class="icons" aria-hidden="false" aria-label="Example home icon" fontIcon="close"></mat-icon></a>
+<div class="top d-flex justify-content-end">
+  <a (click)="onCancel()"
+    ><mat-icon
+      class="icons"
+      aria-hidden="false"
+      aria-label="Example home icon"
+      fontIcon="close"
+    ></mat-icon
+  ></a>
 </div>
 <div class="container">
+  <div [className]="valid">
+    <div class="d-flex justify-content-center align-items-center">
+      <app-spinner></app-spinner>
+    </div>
+  </div>
 
-    <h1 [ngClass]="valid">Chekking ....</h1>
-
-    <h1 [ngClass]="showed">{{roomState}}</h1>
-
+  <div [ngClass]="showed">
+    <div *ngIf="avaible" class="p-3">
+      <h2>Your information :</h2>
+      <form #bookFrom="ngForm">
+        {{bookFrom.value | json}}
+        <div class="row row-cols-3 justify-content-center my-4">
+          <div class="col">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Email</mat-label>
+              <input
+                matInput
+                placeholder="Email"
+                [(ngModel)]="email"
+                name="email"
+              />
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Email</mat-label>
+              <input
+                matInput
+                placeholder="Email"
+                [(ngModel)]="name"
+                name="name"
+              />
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Email</mat-label>
+              <input
+                matInput
+                placeholder="Email"
+                [(ngModel)]="phone"
+                name="phone"
+              />
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Enter a date range</mat-label>
+              <mat-date-range-input [rangePicker]="picker">
+                <input matStartDate [(ngModel)]="dateStart" name="dateStart" placeholder="Start date">
+                <input matEndDate  [(ngModel)]="dateEnd" name="dateEnd"placeholder="End date">
+              </mat-date-range-input>
+              <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+              <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-date-range-picker #picker></mat-date-range-picker>
+            </mat-form-field>
+          </div>
+        </div>
+        <button class="btn btn-outline-dark w-100">Book Now</button>
+      </form>
+    </div>
+  </div>
 </div>

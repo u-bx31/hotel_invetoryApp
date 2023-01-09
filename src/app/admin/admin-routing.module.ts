@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './login/login.component';
+import { AuthGuard } from '../guards/auth.guard';
+import LoginComponent from './login/login.component';
 import { SideBarComponent } from './managment/side-bar/side-bar.component';
 
 const routes: Routes = [
   {path : '',component : LoginComponent},
-  {path : 'management' , component : SideBarComponent , children : [
+  {path : 'management' ,canActivate : [AuthGuard], component : SideBarComponent , children : [
+    {path : '',redirectTo : 'management/rooms',pathMatch: 'full'},
     {path : 'rooms',loadChildren : ()=>import('./managment/rooms/rooms.module').then((m)=>m.RoomsModule)}
   ]},
   

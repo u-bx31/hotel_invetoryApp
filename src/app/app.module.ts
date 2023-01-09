@@ -17,6 +17,7 @@ import { NgMaterialModule } from './ng-material/ng-material.module';
 import { RoomViewComponent } from './home/rooms/room-view/room-view.component';
 import { DialogBoxComponent } from './home/rooms/dialog-box/dialog-box.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { SpinnerComponent } from './spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     FooterComponent,
     IndexComponent,
     RoomViewComponent,
-    DialogBoxComponent
+    DialogBoxComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
