@@ -56,22 +56,39 @@
   ],
   "roomType": [
     {
+      "id": "SDDGSDF",
       "type": "Deluxe Room"
     },
     {
+      "id": "JHGUVNJ",
       "type": "regular Room"
     },
     {
+      "id": "LYTPSFH",
       "type": "Private Suite"
     },
     {
+      "id": "LJUYTBN",
       "type": "Suite"
     },
     {
+      "id": "PKJGTJL",
       "type": "Double Beds"
+    },
+    {
+      "type": "Economy",
+      "id": "ASdaxo2"
     }
   ],
-  "profile": {
-    "name": "typicode"
-  }
+  "Reservation": [
+    {
+      "id": "TOJDYIF",
+      "room_id": "typicode",
+      "user_firstName": "user12",
+      "user_lastName": "2312",
+      "user_phoneNumber": 231323213123,
+      "checkinTime": "11-Nov-2021",
+      "checkoutTime": "12-Nov-2021"
+    }
+  ]
 }

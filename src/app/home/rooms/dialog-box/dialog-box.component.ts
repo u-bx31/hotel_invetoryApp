@@ -19,7 +19,8 @@ export class DialogBoxComponent implements OnInit {
   }
 
   email : string = '';
-  name : string = '';
+  lastName : string = '';
+  firstName : string = '';
   phone !: number;
   dateStart !: string ;
   dateEnd !: string ;

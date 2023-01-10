@@ -19,17 +19,11 @@ export class RoomService {
       return of([]);
     })
   );
-  getRoomsType$ = this.service.get<any>(`${this.url}/roomType`).pipe(
-    catchError((err)=>{
-      console.log('error',err.message);
-      return of([]);
-    })
-  );
+
 
   getRoom(id : string){
     return this.service.get<RoomList>(`${this.url}/rooms/${id}`);
   }
-
   addRooms(room : RoomList){
     return this.service.post<any>(`${this.url}/rooms`,room);
   }
@@ -38,5 +32,23 @@ export class RoomService {
   }
   deleteRooms(id : string){
     return this.service.delete<any>(`${this.url}/rooms/${id}`);
+  }
+
+  // room Type functions
+
+  getRoomsType$ = this.service.get<any>(`${this.url}/roomType`).pipe(
+    catchError((err)=>{
+      console.log('error',err.message);
+      return of([]);
+    })
+  );
+  addRoomsType(roomType : any){
+    return this.service.post<any>(`${this.url}/roomType`,roomType);
+  }
+  editRoomsType(roomType : any){
+    return this.service.put<any>(`${this.url}/roomType/${roomType.id}`,roomType);
+  }
+  deleteRoomsType(id : string){
+    return this.service.delete<any>(`${this.url}/roomType/${id}`);
   }
 }

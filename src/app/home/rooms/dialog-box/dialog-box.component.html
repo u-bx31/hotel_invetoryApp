@@ -23,7 +23,7 @@
         <div class="row row-cols-3 justify-content-center my-4">
           <div class="col">
             <mat-form-field appearance="outline" class="w-100">
-              <mat-label>Email</mat-label>
+              <mat-label>Email :</mat-label>
               <input
                 matInput
                 placeholder="Email"
@@ -34,21 +34,32 @@
           </div>
           <div class="col">
             <mat-form-field appearance="outline" class="w-100">
-              <mat-label>Email</mat-label>
+              <mat-label>First Name :</mat-label>
               <input
                 matInput
-                placeholder="Email"
-                [(ngModel)]="name"
-                name="name"
+                placeholder="First Name"
+                [(ngModel)]="firstName"
+                name="firstName"
               />
             </mat-form-field>
           </div>
           <div class="col">
             <mat-form-field appearance="outline" class="w-100">
-              <mat-label>Email</mat-label>
+              <mat-label>last Name :</mat-label>
               <input
                 matInput
-                placeholder="Email"
+                placeholder="Last Name"
+                [(ngModel)]="lastName"
+                name="lastName"
+              />
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Phone Number :</mat-label>
+              <input
+                matInput
+                placeholder="Phone Number"
                 [(ngModel)]="phone"
                 name="phone"
               />

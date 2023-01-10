@@ -1,0 +1,41 @@
+<form
+  [className]="
+    valid
+      ? 'text-start needs-validation'
+      : 'text-start needs-validation  was-validated'
+  "
+  #roomTypeForm="ngForm"
+  (ngSubmit)="addRoom(roomTypeForm)"
+>
+<a class="btn btn-outline-danger" routerLink="../">
+    <div class="d-flex">
+      <mat-icon aria-hidden="false" fontIcon="arrow_back"></mat-icon> Back
+    </div>
+  </a>
+  <h2 class="text-center">{{ type }} Room</h2>
+
+  <div class="mb-3">
+    <label class="form-label">Type : </label>
+    <input
+      type="text"
+      #typeInput="ngModel"
+      required
+      class="form-control"
+      placeholder="Room Type"
+      [(ngModel)]="roomType.type"
+      name="type"
+    />
+    <div [className]="typeInput.valid ? 'valid-feedback' : 'invalid-feedback'">
+      <p>
+        {{ typeInput.valid ? "Looks good!" : "Please select a valid state." }}
+      </p>
+    </div>
+  </div>
+  <button
+    class="btn btn-primary"
+    [disabled]="roomTypeForm.pristine"
+    type="submit"
+  >
+    Submit
+  </button>
+</form>

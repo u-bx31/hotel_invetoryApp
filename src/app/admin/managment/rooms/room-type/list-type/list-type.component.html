@@ -1,0 +1,28 @@
+<table class="mx-auto w-100 border border-2 text-center">
+  <tr class="border border-2">
+    <th>id</th>
+    <th>Type</th>
+  </tr>
+
+  <tr *ngFor="let room of roomTypeList">
+    <td>{{ room.id }}</td>
+    <td>{{ room.type }}</td>
+    <td>
+      <a class="btn btn-outline-info w-100" [routerLink]="[room.id]">
+        <div class="d-flex justify-content-center align-items-center">
+          <mat-icon aria-hidden="false" fontIcon="edit_note"></mat-icon>
+        </div>
+      </a>
+    </td>
+    <td>
+      <button
+        class="btn btn-outline-danger w-100"
+        (click)="handleDelete(room.id || '2')"
+      >
+        <div class="d-flex justify-content-center align-items-center">
+          <mat-icon aria-hidden="false" fontIcon="delete"></mat-icon>
+        </div>
+      </button>
+    </td>
+  </tr>
+</table>
