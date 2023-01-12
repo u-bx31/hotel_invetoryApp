@@ -13,14 +13,14 @@
     },
     {
       "id": "2",
-      "roomType": "Deluxe Room",
+      "roomType": "Suite",
       "amenities": "Air Conditioner, Free Wi-Fi, TV, Bathroom, Kitchen",
       "price": 1000,
       "photos": "assets/images/room2.png",
       "checkinTime": "11-Nov-2021",
       "checkoutTime": "12-Nov-2021",
       "rating": 3.45654,
-      "avaible": false
+      "avaible": true
     },
     {
       "id": "3",
@@ -31,10 +31,10 @@
       "checkinTime": "11-Nov-2021",
       "checkoutTime": "12-Nov-2021",
       "rating": 2.6,
-      "avaible": true
+      "avaible": false
     },
     {
-      "id": "3",
+      "id": "4",
       "roomType": "Double Beds",
       "amenities": "Air Conditioner, Free Wi-Fi, TV, Bathroom, Kitchen",
       "price": 550,
@@ -80,15 +80,36 @@
       "id": "ASdaxo2"
     }
   ],
-  "Reservation": [
+  "reservation": [
     {
       "id": "TOJDYIF",
       "room_id": "typicode",
+      "user_email": "sdfdf@gmail.co",
       "user_firstName": "user12",
       "user_lastName": "2312",
       "user_phoneNumber": 231323213123,
       "checkinTime": "11-Nov-2021",
       "checkoutTime": "12-Nov-2021"
+    },
+    {
+      "room_id": "3",
+      "user_email": "dfdg@dfsdf",
+      "user_firstName": "sfdfdg",
+      "user_lastName": "dfgfg",
+      "user_phoneNumber": 234234,
+      "checkinTime": "2023-01-16T23:00:00.000Z",
+      "checkoutTime": "2023-01-17T23:00:00.000Z",
+      "id": "K_1VOqp"
+    },
+    {
+      "room_id": "4",
+      "user_email": "sdfdsf@fgfdg",
+      "user_firstName": "dghhgfh",
+      "user_lastName": "dfgfdg",
+      "user_phoneNumber": 23432434,
+      "checkinTime": "2023-01-25T23:00:00.000Z",
+      "checkoutTime": "2023-01-26T23:00:00.000Z",
+      "id": "NbgO-Ga"
     }
   ]
 }

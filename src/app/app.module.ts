@@ -18,6 +18,7 @@ import { RoomViewComponent } from './home/rooms/room-view/room-view.component';
 import { DialogBoxComponent } from './home/rooms/dialog-box/dialog-box.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { SpinnerComponent } from './spinner/spinner.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,6 @@ import { SpinnerComponent } from './spinner/spinner.component';
     RoomsComponent,
     ContactComponent,
     HeaderComponent,
-
     FooterComponent,
     IndexComponent,
     RoomViewComponent,
@@ -38,6 +38,7 @@ import { SpinnerComponent } from './spinner/spinner.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
     NgbModule,
     BrowserAnimationsModule,
     FormsModule,

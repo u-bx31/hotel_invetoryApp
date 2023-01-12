@@ -51,4 +51,10 @@ export class RoomService {
   deleteRoomsType(id : string){
     return this.service.delete<any>(`${this.url}/roomType/${id}`);
   }
+
+  // Reservation 
+  addReservation(reservation : any){
+    return this.service.post<any>(`${this.url}/reservation`,reservation);
+  }
+
 }

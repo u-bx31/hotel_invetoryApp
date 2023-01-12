@@ -10,58 +10,72 @@
 </div>
 <div class="container">
   <div [className]="valid">
-    <div class="d-flex justify-content-center align-items-center">
+    <div class="d-flex flex-column justify-content-center align-items-center">
       <app-spinner></app-spinner>
+      <h2>{{checkStateMessage}}</h2>
     </div>
   </div>
-
+  <div *ngIf="success" class="text-center mx-auto py-5">
+    <mat-icon
+      class="icons"
+      aria-hidden="false"
+      aria-label="Example home icon"
+      fontIcon="check_circle"
+    ></mat-icon>
+    <h2>room successfully Booked</h2>
+  </div>
   <div [ngClass]="showed">
     <div *ngIf="avaible" class="p-3">
       <h2>Your information :</h2>
-      <form #bookFrom="ngForm">
+      <form [formGroup]="bookFrom">
         {{bookFrom.value | json}}
         <div class="row row-cols-3 justify-content-center my-4">
           <div class="col">
             <mat-form-field appearance="outline" class="w-100">
-              <mat-label>Email :</mat-label>
+              <mat-label>Email</mat-label>
               <input
                 matInput
                 placeholder="Email"
-                [(ngModel)]="email"
-                name="email"
+                formControlName="user_email"
+                required
               />
             </mat-form-field>
           </div>
           <div class="col">
             <mat-form-field appearance="outline" class="w-100">
-              <mat-label>First Name :</mat-label>
+              <mat-label>First Name </mat-label>
               <input
                 matInput
                 placeholder="First Name"
-                [(ngModel)]="firstName"
+                formControlName="user_firstName"
                 name="firstName"
+                required
               />
             </mat-form-field>
           </div>
           <div class="col">
             <mat-form-field appearance="outline" class="w-100">
-              <mat-label>last Name :</mat-label>
+              <mat-label>last Name </mat-label>
               <input
                 matInput
                 placeholder="Last Name"
-                [(ngModel)]="lastName"
+                
+                formControlName="user_lastName"
                 name="lastName"
+                required
               />
             </mat-form-field>
           </div>
           <div class="col">
             <mat-form-field appearance="outline" class="w-100">
-              <mat-label>Phone Number :</mat-label>
+              <mat-label>Phone Number </mat-label>
               <input
                 matInput
                 placeholder="Phone Number"
-                [(ngModel)]="phone"
+                type="number"
+                formControlName="user_phoneNumber"
                 name="phone"
+                required
               />
             </mat-form-field>
           </div>
@@ -69,8 +83,8 @@
             <mat-form-field appearance="outline" class="w-100">
               <mat-label>Enter a date range</mat-label>
               <mat-date-range-input [rangePicker]="picker">
-                <input matStartDate [(ngModel)]="dateStart" name="dateStart" placeholder="Start date">
-                <input matEndDate  [(ngModel)]="dateEnd" name="dateEnd"placeholder="End date">
+                <input matStartDate formControlName="checkinTime" name="dateStart" placeholder="Start date" required>
+                <input matEndDate  formControlName="checkoutTime" name="dateEnd"placeholder="End date" required>
               </mat-date-range-input>
               <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
               <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
@@ -78,8 +92,13 @@
             </mat-form-field>
           </div>
         </div>
-        <button class="btn btn-outline-dark w-100">Book Now</button>
+        <button class="btn btn-outline-dark w-100" [disabled]="bookFrom.invalid" (click)="addReservation()">Book Now</button>
       </form>
+    </div>
+    <div *ngIf="!avaible" class="p-3 text-center">
+      <h2>Sorry..!</h2>
+      <h3>this Room Not Avaible At this moment.</h3>
+      <h3>Check out our other Rooms</h3>
     </div>
   </div>
 </div>
