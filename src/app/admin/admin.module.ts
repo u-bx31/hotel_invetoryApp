@@ -13,25 +13,26 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { ReservationComponent } from './managment/reservation/reservation.component';
 
 
 @NgModule({
-  declarations: [
-    LoginComponent,
-    RoomsComponent,
-    EmployesComponent,
-    SideBarComponent
-  ],
-  imports: [
-    CommonModule,
-    AdminRoutingModule,
-    FormsModule,
-    LayoutModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule
-  ]
+    declarations: [
+        LoginComponent,
+        RoomsComponent,
+        EmployesComponent,
+        SideBarComponent,
+    ],
+    imports: [
+        CommonModule,
+        AdminRoutingModule,
+        FormsModule,
+        LayoutModule,
+        MatToolbarModule,
+        MatButtonModule,
+        MatSidenavModule,
+        MatIconModule,
+        MatListModule,
+    ]
 })
 export class AdminModule { }

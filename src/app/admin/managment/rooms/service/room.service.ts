@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, map, of, shareReplay, Subject } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { RoomList } from '../room';
 
 @Injectable({
@@ -10,7 +11,7 @@ export class RoomService {
 
   constructor(private service : HttpClient) {}
 
-  url : string  = 'http://localhost:3000';
+  url : string  = environment.apiEndpoint;
 
   error$ = new Subject<string>;
   getRooms$ = this.service.get<RoomList[]>(`${this.url}/rooms`).pipe(
@@ -57,4 +58,18 @@ export class RoomService {
     return this.service.post<any>(`${this.url}/reservation`,reservation);
   }
 
+
+  getReservation$ = this.service.get<any>(`${this.url}/reservation`).pipe(
+    catchError((err)=>{
+      console.log('error',err.message);
+      return of([]);
+    })
+  );
+
+  editReservation(reservation : any){
+    return this.service.put<any>(`${this.url}/reservation/${reservation.id}`,reservation);
+  }
+  deleteReservation(id : string){
+    return this.service.delete<any>(`${this.url}/reservation/${id}`);
+  }
 }

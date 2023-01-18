@@ -7,8 +7,9 @@ import { SideBarComponent } from './managment/side-bar/side-bar.component';
 const routes: Routes = [
   {path : '',component : LoginComponent},
   {path : 'management' ,canActivate : [AuthGuard], component : SideBarComponent , children : [
-    {path : '',redirectTo : 'management/rooms',pathMatch: 'full'},
-    {path : 'rooms',loadChildren : ()=>import('./managment/rooms/rooms.module').then((m)=>m.RoomsModule)}
+    {path : 'rooms',loadChildren : ()=>import('./managment/rooms/rooms.module').then((m)=>m.RoomsModule)},
+    {path : 'reservation' , loadChildren : ()=> import('./managment/reservation/reservation.module').then((m)=>m.ReservationModule)},
+
   ]},
   
 

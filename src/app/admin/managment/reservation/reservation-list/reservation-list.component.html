@@ -1,0 +1,39 @@
+<table class="mx-auto w-100 border border-2">
+    <tr class="border border-2">
+      <th>id</th>
+      <th>Room id</th>
+      <th>User FirstName</th>
+      <th>User LastName</th>
+      <th>User PhoneNumber</th>
+      <th>Check-in Time</th>
+      <th>Check-Out Time</th>
+    </tr>
+  
+    <tr *ngFor="let reserv of Reservation">
+      <td>{{ reserv.id }}</td>
+      <td>{{ reserv.room_id }}</td>
+      <td>{{ reserv.user_firstName }}</td>
+      <td>{{ reserv.user_lastName }}</td>
+      <td>{{ reserv.user_phoneNumber }}</td>
+      <td>{{ reserv.checkinTime | date }}</td>
+      <td>{{ reserv.checkoutTime | date }}</td>
+      <td>
+        <a class="btn btn-outline-info w-100" [routerLink]="[reserv.id]">
+          <div class="d-flex justify-content-center align-items-center">
+            <mat-icon aria-hidden="false" fontIcon="edit_note"></mat-icon>
+          </div>
+        </a>
+      </td>
+      <td>
+        <button
+          class="btn btn-outline-danger w-100"
+          (click)="handleDelete(reserv.id)"
+        >
+          <div class="d-flex justify-content-center align-items-center">
+            <mat-icon aria-hidden="false" fontIcon="delete"></mat-icon>
+          </div>
+        </button>
+      </td>
+    </tr>
+  </table>
+  

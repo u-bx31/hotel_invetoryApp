@@ -9,7 +9,7 @@
       "checkinTime": "11-Nov-2021",
       "checkoutTime": "12-Nov-2021",
       "rating": 4.5,
-      "avaible": true
+      "avaible": false
     },
     {
       "id": "2",
@@ -56,10 +56,6 @@
   ],
   "roomType": [
     {
-      "id": "SDDGSDF",
-      "type": "Deluxe Room"
-    },
-    {
       "id": "JHGUVNJ",
       "type": "regular Room"
     },
@@ -74,10 +70,6 @@
     {
       "id": "PKJGTJL",
       "type": "Double Beds"
-    },
-    {
-      "type": "Economy",
-      "id": "ASdaxo2"
     }
   ],
   "reservation": [

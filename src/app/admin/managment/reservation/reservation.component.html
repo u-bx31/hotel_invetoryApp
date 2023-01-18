@@ -1,0 +1,15 @@
+<div class="container justfy-content-center align-items-center h-50">
+    <a class="btn btn-outline-danger mb-3" routerLink="../">
+        <div class="d-flex">
+          <mat-icon aria-hidden="false" fontIcon="arrow_back"></mat-icon> Back
+        </div>
+      </a>
+      
+      <a class="btn btn-outline-primary w-100" [routerLink]="'add'">Add Room</a>
+      
+      <div class="">
+        <h2>Rooms Count : {{ numberRooms }}</h2>
+        <app-reservation-list [Reservation]="Reservation" 
+        (handleDeleted)="handleDelete($event)"></app-reservation-list>
+      </div>
+</div>

@@ -1,0 +1,87 @@
+<form [formGroup]="reservation">
+  <a class="btn btn-outline-danger" routerLink="../">
+    <div class="d-flex">
+      <mat-icon aria-hidden="false" fontIcon="arrow_back"></mat-icon> Back
+    </div>
+  </a>
+  <h2 class="text-center">{{ type }} Reservation</h2>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Room Id : </label>
+    <input
+      type="number"
+      required
+      class="form-control"
+      placeholder="Room Id"
+      formControlName = "room_id"
+      name="price"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">User Email : </label>
+    <input
+      type="email"
+      required
+      class="form-control"
+      placeholder="Email"
+      formControlName="user_email"
+      name="price"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">User FirstName : </label>
+    <input
+      type="text"
+      required
+      class="form-control"
+      placeholder="FirstName"
+      formControlName="user_fisrtName"
+      name="price"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">User LastName : </label>
+    <input
+      type="text"
+      required
+      class="form-control"
+      placeholder="LastName"
+      formControlName="user_lastName"
+      name="price"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">User Phone Number : </label>
+    <input
+      type="tel"
+      required
+      class="form-control"
+      placeholder="PhoneNumber"
+      formControlName="user_phoneNumber"
+      name="price"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Check-in Time :</label>
+    <input
+      type="date"
+      required
+      class="form-control"
+      placeholder="Check-in Time"
+      name="checkinTime"
+      formControlName = "checkinTime"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Check-out Time :</label>
+    <input
+      type="date"
+      required
+      class="form-control"
+      placeholder="Check-out Time"
+      name="checkoutTime"
+      formControlName = "checkoutTime"
+    />
+  </div>
+
+  <button class="btn btn-primary">Submit</button>
+</form>
