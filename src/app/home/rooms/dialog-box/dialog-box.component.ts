@@ -9,7 +9,9 @@ import {
 import { Reservation } from '../reservation';
 import { HttpClient } from '@angular/common/http';
 import { RoomService } from 'src/app/admin/managment/rooms/service/room.service';
-
+const today = new Date();
+const month = today.getMonth();
+const year = today.getFullYear();
 @Component({
   selector: 'app-dialog-box',
   templateUrl: './dialog-box.component.html',
@@ -19,7 +21,7 @@ export class DialogBoxComponent implements OnInit {
   valid: string = 'show';
   success!: boolean;
   showed: string = 'hide';
-  avaible!: boolean;
+  avaible: boolean = true;
   roomState!: string;
   checkStateMessage!: string;
 
@@ -29,57 +31,90 @@ export class DialogBoxComponent implements OnInit {
     private service: RoomService,
     private fb: FormBuilder
   ) {
-    this.avaible = this.data.room.avaible;
+    // this.avaible = this.data.room.avaible;
   }
-  bookFrom!: FormGroup;
+  bookForm!: FormGroup;
+
+  campaignTwo!: FormGroup;
 
   ngOnInit(): void {
     this.success = false;
-    this.checkStateMessage = 'Check if the room Avaible';
-    this.bookFrom = this.fb.group({
-      room_id: new FormControl(this.data.room_id),
-      user_email: new FormControl('', [Validators.required, Validators.email]),
-      user_firstName: new FormControl('', [Validators.required]),
-      user_lastName: new FormControl('', [Validators.required]),
-      user_phoneNumber: new FormControl('', [Validators.required]),
-      checkinTime: new FormControl('', [Validators.required]),
-      checkoutTime: new FormControl('', [Validators.required]),
+    this.checkStateMessage = 'Please Wait ...';
+    this.bookForm = this.fb.group({
+      room_id: [this.data.room_id],
+      user_email: ['', [Validators.required, Validators.email]],
+      user_firstName: ['', [Validators.required]],
+      user_lastName: ['', [Validators.required]],
+      user_phoneNumber: ['', [Validators.required]],
+      checkinTime: ['', [Validators.required]],
+      checkoutTime: ['', [Validators.required]],
     });
-
+    this.service.getReservation$.subscribe((values) => {
+      let Roomvalues: any[] = values;
+      let roomInfo = Roomvalues.filter(
+        (val) => val.room_id == this.data.room_id
+      );
+      roomInfo.map((res) => {
+        console.log(res);
+        this.campaignTwo = this.fb.group({
+          start: [new Date(res.checkinTime)],
+          end: [new Date(res.checkoutTime)],
+        });
+      });
+    });
     setTimeout(() => {
       this.valid = 'hide';
       this.showed = 'show';
     }, 3000);
-
-    if (this.avaible === true) {
-      this.roomState = 'Avaible Room';
-    } else {
-      this.roomState = 'Not Avaible Room';
-    }
   }
   onCancel(): void {
     this.dialogRef.close();
   }
 
   addReservation() {
-    
-    this.service.addReservation(this.bookFrom.value).subscribe({
-      next: () => {
-        this.checkStateMessage = 'Adding you reservation please wait ...';
-        this.valid = 'show';
-        this.showed = 'hide';
-        setTimeout(() => {
-          this.valid = 'hide';
-          this.data.room.avaible = false;
-          this.service.editRooms(this.data.room).subscribe((parms)=>console.log(parms));
-          this.success = true;
-        }, 3000);
-      },
-      complete: () => {
-        setTimeout(() => {
-          this.onCancel();
-        }, 4000);
-      },
+    this.service.getReservation$.subscribe((values) => {
+      let Roomvalues: any[] = values;
+      let roomInfo = Roomvalues.filter(
+        (val) => val.room_id == this.data.room_id
+      );
+      roomInfo.map((res) => {
+        if (
+          Date.parse(res.checkinTime) ==
+            Date.parse(this.bookForm.value.checkinTime) &&
+          Date.parse(res.checkoutTime) ==
+            Date.parse(this.bookForm.value.checkoutTime)
+        ) {
+          this.roomState = 'Not Avaible Room';
+          this.avaible = false;
+          setTimeout(() => {
+            this.avaible = true;
+          }, 2000);
+          
+        }
+      });
+      if (this.avaible === true && this.bookForm.valid) {
+        this.service.addReservation(this.bookForm.value).subscribe({
+          next: () => {
+            this.checkStateMessage = 'Adding you reservation please wait ...';
+            this.valid = 'show';
+            this.showed = 'hide';
+            setTimeout(() => {
+              this.valid = 'hide';
+              this.data.room.avaible = false;
+              this.service
+                .editRooms(this.data.room)
+                .subscribe((parms) => console.log(parms));
+              this.success = true;
+            }, 3000);
+          },
+          complete: () => {
+            setTimeout(() => {
+              this.onCancel();
+            }, 4000);
+          },
+        });
+      }
     });
+   
   }
 }

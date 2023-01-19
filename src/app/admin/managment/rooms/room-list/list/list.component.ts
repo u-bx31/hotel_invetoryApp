@@ -8,10 +8,10 @@ import { RoomList } from '../../room';
 })
 export class ListComponent {
   @Input() rooms : RoomList[] |null =[];
-  @Output() handleDeleted = new EventEmitter<string>;
+  @Output() handleDeleted = new EventEmitter<RoomList>;
 
 
-  handleDelete =(id: string)=>{
-    this.handleDeleted.emit(id);
+  handleDelete =(rooms: RoomList)=>{
+    this.handleDeleted.emit(rooms);
   }
 }

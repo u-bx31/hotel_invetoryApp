@@ -23,8 +23,18 @@ export class RoomListComponent implements OnInit {
       this.numberRooms = rooms.length;
     });
   }
-  handleDelete = (id: string) => {
-    this.roomService.deleteRooms(id).subscribe();
-    this.getAllRooms()
+  handleDelete = (roomList: RoomList) => {
+    this.roomService.getReservation$.subscribe((values) => {
+      let reservation = values.filter(
+        (res : any) => roomList.id === res.room_id
+      );
+      if (reservation.length > 0) {
+        alert('this Room Already Exist on Another Table');
+      } else {
+        this.roomService.deleteRooms(roomList.id).subscribe();
+        this.getAllRooms()
+      }
+    });
+
   };
 }

@@ -70,18 +70,22 @@
     {
       "id": "PKJGTJL",
       "type": "Double Beds"
+    },
+    {
+      "type": "Deluxe Room",
+      "id": "FW32IRl"
     }
   ],
   "reservation": [
     {
       "id": "TOJDYIF",
-      "room_id": "typicode",
+      "room_id": "3",
       "user_email": "sdfdf@gmail.co",
       "user_firstName": "user12",
       "user_lastName": "2312",
       "user_phoneNumber": 231323213123,
-      "checkinTime": "11-Nov-2021",
-      "checkoutTime": "12-Nov-2021"
+      "checkinTime": "2023-01-13T23:00:00.000Z",
+      "checkoutTime": "2023-01-14T23:00:00.000Z"
     },
     {
       "room_id": "3",
@@ -94,14 +98,24 @@
       "id": "K_1VOqp"
     },
     {
+      "id": "NbgO-Ga",
       "room_id": "4",
       "user_email": "sdfdsf@fgfdg",
-      "user_firstName": "dghhgfh",
+      "user_firstName": "dghhgfh55",
       "user_lastName": "dfgfdg",
       "user_phoneNumber": 23432434,
       "checkinTime": "2023-01-25T23:00:00.000Z",
-      "checkoutTime": "2023-01-26T23:00:00.000Z",
-      "id": "NbgO-Ga"
+      "checkoutTime": "2023-01-26T23:00:00.000Z"
+    },
+    {
+      "room_id": "3",
+      "user_email": "asdsa@dsfdsf",
+      "user_firstName": "gjhgj",
+      "user_lastName": "hgjghj",
+      "user_phoneNumber": 546456546,
+      "checkinTime": "2023-01-18T23:00:00.000Z",
+      "checkoutTime": "2023-01-19T23:00:00.000Z",
+      "id": "rSPkU1-"
     }
   ]
 }

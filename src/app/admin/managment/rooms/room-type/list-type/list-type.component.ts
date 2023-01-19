@@ -11,7 +11,7 @@ export class ListTypeComponent {
   @Output() handleDeleted = new EventEmitter<string>;
 
 
-  handleDelete =(id: string)=>{
-    this.handleDeleted.emit(id);
+  handleDelete =(roomTypeList: any)=>{
+    this.handleDeleted.emit(roomTypeList);
   }
 }

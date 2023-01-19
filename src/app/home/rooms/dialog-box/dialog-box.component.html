@@ -1,128 +1,133 @@
-<div class="top d-flex justify-content-end">
-  <a (click)="onCancel()"
-    ><mat-icon
-      class="icons"
-      aria-hidden="false"
-      aria-label="Example home icon"
-      fontIcon="close"
-    ></mat-icon
-  ></a>
-</div>
-<div class="container">
-  <div [className]="valid">
-    <div class="d-flex flex-column justify-content-center align-items-center">
-      <app-spinner></app-spinner>
-      <h2>{{ checkStateMessage }}</h2>
+<div class="h-100">
+  <div class="top d-flex justify-content-end">
+    <a (click)="onCancel()"
+      ><mat-icon
+        class="icons"
+        aria-hidden="false"
+        aria-label="Example home icon"
+        fontIcon="close"
+      ></mat-icon
+    ></a>
+  </div>
+  <div class="d-flex justify-content-center align-items-center h-75">
+    <div [className]="valid">
+      <div class="d-flex flex-column justify-content-center align-items-center">
+        <app-spinner></app-spinner>
+        <h2 class="mt-2">{{ checkStateMessage }}</h2>
+      </div>
     </div>
-  </div>
-  <div *ngIf="success" class="text-center mx-auto py-5">
-    <mat-icon
-      class="icons"
-      aria-hidden="false"
-      aria-label="Example home icon"
-      fontIcon="check_circle"
-    ></mat-icon>
-    <h2>room successfully Booked</h2>
-  </div>
-  <div [ngClass]="showed">
-    <div *ngIf="avaible" class="p-3">
-      <h2>Your information :</h2>
-      <form [formGroup]="bookFrom">
-        <div class="row row-cols-3 justify-content-center my-4">
-          <div class="col">
-            <div class="d-felx"></div>
-            <mat-form-field appearance="outline" class="w-100">
-              <mat-label>Email</mat-label>
-              <input
-                matInput
-                placeholder="Email"
-                formControlName="user_email"
-                required
-              />
-              <mat-icon matSuffix>alternate_email</mat-icon>
-            </mat-form-field>
-          </div>
-          <div class="col">
-            <mat-form-field appearance="outline" class="w-100">
-              <mat-label>First Name </mat-label>
-              <input
-                matInput
-                placeholder="First Name"
-                formControlName="user_firstName"
-                name="firstName"
-                required
-              />
-              <mat-icon matSuffix>person</mat-icon>
-            </mat-form-field>
-          </div>
-          <div class="col">
-            <mat-form-field appearance="outline" class="w-100">
-              <mat-label>last Name </mat-label>
-              <input
-                matInput
-                placeholder="Last Name"
-                formControlName="user_lastName"
-                name="lastName"
-                required
-              />
-              <mat-icon matSuffix>person</mat-icon>
-            </mat-form-field>
-          </div>
-          <div class="col">
-            <mat-form-field appearance="outline" class="w-100">
-              <mat-label>Phone Number </mat-label>
-              <input
-                matInput
-                placeholder="Phone Number"
-                type="number"
-                formControlName="user_phoneNumber"
-                name="phone"
-                required
-              />
-              <mat-icon matSuffix>phone_iphone</mat-icon>
-            </mat-form-field>
-          </div>
-          <div class="col">
-            <mat-form-field appearance="outline" class="w-100">
-              <mat-label>Enter a date range</mat-label>
-              <mat-date-range-input [rangePicker]="picker">
+
+    <div *ngIf="success" class="text-center mx-auto py-5">
+      <mat-icon
+        class="icons"
+        aria-hidden="false"
+        aria-label="Example home icon"
+        fontIcon="check_circle"
+      ></mat-icon>
+      <h2>room successfully Booked</h2>
+    </div>
+    <div [ngClass]="showed">
+      <h2 class="ms-3">Your information :</h2>
+      <div *ngIf="avaible" class="p-md-3 w-100">
+        
+        <form [formGroup]="bookForm">
+          <div class="row row-cols-md-3 justify-content-center my-4 mx-md-3">
+            <div class="col">
+              <div class="d-felx"></div>
+              <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Email</mat-label>
                 <input
-                  matStartDate
-                  formControlName="checkinTime"
-                  name="dateStart"
-                  placeholder="Start date"
+                  matInput
+                  placeholder="Email"
+                  formControlName="user_email"
                   required
                 />
+                <mat-icon matSuffix class="w-50">alternate_email</mat-icon>
+              </mat-form-field>
+            </div>
+            <div class="col">
+              <mat-form-field appearance="outline" class="w-100">
+                <mat-label>First Name </mat-label>
                 <input
-                  matEndDate
-                  formControlName="checkoutTime"
-                  name="dateEnd"
-                  placeholder="End date"
+                  matInput
+                  placeholder="First Name"
+                  formControlName="user_firstName"
+                  name="firstName"
                   required
                 />
-              </mat-date-range-input>
-              <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
-              <mat-datepicker-toggle
-                matIconSuffix
-                [for]="picker"
-              ></mat-datepicker-toggle>
-              <mat-date-range-picker #picker></mat-date-range-picker>
-            </mat-form-field>
+                <mat-icon matSuffix class="w-50">person</mat-icon>
+              </mat-form-field>
+            </div>
+            <div class="col">
+              <mat-form-field appearance="outline" class="w-100">
+                <mat-label>last Name </mat-label>
+                <input
+                  matInput
+                  placeholder="Last Name"
+                  formControlName="user_lastName"
+                  name="lastName"
+                  required
+                />
+                <mat-icon matSuffix class="w-50">person</mat-icon>
+              </mat-form-field>
+            </div>
+            <div class="col">
+              <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Phone Number </mat-label>
+                <input
+                  matInput
+                  placeholder="Phone Number"
+                  type="number"
+                  formControlName="user_phoneNumber"
+                  name="phone"
+                  required
+                />
+                <mat-icon matSuffix class="w-50">phone_iphone</mat-icon>
+              </mat-form-field>
+            </div>
+            <div class="col">
+              <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Enter a date range</mat-label>
+                <mat-date-range-input [rangePicker]="picker" [comparisonStart]="campaignTwo.value.start"
+                [comparisonEnd]="campaignTwo.value.end">
+                  <input
+                    matStartDate
+                    formControlName="checkinTime"
+                    name="dateStart"
+                    placeholder="Start date"
+                    required
+                  />
+                  <input
+                    matEndDate
+                    formControlName="checkoutTime"
+                    name="dateEnd"
+                    placeholder="End date"
+                    required
+                  />
+                </mat-date-range-input>
+                <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle
+                  matIconSuffix
+                  [for]="picker"
+                ></mat-datepicker-toggle>
+                <mat-date-range-picker #picker></mat-date-range-picker>
+              </mat-form-field>
+            </div>
           </div>
-        </div>
+        </form>
         <button
-          class="btn btn-outline-dark w-100"
-          [disabled]="bookFrom.invalid"
-          (click)="addReservation()"
-        >
-          Book Now
-        </button>
-      </form>
-    </div>
-    <div *ngIf="!avaible" class="p-3 text-center">
-      <h2>Sorry..!</h2>
-      <h3>this Room Not Avaible At this moment.</h3>
-      <h3>Check out our other Rooms</h3>
+        class="btn btn-outline-dark w-100 mt-5"
+        [disabled]="bookForm.invalid"
+        (click)="addReservation()"
+      >
+        Book Now
+      </button>
+      </div>
+      <div *ngIf="!avaible" class="p-3 text-center">
+        <h2>Sorry..!</h2>
+        <h3>this Room Not Avaible At the Date you pick.</h3>
+        <h3>Choose another Date Or Pick another Room</h3>
+      </div>
     </div>
   </div>
 </div>

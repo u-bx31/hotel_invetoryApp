@@ -5,7 +5,6 @@ import { ReservationComponent } from './reservation.component';
 
 const routes: Routes = [
   {path : '',component: ReservationComponent},
-  {path : 'add',component:ReservationAddComponent},
   {path : ':id',component:ReservationAddComponent},
 
 

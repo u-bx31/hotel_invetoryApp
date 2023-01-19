@@ -1,5 +1,5 @@
 export interface RoomList {
-    id? : string;
+    id : string;
     roomType : string;
     price : number;
     photos?: string ;
