@@ -88,9 +88,9 @@
             <div class="col">
               <mat-form-field appearance="outline" class="w-100">
                 <mat-label>Enter a date range</mat-label>
-                <mat-date-range-input [rangePicker]="picker" [comparisonStart]="campaignTwo.value.start"
+                <mat-date-range-input [rangePicker]="picker" min="{{currentDate | date:'yyyy-mm-dd'}}"  [comparisonStart]="campaignTwo.value.start"
                 [comparisonEnd]="campaignTwo.value.end">
-                  <input
+                  <input 
                     matStartDate
                     formControlName="checkinTime"
                     name="dateStart"

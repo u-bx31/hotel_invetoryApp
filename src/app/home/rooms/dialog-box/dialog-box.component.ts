@@ -24,7 +24,7 @@ export class DialogBoxComponent implements OnInit {
   avaible: boolean = true;
   roomState!: string;
   checkStateMessage!: string;
-
+  currentDate : any = new Date();
   constructor(
     public dialogRef: MatDialogRef<DialogBoxComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
@@ -79,10 +79,7 @@ export class DialogBoxComponent implements OnInit {
       );
       roomInfo.map((res) => {
         if (
-          Date.parse(res.checkinTime) ==
-            Date.parse(this.bookForm.value.checkinTime) &&
-          Date.parse(res.checkoutTime) ==
-            Date.parse(this.bookForm.value.checkoutTime)
+          Date.parse(this.bookForm.value.checkinTime) >=Date.parse(res.checkinTime) && Date.parse(this.bookForm.value.checkinTime) <=Date.parse(res.checkoutTime)
         ) {
           this.roomState = 'Not Avaible Room';
           this.avaible = false;
