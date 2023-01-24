@@ -1,13 +1,13 @@
 <table class="mx-auto w-100 border border-2">
   <tr class="border border-2">
-    <th>id</th>
-    <th>Type</th>
-    <th>Price</th>
-    <th>CheckIn Time</th>
-    <th>Rating</th>
+    <th class="ps-1">id</th>
+    <th class="ps-1">Type</th>
+    <th class="ps-1">Price</th>
+    <th class="ps-1">CheckIn Time</th>
+    <th class="ps-1">Rating</th>
   </tr>
 
-  <tr *ngFor="let room of rooms">
+  <tr *ngFor="let room of rooms,let odd = odd,let even = even" [ngClass]="odd ? 'odd':'even'">
     <td>{{ room.id }}</td>
     <td>{{ room.roomType }}</td>
     <td>{{ room.price | currency }}</td>

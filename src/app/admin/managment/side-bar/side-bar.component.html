@@ -1,48 +1,81 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="(isHandset$ | async) === false">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false"
+  >
     <mat-toolbar>Menu</mat-toolbar>
-    <mat-nav-list >
-      <a mat-list-item [routerLink] = "''" class="my-3">
-        <div class="d-flex flex-row">
-          <mat-icon aria-hidden="false" fontIcon="home" class="me-2" ></mat-icon>Home
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="''" class="my-3 ">
+        <div class="d-flex flex-row c-item px-3 py-3">
+          <mat-icon aria-hidden="false" fontIcon="home" class="me-2"></mat-icon
+          >Home
         </div>
       </a>
-      <a mat-list-item [routerLink] = "'rooms'" class="my-3">
-        <div class="d-flex flex-row">
-          <mat-icon aria-hidden="false" fontIcon="king_bed" class="me-2"></mat-icon>Rooms
-        </div>
-        </a>
-      <a mat-list-item [routerLink] = "'reservation'" class="my-3">
-        <div class="d-flex flex-row">
-          <mat-icon aria-hidden="false" fontIcon="book_online" class="me-2"></mat-icon>Reservation
-        </div>
-        </a>
-      <a mat-list-item class="my-3">
-        <div class="d-flex flex-row">
-          <mat-icon aria-hidden="false" fontIcon="badge" class="me-2"></mat-icon>Employe's(soon)
+      <a mat-list-item [routerLink]="'rooms'" class="my-3 ">
+        <div class="d-flex flex-row c-item px-3 py-3 ">
+          <mat-icon
+            aria-hidden="false"
+            fontIcon="king_bed"
+            class="me-2"
+          ></mat-icon
+          >Rooms
         </div>
       </a>
-      <a mat-flat-button color="primary" (click)="logout()" class="w-100 my-3"><mat-icon aria-hidden="false" fontIcon="logout"></mat-icon>Log-Out</a>
+      <a mat-list-item [routerLink]="'reservation'" class="my-3 ">
+        <div class="d-flex flex-row c-item px-3 py-3">
+          <mat-icon
+            aria-hidden="false"
+            fontIcon="book_online"
+            class="me-2"
+          ></mat-icon
+          >Reservation
+        </div>
+      </a>
+      <a mat-list-item class="my-3 ">
+        <div class="d-flex flex-row c-item px-3 py-3 ">
+          <mat-icon aria-hidden="false" fontIcon="badge" class="me-2"></mat-icon
+          >Employe's
+        </div>
+      </a>
     </mat-nav-list>
   </mat-sidenav>
-  <mat-sidenav-content>
-    <mat-toolbar color="primary">
+  <mat-sidenav-content class="">
+    <mat-toolbar class="mat-tolbar">
       <button
         type="button"
         aria-label="Toggle sidenav"
         mat-icon-button
         (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async">
+        *ngIf="isHandset$ | async"
+      >
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>hotel_invetory</span>
+      <span class="text-white fs-4">Hotel Inventory App</span>
+      <span class="example-spacer"></span>
+      <div class="row mx-auto ">
+        <div class="col">
+          <div ngbDropdown class="d-inline-block c-logIcon">
+            <button mat-icon-button class="example-icon c-logIcon_icon" aria-label="Example icon-button with share icon" ngbDropdownToggle>
+              <mat-icon>person</mat-icon>
+            </button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button ngbDropdownItem>Profile</button>
+              <button ngbDropdownItem>Messages</button>
+              <hr>
+              <button mat-flat-button ngbDropdownItem (click)="logout()"><mat-icon aria-hidden="false" fontIcon="logout"></mat-icon>Log-Out</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </mat-toolbar>
-    <div class="container py-5">
-      <router-outlet></router-outlet>
+    <div class="c-router">
+      <div class="container p-5">
+        <router-outlet></router-outlet>
+      </div>
     </div>
-    
   </mat-sidenav-content>
 </mat-sidenav-container>

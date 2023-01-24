@@ -1,15 +1,15 @@
-<table class="mx-auto w-100 border border-2">
-    <tr class="border border-2">
-      <th>id</th>
-      <th>Room id</th>
-      <th>User FirstName</th>
-      <th>User LastName</th>
-      <th>User PhoneNumber</th>
-      <th>Check-in Time</th>
-      <th>Check-Out Time</th>
+<table class="mx-auto w-100  border border-1">
+    <tr class="border-bottom">
+      <th class="ps-1">id</th>
+      <th class="ps-1">Room id</th>
+      <th class="ps-1">User FirstName</th>
+      <th class="ps-1">User LastName</th>
+      <th class="ps-1">User PhoneNumber</th>
+      <th class="ps-1">Check-in Time</th>
+      <th class="ps-1">Check-Out Time</th>
     </tr>
   
-    <tr *ngFor="let reserv of Reservation">
+    <tr *ngFor="let reserv of Reservation,let odd = odd,let even = even" [ngClass]="odd ? 'odd':'even'">
       <td>{{ reserv.id }}</td>
       <td>{{ reserv.room_id }}</td>
       <td>{{ reserv.user_firstName }}</td>

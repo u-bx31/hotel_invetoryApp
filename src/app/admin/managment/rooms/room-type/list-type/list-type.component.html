@@ -1,10 +1,10 @@
 <table class="mx-auto w-100 border border-2 text-center">
   <tr class="border border-2">
-    <th>id</th>
-    <th>Type</th>
+    <th class="ps-1">id</th>
+    <th class="ps-1">Type</th>
   </tr>
 
-  <tr *ngFor="let room of roomTypeList">
+  <tr *ngFor="let room of roomTypeList,let odd = odd,let even = even" [ngClass]="odd ? 'odd':'even'">
     <td>{{ room.id }}</td>
     <td>{{ room.type }}</td>
     <td>

@@ -14,6 +14,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { ReservationComponent } from './managment/reservation/reservation.component';
+import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { ReservationComponent } from './managment/reservation/reservation.compon
         FormsModule,
         LayoutModule,
         MatToolbarModule,
+        NgbDropdownModule,
         MatButtonModule,
         MatSidenavModule,
         MatIconModule,

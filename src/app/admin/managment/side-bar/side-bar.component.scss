@@ -1,13 +1,22 @@
 .sidenav-container {
   height: 100%;
+  background-color: rgb(0, 58, 112);
 }
 
 .sidenav {
-  width: 200px;
+  width: 250px;
 }
-
-.sidenav .mat-toolbar {
+.sidenav .mat-toolbar{
+  font-size: 2rem;
+  color: white;
+  justify-content: center;
+}
+.sidenav ,.mat-toolbar {
   background: inherit;
+  background-color: rgb(0, 58, 112);
+}
+.example-spacer {
+  flex: 1 1 auto;
 }
 
 .mat-toolbar.mat-primary {
@@ -15,3 +24,25 @@
   top: 0;
   z-index: 1;
 }
+.c-router{
+  background-color: rgb(250, 246, 238);
+  border-radius: 104px 0 0 124px;
+  min-height: 90%;
+}
+.c-item{
+  font-size: 1.6rem;
+  color: white;
+  border-radius: 12px;
+  &:hover{
+    scale: 1.1;
+  }
+}
+.c-logIcon{
+  color: white;
+  &_icon{
+    .mat-icon{
+      font-size: 1.8rem;
+    }
+  }
+}
+

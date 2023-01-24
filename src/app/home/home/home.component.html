@@ -4,56 +4,42 @@
   <div id="myCarousel1" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
 
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel1" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel1" data-slide-to="1"></li>
-      <li data-target="#myCarousel1" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner">
-      <!-- <div class="item active"> <img src="/assets/images/banner.jpg" style="width:100%; height: 500px" alt="First slide">
-                <div class="carousel-caption">
-                    <h1>vacayhome<br> spa & Resort</h1>
-                </div>
-            </div> -->
-      <div class="item">
-        <img
-          src="/assets/images/banner2.png"
-          style="width: 100%; height: 500px"
-          alt="Second slide"
-        />
-        <div class="carousel-caption">
-          <h1 class="py-4">
-            vacayhome<br />
-          </h1>
-          <h1 class="py-4">spa & Resort</h1>
+    <ngb-carousel >
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img src="/assets/images/banner.png" class="w-100" alt="Random first slide" />
         </div>
-      </div>
-      <!-- <div class="item"> <img src="/assets/images/banner3.png" style="width:100%; height: 500px" alt="Third slide">
-                <div class="carousel-caption">
-                    <h1>vacayhome<br> spa & Resort</h1>
-                </div>
-            </div> -->
-    </div>
-    <a class="left carousel-control" href="#myCarousel1" data-slide="prev">
-      <img
-        src="/assets/images/icons/left-arrow.png"
-        onmouseover="this.src = '/assets/images/icons/left-arrow-hover.png'"
-        onmouseout="this.src = '/assets/images/icons/left-arrow.png'"
-        alt="left"
-    /></a>
-    <a class="right carousel-control" href="#myCarousel1" data-slide="next"
-      ><img
-        src="/assets/images/icons/right-arrow.png"
-        onmouseover="this.src = '/assets/images/icons/right-arrow-hover.png'"
-        onmouseout="this.src = '/assets/images/icons/right-arrow.png'"
-        alt="left"
-    /></a>
+        <div class="carousel-caption">
+          <h2>First slide label</h2>
+          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img src="/assets/images/banner2.png" class="w-100" alt="Random second slide" />
+        </div>
+        <div class="carousel-caption">
+          <h2>Second slide label</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img src="/assets/images/banner3.png" class="w-100" alt="Random third slide" />
+        </div>
+        <div class="carousel-caption">
+          <h2>Third slide label</h2>
+          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+    
   </div>
   <div class="clearfix"></div>
 
   <!--service block--->
   <section class="service-block">
-    <div class="container">
+    <div class="container c-services" >
       <div class="row">
         <div class="col-md-3 col-sm-3 col-xs-6 width-50">
           <div class="service-details text-center">
@@ -113,13 +99,13 @@
       <div class="row">
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
           <div class="gallery-image">
-            <img class="img-responsive" src="/assets/images/room1.png" />
+            <img class="w-100" src="/assets/images/room1.png" />
             <div class="overlay">
               <a
                 class="info pop example-image-link img-responsive"
                 href="/assets/images/room1.png"
                 data-lightbox="example-1"
-                ><i class="fa fa-search" aria-hidden="true"></i
+                ><mat-icon>search</mat-icon
               ></a>
               <p><a>delux room</a></p>
             </div>
@@ -127,13 +113,13 @@
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
           <div class="gallery-image">
-            <img class="img-responsive" src="/assets/images/room2.png" />
+            <img class="w-100" src="/assets/images/room2.png" />
             <div class="overlay">
               <a
                 class="info pop example-image-link img-responsive"
                 href="/assets/images/room2.png"
                 data-lightbox="example-1"
-                ><i class="fa fa-search" aria-hidden="true"></i
+                ><mat-icon>search</mat-icon
               ></a>
               <p><a>super room</a></p>
             </div>
@@ -141,13 +127,13 @@
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
           <div class="gallery-image">
-            <img class="img-responsive" src="/assets/images/room3.png" />
+            <img class="w-100" src="/assets/images/room3.png" />
             <div class="overlay">
               <a
-                class="info pop example-image-link img-responsive"
+                class="info pop example-image-link "
                 href="/assets/images/room3.png"
                 data-lightbox="example-1"
-                ><i class="fa fa-search" aria-hidden="true"></i
+                ><mat-icon>search</mat-icon
               ></a>
               <p><a>single room</a></p>
             </div>
@@ -155,13 +141,13 @@
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
           <div class="gallery-image">
-            <img class="img-responsive" src="/assets/images/room4.png" />
+            <img class="w-100" src="/assets/images/room4.png" />
             <div class="overlay">
               <a
                 class="info pop example-image-link img-responsive"
                 href="/assets/images/room4.png"
                 data-lightbox="example-1"
-                ><i class="fa fa-search" aria-hidden="true"></i
+                ><mat-icon>search</mat-icon
               ></a>
               <p><a>double room</a></p>
             </div>
@@ -218,7 +204,7 @@
                 nulla, ornare eu felis luctus non maximus vitae, portt neque.
                 ipsum dolor sit amet, consec adipiscing elit.
               </p>
-              <div class="links"><a href="single-blog.html">Read more</a></div>
+              <div class="links"><a >Read more</a></div>
             </div>
           </div>
         </div>
@@ -241,7 +227,7 @@
                 nulla, ornare eu felis luctus non maximus vitae, portt neque.
                 ipsum dolor sit amet, consec adipiscing elit.
               </p>
-              <div class="links"><a href="single-blog.html">Read more</a></div>
+              <div class="links"><a >Read more</a></div>
             </div>
           </div>
         </div>
@@ -255,7 +241,7 @@
                 nulla, ornare eu felis luctus non maximus vitae, portt neque.
                 ipsum dolor sit amet, consec adipiscing elit.
               </p>
-              <div class="links"><a href="single-blog.html">Read more</a></div>
+              <div class="links"><a >Read more</a></div>
             </div>
             <div class="product-thumb">
               <div class="image txt-rgt">
@@ -280,7 +266,7 @@
                 nulla, ornare eu felis luctus non maximus vitae, portt neque.
                 ipsum dolor sit amet, consec adipiscing elit.
               </p>
-              <div class="links"><a href="single-blog.html">Read more</a></div>
+              <div class="links"><a >Read more</a></div>
             </div>
             <div class="product-thumb txt-rgt">
               <div class="image">
@@ -295,110 +281,6 @@
           </div>
         </div>
         <div class="clearfix"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-----blog slider----->
-
-  <!---blog block--->
-  <section class="blog-block">
-    <div class="container">
-      <div class="row row-cols-2">
-        <div class="col text-center">
-          <div class="row">
-            <div class="col">
-              <div class="event-blog-image">
-                <img
-                  alt="image"
-                  class="img-responsive"
-                  src="/assets/images/blog1.png"
-                />
-              </div>
-            </div>
-            <div class="col">
-              <div class="event-blog-details w-100">
-                <h4>
-                  <a href="single-blog.html">Lorem ipsum dolor sit amet</a>
-                </h4>
-                <h5>
-                  Post By Admin
-                  <a
-                    ><i aria-hidden="true" class="fa fa-heart-o fa-lg"></i
-                    >Likes</a
-                  ><a
-                    ><i aria-hidden="true" class="fa fa-comment-o fa-lg"></i
-                    >comments</a
-                  >
-                </h5>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-                  lorem nulla, ornare eu felis quis, efficitur posuere nulla.
-                  Aliquam ac luctus turpis, non faucibus sem. Fusce ornare
-                  turpis neque, eu commodo sapien porta sed. Nam ut ante turpis.
-                  Nam arcu odio, scelerisque a vehicula vitae, auctor sit amet
-                  lectus.
-                </p>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-                  lorem nulla, ornare eu felis quis, efficitur posuere nulla.
-                  Aliquam ac luctus turpis, non faucibus sem. Fusce ornard
-                  hendrerit tortor vulputate id. Vestibulum mauris nibh, luctus
-                  non maximus vitae, porttitor eget neque. Donec tristique nunc
-                  facilisis, dapibus libero ac
-                </p>
-                <a class="btn btn-default" href="single-blog.html">Read More</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col text-center">
-          <div class="row">
-            <div class="col">
-              <div class="event-blog-image">
-                <img
-                  alt="image"
-                  class="img-responsive"
-                  src="/assets/images/blog2.png"
-                />
-              </div>
-            </div>
-            <div class="col">
-              <div class="event-blog-details">
-                <h4>
-                  <a href="single-blog.html">Lorem ipsum dolor sit amet</a>
-                </h4>
-                <h5>
-                  Post By Admin
-                  <a
-                    ><i aria-hidden="true" class="fa fa-heart-o fa-lg"></i
-                    >Likes</a
-                  ><a
-                    ><i aria-hidden="true" class="fa fa-comment-o fa-lg"></i
-                    >comments</a
-                  >
-                </h5>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-                  lorem nulla, ornare eu felis quis, efficitur posuere nulla.
-                  Aliquam ac luctus turpis, non faucibus sem. Fusce ornare
-                  turpis neque, eu commodo sapien porta sed. Nam ut ante turpis.
-                  Nam arcu odio, scelerisque a vehicula vitae, auctor sit amet
-                  lectus.
-                </p>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-                  lorem nulla, ornare eu felis quis, efficitur posuere nulla.
-                  Aliquam ac luctus turpis, non faucibus sem. Fusce ornard
-                  hendrerit tortor vulputate id. Vestibulum mauris nibh, luctus
-                  non maximus vitae, porttitor eget neque. Donec tristique nunc
-                  facilisis, dapibus libero ac
-                </p>
-                <a class="btn btn-default" href="single-blog.html">Read More</a>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
