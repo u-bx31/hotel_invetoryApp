@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home/home.component';
 import { IndexComponent } from './home/index/index.component';
 import { RoomViewComponent } from './home/rooms/room-view/room-view.component';
 import { RoomsComponent } from './home/rooms/rooms.component';
+import { Page404Component } from './page404/page404.component';
 
 const routes: Routes = [
   {path : '' , component : IndexComponent , children :[
@@ -15,10 +16,10 @@ const routes: Routes = [
     {path : 'contact',component : ContactComponent},
     {path : 'rooms',component : RoomsComponent},
     {path : 'rooms/:id',component : RoomViewComponent},
-    {path : '' , redirectTo : '/home',pathMatch : 'full'}
+    {path : '' , redirectTo : '/home',pathMatch : 'full'},
   ]},
   {path : 'admin' , loadChildren : ()=>import('./admin/admin.module').then((m)=>m.AdminModule)},
-  
+  {path : '**',component: Page404Component}
 
  
 ];

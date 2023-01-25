@@ -9,9 +9,19 @@
 <div class="clearfix"></div>
 <section class="gallery-block gallery-front">
   <div class="container">
+    <div class="d-flex justify-content-end pb-5">
+      <div ngbDropdown class="d-inline-block ">
+        <mat-icon ngbDropdownToggle class="c-iconFilter">filter_alt</mat-icon>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button ngbDropdownItem>Action - 1</button>
+          <button ngbDropdownItem>Another Action</button>
+          <button ngbDropdownItem>Something else is here</button>
+        </div>
+      </div>
+    </div>
     <div class="row" >
-      <div class="col" *ngFor="let room of roomList;">
-        <div class="card shadow-sm">
+      <div class="col " *ngFor="let room of roomList;">
+        <div class="card shadow-sm c-crd">
           <img class="img card-img-top" src={{room.photos}} />
           <div class="card-body">
             <h2 class="card-text">

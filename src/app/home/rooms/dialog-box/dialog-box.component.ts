@@ -24,7 +24,8 @@ export class DialogBoxComponent implements OnInit {
   avaible: boolean = true;
   roomState!: string;
   checkStateMessage!: string;
-  currentDate : any = new Date();
+  currentDate: any = new Date();
+
   constructor(
     public dialogRef: MatDialogRef<DialogBoxComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
@@ -34,7 +35,7 @@ export class DialogBoxComponent implements OnInit {
     // this.avaible = this.data.room.avaible;
   }
   bookForm!: FormGroup;
-
+  resrvation: any = {};
   campaignTwo!: FormGroup;
 
   ngOnInit(): void {
@@ -55,12 +56,20 @@ export class DialogBoxComponent implements OnInit {
         (val) => val.room_id == this.data.room_id
       );
       roomInfo.map((res) => {
-        console.log(res);
-        this.campaignTwo = this.fb.group({
-          start: [new Date(res.checkinTime)],
-          end: [new Date(res.checkoutTime)],
-        });
+        this.resrvation = res;
       });
+
+      if (Object.keys(this.resrvation).length !== 0) {
+        this.campaignTwo = this.fb.group({
+          start: [new Date(this.resrvation.checkinTime)],
+          end: [new Date(this.resrvation.checkoutTime)],
+        });
+      } else {
+        this.campaignTwo = this.fb.group({
+          start: [new Date('11-12-2022')],
+          end: [new Date('12-12-2022')],
+        });
+      }
     });
     setTimeout(() => {
       this.valid = 'hide';
@@ -70,7 +79,13 @@ export class DialogBoxComponent implements OnInit {
   onCancel(): void {
     this.dialogRef.close();
   }
-
+  myFilter = (d: Date): boolean => {
+    // Prevent dates in ranges from being selected.
+    return (
+      !(d >= this.resrvation.checkinTime && d <= this.resrvation.checkoutTime) &&
+      !(d >= this.resrvation.checkinTime && d <= this.resrvation.checkoutTime)
+    );
+  };
   addReservation() {
     this.service.getReservation$.subscribe((values) => {
       let Roomvalues: any[] = values;
@@ -79,14 +94,16 @@ export class DialogBoxComponent implements OnInit {
       );
       roomInfo.map((res) => {
         if (
-          Date.parse(this.bookForm.value.checkinTime) >=Date.parse(res.checkinTime) && Date.parse(this.bookForm.value.checkinTime) <=Date.parse(res.checkoutTime)
+          Date.parse(this.bookForm.value.checkinTime) >=
+            Date.parse(res.checkinTime) &&
+          Date.parse(this.bookForm.value.checkinTime) <=
+            Date.parse(res.checkoutTime)
         ) {
           this.roomState = 'Not Avaible Room';
           this.avaible = false;
           setTimeout(() => {
             this.avaible = true;
           }, 2000);
-          
         }
       });
       if (this.avaible === true && this.bookForm.valid) {
@@ -112,6 +129,5 @@ export class DialogBoxComponent implements OnInit {
         });
       }
     });
-   
   }
 }

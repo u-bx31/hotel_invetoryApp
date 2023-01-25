@@ -29,7 +29,6 @@
     <div [ngClass]="showed">
       <h2 class="ms-3">Your information :</h2>
       <div *ngIf="avaible" class="p-md-3 w-100">
-        
         <form [formGroup]="bookForm">
           <div class="row row-cols-md-3 justify-content-center my-4 mx-md-3">
             <div class="col">
@@ -86,11 +85,24 @@
               </mat-form-field>
             </div>
             <div class="col">
+              <!-- <mat-form-field appearance="fill">
+                <mat-label>Choose a date</mat-label>
+                <input [min]="currentDate" matInput [matDatepicker]="picker">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field> -->
               <mat-form-field appearance="outline" class="w-100">
                 <mat-label>Enter a date range</mat-label>
-                <mat-date-range-input [rangePicker]="picker" min="{{currentDate | date:'yyyy-mm-dd'}}"  [comparisonStart]="campaignTwo.value.start"
-                [comparisonEnd]="campaignTwo.value.end">
-                  <input 
+                <mat-date-range-input
+                  [dateFilter]="myFilter"
+                  [rangePicker]="picker"
+                  [comparisonStart]="campaignTwo.value.start"
+                  [comparisonEnd]="campaignTwo.value.end"
+                  [min]="currentDate"
+                >
+                  <input
+                       
                     matStartDate
                     formControlName="checkinTime"
                     name="dateStart"
@@ -116,12 +128,12 @@
           </div>
         </form>
         <button
-        class="btn btn-outline-dark w-100 mt-5"
-        [disabled]="bookForm.invalid"
-        (click)="addReservation()"
-      >
-        Book Now
-      </button>
+          class="btn btn-outline-dark w-100 mt-5"
+          [disabled]="bookForm.invalid"
+          (click)="addReservation()"
+        >
+          Book Now
+        </button>
       </div>
       <div *ngIf="!avaible" class="p-3 text-center">
         <h2>Sorry..!</h2>

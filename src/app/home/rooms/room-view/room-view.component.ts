@@ -14,12 +14,16 @@ import { DialogBoxComponent } from '../dialog-box/dialog-box.component';
 })
 export class RoomViewComponent implements OnInit {
   id : string | undefined = '';
-
+  imgUrl : any[]= [] ;
   room !: any; 
+  roomType: any[] = [];
   constructor(public dialog: MatDialog,private parm:ActivatedRoute,private service : RoomService,){}
   
 
   ngOnInit(){
+    this.service.getRoomsType$.subscribe((parms)=>{
+      this.roomType = parms;
+    })
     this.parm.paramMap.subscribe((parms)=>
     this.id = parms.get('id')?.toString())
     this.service.getRooms$.subscribe((parms)=>{

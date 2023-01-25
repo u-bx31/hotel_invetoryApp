@@ -36,6 +36,7 @@ export class AddRoomComponent implements OnInit {
     let sub = this.router.params.subscribe((parms)=>this.id = parms['id'])
     this.roomService.getRoomsType$.subscribe((parms)=>{
       this.typeRooms = parms
+
     })
     console.log(this.id);
     if(this.id !== undefined){
