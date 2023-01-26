@@ -5,8 +5,7 @@
       ? 'text-start needs-validation'
       : 'text-start needs-validation was-validated'
   "
-  #roomForm="ngForm"
-  (ngSubmit)="addRoom(roomForm)"
+  [formGroup]="roomForm"
 >
   <a class="btn btn-outline-danger" routerLink="../">
     <div class="d-flex">
@@ -14,123 +13,59 @@
     </div>
   </a>
   <h2 class="text-center">{{ type }} Room</h2>
+  {{roomForm.value | json}}
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Room Type :</label>
-    <!-- <input
-      class="form-control"
-      #typeInput="ngModel"
-      [(ngModel)]="room.roomType"
-      name="roomType"
-    /> -->
+
     <select
       class="form-select"
-      #typeInput="ngModel"
-      [(ngModel)]="room.roomType"
-      name="roomType"
+      formControlName="roomType"
+      (change)="selcetionF()"
     >
       <option value="" disabled selected>Room Type </option>
       <option *ngFor="let rooms of typeRooms" [value]="rooms.type">{{rooms.type}}</option>
     </select>
-    <div [className]="typeInput.valid ? 'valid-feedback' : 'invalid-feedback'">
-      <p>
-        {{ typeInput.valid ? "Looks good!" : "Please select a valid state." }}
-      </p>
-    </div>
   </div>
 
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Price : </label>
     <input
       type="number"
-      #priceInput="ngModel"
       required
       class="form-control"
       placeholder="Price"
-      [(ngModel)]="room.price"
-      name="price"
+      formControlName="price"
     />
-    <div [className]="priceInput.valid ? 'valid-feedback' : 'invalid-feedback'">
-      <p>
-        {{ priceInput.valid ? "Looks good!" : "Please select a valid state." }}
-      </p>
-    </div>
   </div>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Rating :</label>
     <input
       type="number"
-      #ratingInput="ngModel"
       min="0"
       max="5"
       required
       class="form-control"
       placeholder="Rating"
-      [(ngModel)]="room.rating"
-      name="rating"
+      formControlName="rating"
     />
-    <div
-      [className]="ratingInput.valid ? 'valid-feedback' : 'invalid-feedback'"
-    >
-      <p>
-        {{ ratingInput.valid ? "Looks good!" : "Please select a valid state." }}
-      </p>
-    </div>
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">check-in Time :</label>
-    <input
-      type="date"
-      #checkInTimeInput="ngModel"
-      required
-      class="form-control"
-      placeholder="Check-in Time"
-      [(ngModel)]="room.checkinTime"
-      name="checkintTime"
-    />
-    <div
-      [className]="
-        checkInTimeInput.valid ? 'valid-feedback' : 'invalid-feedback'
-      "
-    >
-      <p>
-        {{
-          checkInTimeInput.valid
-            ? "Looks good!"
-            : "Please select a valid state."
-        }}
-      </p>
-    </div>
   </div>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Check-out Time :</label>
     <input
       type="date"
-      #checkOutTimeInput="ngModel"
       required
       class="form-control"
       placeholder="Check-out Time"
       name="checkoutTime"
-      [(ngModel)]="room.checkoutTime"
+      formControlName="date_added"
     />
-    <div
-      [className]="
-        checkOutTimeInput.valid ? 'valid-feedback' : 'invalid-feedback'
-      "
-    >
-      <p>
-        {{
-          checkOutTimeInput.valid
-            ? "Looks good!"
-            : "Please select a valid state."
-        }}
-      </p>
-    </div>
+    
   </div>
 
   <button
     class="btn btn-primary"
-    [disabled]="roomForm.pristine"
-    type="submit"
+    type="button"
+    (click)="addRoom()"
   >
     Submit
   </button>

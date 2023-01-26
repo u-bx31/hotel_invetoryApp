@@ -3,7 +3,7 @@
     <th class="ps-1">id</th>
     <th class="ps-1">Type</th>
     <th class="ps-1">Price</th>
-    <th class="ps-1">CheckIn Time</th>
+    <th class="ps-1">Date Added</th>
     <th class="ps-1">Rating</th>
   </tr>
 
@@ -11,7 +11,7 @@
     <td>{{ room.id }}</td>
     <td>{{ room.roomType }}</td>
     <td>{{ room.price | currency }}</td>
-    <td>{{ room.checkinTime | date }}</td>
+    <td>{{ room.date_added | date }}</td>
     <td>{{ room.rating | number : "1.1-2" }}</td>
     <td>
       <a class="btn btn-outline-info w-100" [routerLink]="[room.id]">

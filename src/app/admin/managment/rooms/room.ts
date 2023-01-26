@@ -2,11 +2,9 @@ export interface RoomList {
     id : string;
     roomType : string;
     price : number;
-    photos?: string ;
-    checkinTime : Date;
-    checkoutTime : Date;
+    picture?: string ;
+    date_added : Date;
     rating : number;
-    aviable : boolean ;
 }
 export interface Room{
     avaibleRooms:number;
