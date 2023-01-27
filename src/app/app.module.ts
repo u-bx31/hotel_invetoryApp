@@ -20,6 +20,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Page404Component } from './page404/page404.component';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,7 @@ import { Page404Component } from './page404/page404.component';
     FormsModule,
     NgMaterialModule
   ],
-  providers: [],
+  providers :[CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

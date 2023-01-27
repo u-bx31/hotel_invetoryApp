@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 import { Observable, of, throwError } from 'rxjs';
 
 @Injectable({
@@ -7,27 +8,28 @@ import { Observable, of, throwError } from 'rxjs';
 })
 export class AuthService {
 
-  constructor(private router : Router) { }
+  constructor(private router : Router,private Cookie:CookieService) { }
 
   setToken = (token : string) : void=>{
-    localStorage.setItem('token' , token)
+    this.Cookie.set('token',token,{ expires: 1, sameSite: 'Lax' })
   }
 
 
   getToken = (): string | null => {
-    return localStorage.getItem('token')
+    return this.Cookie.get('token')
   }
 
-  isLoggedIn = () : boolean => {
-    return this.getToken() != null
+  isLoggedIn = () : any => {
+    return this.getToken()!= "";
   }
 
   logOut = () =>{
-    localStorage.removeItem('token');
+    this.Cookie.delete('token')
     this.router.navigate(['admin'])
   }
   logIn = (email : string ,password : string) : Observable<any> =>{
     if(email==="admin@gmail.com" && password ==='admin321'){
+      console.log(this.getToken());
       this.setToken('dgdkjfhgjdhgadmingfdjsfhdf')
       return of([])
     }

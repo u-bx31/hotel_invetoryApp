@@ -22,13 +22,11 @@ import { AddRoomTypeComponent } from './add-room-type/add-room-type.component';
     AddRoomTypeComponent,
   ],
   imports: [    
-   
     CommonModule,
     RoomsRoutingModule,
     NgMaterialModule,
     ReactiveFormsModule,
     FormsModule,
-
-  ]
+  ],
 })
 export class RoomsModule { }
