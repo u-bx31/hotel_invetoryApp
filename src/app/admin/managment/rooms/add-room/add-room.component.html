@@ -1,19 +1,19 @@
-
 <form
+  [formGroup]="roomForm"
   [className]="
     valid
       ? 'text-start needs-validation'
       : 'text-start needs-validation was-validated'
-  "
-  [formGroup]="roomForm"
->
+  ">
   <a class="btn btn-outline-danger" routerLink="../">
     <div class="d-flex">
       <mat-icon aria-hidden="false" fontIcon="arrow_back"></mat-icon> Back
     </div>
   </a>
   <h2 class="text-center">{{ type }} Room</h2>
-  {{roomForm.value | json}}
+  {{ roomForm.value | json }}
+  {{ roomForm.valid }}
+  {{ roomForm.invalid }}
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Room Type :</label>
 
@@ -22,8 +22,10 @@
       formControlName="roomType"
       (change)="selcetionF()"
     >
-      <option value="" disabled selected>Room Type </option>
-      <option *ngFor="let rooms of typeRooms" [value]="rooms.type">{{rooms.type}}</option>
+      <option value="" disabled selected>Room Type</option>
+      <option *ngFor="let rooms of typeRooms" [value]="rooms.type">
+        {{ rooms.type }}
+      </option>
     </select>
   </div>
 
@@ -31,7 +33,6 @@
     <label for="exampleInputEmail1" class="form-label">Price : </label>
     <input
       type="number"
-      required
       class="form-control"
       placeholder="Price"
       formControlName="price"
@@ -43,28 +44,25 @@
       type="number"
       min="0"
       max="5"
-      required
       class="form-control"
       placeholder="Rating"
       formControlName="rating"
     />
   </div>
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Check-out Time :</label>
+    <label for="exampleInputEmail1" class="form-label">Date Added:</label>
     <input
       type="date"
-      required
       class="form-control"
       placeholder="Check-out Time"
-      name="checkoutTime"
       formControlName="date_added"
     />
-    
   </div>
 
   <button
     class="btn btn-primary"
     type="button"
+    [disabled]="roomForm.pristine"
     (click)="addRoom()"
   >
     Submit
