@@ -34,11 +34,11 @@ export class AddRoomComponent implements OnInit {
       this.typeRooms = parms
     })
     this.roomForm = this.fb.group({
-      roomType: ['', [Validators.required]],
-      picture: ['', [Validators.required]],
-      price: ['', [Validators.required]],
-      rating: ['', [Validators.required]],
-      date_added: ['', [Validators.required]],
+      roomType: ['', Validators.required],
+      picture: [''],
+      price: ['', Validators.required],
+      rating: ['', Validators.required],
+      date_added: ['', Validators.required],
     });
     console.log(this.id);
     if(this.id !== undefined){
@@ -62,14 +62,13 @@ export class AddRoomComponent implements OnInit {
   }
   selcetionF(){
     this.imgUrl = this.typeRooms.filter((res)=>res.type === this.roomForm.value.roomType).map((res)=>res.images)
+   
+  }
+  addRoom() {
     this.imgUrl.map((img)=>{
       this.roomForm.value.picture = img
     })
-  }
-  addRoom() {
-    
     console.log(this.roomForm.valid);
-    console.log(this.roomForm.value);
     if (this.roomForm.invalid) {
       this.valid = false;
       

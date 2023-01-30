@@ -1,10 +1,8 @@
 <form
   [formGroup]="roomForm"
-  [className]="
-    valid
-      ? 'text-start needs-validation'
-      : 'text-start needs-validation was-validated'
-  ">
+  (submit)="addRoom()"
+
+>
   <a class="btn btn-outline-danger" routerLink="../">
     <div class="d-flex">
       <mat-icon aria-hidden="false" fontIcon="arrow_back"></mat-icon> Back
@@ -13,7 +11,6 @@
   <h2 class="text-center">{{ type }} Room</h2>
   {{ roomForm.value | json }}
   {{ roomForm.valid }}
-  {{ roomForm.invalid }}
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Room Type :</label>
 
@@ -59,12 +56,7 @@
     />
   </div>
 
-  <button
-    class="btn btn-primary"
-    type="button"
-    [disabled]="roomForm.pristine"
-    (click)="addRoom()"
-  >
+  <button class="btn btn-primary" type="submit" [disabled]="roomForm.pristine">
     Submit
   </button>
 </form>
