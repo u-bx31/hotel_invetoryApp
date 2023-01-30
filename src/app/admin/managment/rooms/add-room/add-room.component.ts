@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { map, Observable } from 'rxjs';
 import { RoomList } from '../room';
@@ -17,16 +17,21 @@ export class AddRoomComponent implements OnInit {
   type!: string;
   imgUrl: any[] =[];
   roomType: any;
+  roomList : RoomList[] = [];
+  typeRooms : any[] = [];
+  roomForm!:FormGroup;
+  toppingsControl = new FormControl([]);
+  toppingList: string[] = ['Wifi','Lunch','Dinner','free Spa','Jacuze']
 
+  
   constructor(
     private fb : FormBuilder,
     private roomService: RoomService,
     private router: ActivatedRoute,
     private router2: Router
   ) {}
-    roomList : RoomList[] = [];
-    typeRooms : any[] = [];
-    roomForm!:FormGroup;
+
+
   
   ngOnInit() {
     let sub = this.router.params.subscribe((parms)=>this.id = parms['id'])
@@ -39,6 +44,7 @@ export class AddRoomComponent implements OnInit {
       price: ['', Validators.required],
       rating: ['', Validators.required],
       date_added: ['', Validators.required],
+      ameneties : []
     });
     console.log(this.id);
     if(this.id !== undefined){
@@ -89,6 +95,20 @@ export class AddRoomComponent implements OnInit {
       }
       this.router2.navigateByUrl('/admin/management/rooms/list')
       this.roomForm.reset();
+    }
+  }
+
+
+  onToppingRemoved(topping: string) {
+    const toppings: any = this.toppingsControl.value as string[];
+    this.removeFirst(toppings, topping);
+    this.toppingsControl.setValue(toppings); // To trigger change detection
+  }
+
+  private removeFirst<T>(array: T[], toRemove: T): void {
+    const index = array.indexOf(toRemove);
+    if (index !== -1) {
+      array.splice(index, 1);
     }
   }
 }

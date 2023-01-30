@@ -1,8 +1,4 @@
-<form
-  [formGroup]="roomForm"
-  (submit)="addRoom()"
-
->
+<form [formGroup]="roomForm" (submit)="addRoom()">
   <a class="btn btn-outline-danger" routerLink="../">
     <div class="d-flex">
       <mat-icon aria-hidden="false" fontIcon="arrow_back"></mat-icon> Back
@@ -54,6 +50,27 @@
       placeholder="Check-out Time"
       formControlName="date_added"
     />
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Ameneties:</label>
+    <mat-form-field appearance="outline" class="w-100">
+      <mat-label>Toppings</mat-label>
+      <mat-select [formControl]="toppingsControl" formControlName="ameneties" multiple>
+    
+        <mat-select-trigger>
+          <mat-chip-listbox>
+            <mat-chip *ngFor="let topping of this.roomForm.value.ameneties"
+              [removable]="true" (removed)="onToppingRemoved(topping)">
+              {{ topping }}
+              <mat-icon matChipRemove>cancel</mat-icon>
+            </mat-chip>
+          </mat-chip-listbox>
+        </mat-select-trigger>
+    
+        <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+    
+      </mat-select>
+    </mat-form-field>
   </div>
 
   <button class="btn btn-primary" type="submit" [disabled]="roomForm.pristine">

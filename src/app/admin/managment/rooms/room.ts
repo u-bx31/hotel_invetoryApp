@@ -2,6 +2,7 @@ export interface RoomList {
     id : string;
     roomType : string;
     price : number;
+    ameneties?: string[],
     picture?: string ;
     date_added : Date;
     rating : number;
