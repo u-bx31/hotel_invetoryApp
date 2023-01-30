@@ -1,17 +1,24 @@
-<form [formGroup]="roomForm" (submit)="addRoom()">
+<form
+  [formGroup]="roomForm"
+  (submit)="addRoom()"
+  [className]="
+    valid
+      ? 'text-start needs-validation'
+      : 'text-start needs-validation was-validated'
+  "
+>
   <a class="btn btn-outline-danger" routerLink="../">
     <div class="d-flex">
       <mat-icon aria-hidden="false" fontIcon="arrow_back"></mat-icon> Back
     </div>
   </a>
   <h2 class="text-center">{{ type }} Room</h2>
-  {{ roomForm.value | json }}
-  {{ roomForm.valid }}
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Room Type :</label>
-
+    {{roomForm.valid }}
     <select
       class="form-select"
+      required
       formControlName="roomType"
       (change)="selcetionF()"
     >
@@ -29,6 +36,7 @@
       class="form-control"
       placeholder="Price"
       formControlName="price"
+      required
     />
   </div>
   <div class="mb-3">
@@ -40,6 +48,7 @@
       class="form-control"
       placeholder="Rating"
       formControlName="rating"
+      required
     />
   </div>
   <div class="mb-3">
@@ -49,26 +58,34 @@
       class="form-control"
       placeholder="Check-out Time"
       formControlName="date_added"
+      required
     />
   </div>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Ameneties:</label>
     <mat-form-field appearance="outline" class="w-100">
       <mat-label>Toppings</mat-label>
-      <mat-select [formControl]="toppingsControl" formControlName="ameneties" multiple>
-    
+      <mat-select
+        [formControl]="toppingsControl"
+        formControlName="ameneties"
+        multiple
+      >
         <mat-select-trigger>
           <mat-chip-listbox>
-            <mat-chip *ngFor="let topping of this.roomForm.value.ameneties"
-              [removable]="true" (removed)="onToppingRemoved(topping)">
+            <mat-chip
+              *ngFor="let topping of this.roomForm.value.ameneties"
+              [removable]="true"
+              (removed)="onToppingRemoved(topping)"
+            >
               {{ topping }}
               <mat-icon matChipRemove>cancel</mat-icon>
             </mat-chip>
           </mat-chip-listbox>
         </mat-select-trigger>
-    
-        <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
-    
+
+        <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
+          topping
+        }}</mat-option>
       </mat-select>
     </mat-form-field>
   </div>

@@ -21,7 +21,7 @@ export class AddRoomComponent implements OnInit {
   typeRooms : any[] = [];
   roomForm!:FormGroup;
   toppingsControl = new FormControl([]);
-  toppingList: string[] = ['Wifi','Lunch','Dinner','free Spa','Jacuze']
+  toppingList: string[] = ['Wifi','Lunch','Dinner','free Spa','Jacuze','none']
 
   
   constructor(
@@ -44,7 +44,7 @@ export class AddRoomComponent implements OnInit {
       price: ['', Validators.required],
       rating: ['', Validators.required],
       date_added: ['', Validators.required],
-      ameneties : []
+      ameneties : [[],Validators.required]
     });
     console.log(this.id);
     if(this.id !== undefined){
@@ -59,6 +59,9 @@ export class AddRoomComponent implements OnInit {
           price: this.room.price,
           rating: this.room.rating,
           date_added: this.room.date_added,
+          ameneties : this.room.ameneties.map((options : any)=>{
+            return options;
+          })
         })
       })
     }
@@ -71,14 +74,14 @@ export class AddRoomComponent implements OnInit {
    
   }
   addRoom() {
-    this.imgUrl.map((img)=>{
-      this.roomForm.value.picture = img
-    })
-    console.log(this.roomForm.valid);
     if (this.roomForm.invalid) {
       this.valid = false;
+      console.log(34,this.valid);
       
     } else {
+      this.imgUrl.map((img)=>{
+        this.roomForm.value.picture = img
+      })
       if(this.type == 'Add'){
         console.log('room added');
         this.roomService
