@@ -29,7 +29,7 @@ export default class LoginComponent implements OnInit {
           this.router.navigate(['/admin/management'])
         }
         ,(err : Error) =>{
-          alert(err.message)
+          console.log(err.message)
         }
       )
     }

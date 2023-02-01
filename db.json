@@ -201,7 +201,7 @@
       "lastName" : "_lastName",
       "phoneNumber": 2303238482,
       "email" : "admin@gmail.com",
-      "password" : "admin.321",
+      "password" : "admin321",
       "role" : "chief maitenance engineer",
       "date_started" : "2009-01-25T23:00:00.000Z"
     }
