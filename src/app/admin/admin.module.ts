@@ -21,7 +21,6 @@ import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
     declarations: [
         LoginComponent,
         RoomsComponent,
-        EmployesComponent,
         SideBarComponent,
     ],
     imports: [

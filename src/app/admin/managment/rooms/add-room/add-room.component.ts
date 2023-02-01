@@ -21,7 +21,7 @@ export class AddRoomComponent implements OnInit {
   typeRooms : any[] = [];
   roomForm!:FormGroup;
   toppingsControl = new FormControl([]);
-  toppingList: string[] = ['Wifi','Lunch','Dinner','free Spa','Jacuze','none']
+  toppingList: string[] = ['Wifi','Lunch','Dinner','Spa','jacuzzi','breakfast','none']
 
   
   constructor(

@@ -9,6 +9,7 @@ const routes: Routes = [
   {path : 'management' ,canActivate : [AuthGuard], component : SideBarComponent , children : [
     {path : 'rooms',loadChildren : ()=>import('./managment/rooms/rooms.module').then((m)=>m.RoomsModule)},
     {path : 'reservation' , loadChildren : ()=> import('./managment/reservation/reservation.module').then((m)=>m.ReservationModule)},
+    {path : 'employes' , loadChildren : ()=> import('./managment/employes/employes.module').then((m)=>m.EmployesModule)},
 
   ]},
   

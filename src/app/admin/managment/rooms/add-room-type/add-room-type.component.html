@@ -32,17 +32,20 @@
   </div>
   <div class="mb-3">
     <label class="form-label">Images : </label>
-    <img [src]="this.roomType.images || 'https://img.icons8.com/ios/100/000000/contract-job.png'" title="Profile Picture" height="150px" width="150px" />
-    <input
-      type="file"
-      #typeInput="ngModel"
-      required
-      class="form-control"
-      placeholder="Room Type"
-      (change)="onSelect($event)"
-      [(ngModel)]="roomType.images"
-      name="images"
-    />
+    <div class="">
+      <img [src]="this.roomType.images || 'https://img.icons8.com/ios/100/000000/contract-job.png'" style="border-radius: 5px;" title="Profile Picture" height="250px" width="250px" />
+      <input
+        type="file"
+        #typeInput="ngModel"
+        required
+        class="form-control  mt-2"
+        placeholder="Room Type"
+        (change)="onSelect($event)"
+        [(ngModel)]="roomType.images"
+        name="images"
+      />
+    </div>
+    
   </div>
   <button
     class="btn btn-primary"

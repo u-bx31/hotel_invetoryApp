@@ -57,8 +57,6 @@ export class RoomService {
   addReservation(reservation : any){
     return this.service.post<any>(`${this.url}/reservation`,reservation);
   }
-
-
   getReservation$ = this.service.get<any>(`${this.url}/reservation`).pipe(
     catchError((err)=>{
       console.log('error',err.message);
@@ -71,5 +69,22 @@ export class RoomService {
   }
   deleteReservation(id : string){
     return this.service.delete<any>(`${this.url}/reservation/${id}`);
+  }
+  // employes 
+  addEmployes(employes : any){
+    return this.service.post<any>(`${this.url}/employes`,employes);
+  }
+  getEmployes$ = this.service.get<any>(`${this.url}/employes`).pipe(
+    catchError((err)=>{
+      console.log('error',err.message);
+      return of([]);
+    })
+  );
+
+  editEmployes(employes : any){
+    return this.service.put<any>(`${this.url}/Employes/${employes.id}`,employes);
+  }
+  deleteEmployes(id : string){
+    return this.service.delete<any>(`${this.url}/employes/${id}`);
   }
 }

@@ -173,4 +173,37 @@
       "id": "mm_RyA6"
     }
   ]
+  ,"employes":[
+    {
+      "id":"jf_KF22",
+      "firstName" : "user_firstName",
+      "lastName" : "user_lastName",
+      "phoneNumber": 2303238482,
+      "email" : "user@gmail.com",
+      "password" : "user#2144",
+      "role" : "concierge",
+      "date_started" : "2009-01-25T23:00:00.000Z"
+    },
+    {
+      "id":"jf_hsF23",
+      "firstName" : "manager_firstName",
+      "lastName" : "manager_lastName",
+      "phoneNumber": 2303238482,
+      "email" : "manager@gmail.com",
+      "password" : "manager#2144",
+      "role" : "manager",
+      "date_started" : "2009-01-25T23:00:00.000Z"
+    }
+    ,
+    {
+      "id":"jf_lg24",
+      "firstName" : "_firstName",
+      "lastName" : "_lastName",
+      "phoneNumber": 2303238482,
+      "email" : "admin@gmail.com",
+      "password" : "admin.321",
+      "role" : "chief maitenance engineer",
+      "date_started" : "2009-01-25T23:00:00.000Z"
+    }
+  ]
 }

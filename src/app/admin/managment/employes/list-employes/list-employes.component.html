@@ -1,0 +1,41 @@
+<table class="mx-auto w-100  border border-1">
+    <tr class="border-bottom">
+      <th class="ps-1">id</th>
+      <th class="ps-1">FirstName</th>
+      <th class="ps-1">LastName</th>
+      <th class="ps-1">PhoneNumber</th>
+      <th class="ps-1">Email</th>
+      <th class="ps-1">Password</th>
+      <th class="ps-1">Role</th>
+      <th class="ps-1">Date Started</th>
+    </tr>
+  
+    <tr *ngFor="let employe of employesList,let odd = odd,let even = even" [ngClass]="odd ? 'odd':'even'">
+      <td>{{ employe.id }}</td>
+      <td>{{ employe.firstName }}</td>
+      <td>{{ employe.lastName }}</td>
+      <td>{{ employe.phoneNumber }}</td>
+      <td>{{ employe.email }}</td>
+      <td>{{ employe.password }}</td>
+      <td>{{ employe.role }}</td>
+      <td>{{ employe.date_started | date }}</td>
+      <td>
+        <a class="btn btn-outline-info w-100" [routerLink]="[employe.id]">
+          <div class="d-flex justify-content-center align-items-center">
+            <mat-icon aria-hidden="false" fontIcon="edit_note"></mat-icon>
+          </div>
+        </a>
+      </td>
+      <td>
+        <button
+          class="btn btn-outline-danger w-100"
+          (click)="handleDelete(employe.id)"
+        >
+          <div class="d-flex justify-content-center align-items-center">
+            <mat-icon aria-hidden="false" fontIcon="delete"></mat-icon>
+          </div>
+        </button>
+      </td>
+    </tr>
+  </table>
+  

@@ -13,9 +13,36 @@
       <div ngbDropdown class="d-inline-block ">
         <mat-icon ngbDropdownToggle class="c-iconFilter">filter_alt</mat-icon>
         <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-          <button ngbDropdownItem>Action - 1</button>
-          <button ngbDropdownItem>Another Action</button>
-          <button ngbDropdownItem>Something else is here</button>
+          <button ngbDropdownItem>Avaible Rooms</button>
+          <hr>
+          <mat-form-field appearance="outline" class="mx-2">
+            <mat-label>Enter a date range</mat-label>
+            <mat-date-range-input
+              [rangePicker]="picker"
+              
+            >
+              <input
+                   
+                matStartDate
+                formControlName="checkinTime"
+                name="dateStart"
+                placeholder="Start date"
+                required
+              />
+              <input
+                matEndDate
+                formControlName="checkoutTime"
+                name="dateEnd"
+                placeholder="End date"
+                required
+              />
+            </mat-date-range-input>
+            <mat-datepicker-toggle
+              matIconSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-date-range-picker #picker></mat-date-range-picker>
+          </mat-form-field>
         </div>
       </div>
     </div>
