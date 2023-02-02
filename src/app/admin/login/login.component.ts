@@ -24,14 +24,7 @@ export default class LoginComponent implements OnInit {
 
   login(loginForm : NgForm){
     if(loginForm.valid){
-      this.auth.logIn(this.email,this.password).subscribe(
-        (result)=>{
-          this.router.navigate(['/admin/management'])
-        }
-        ,(err : Error) =>{
-          console.log(err.message)
-        }
-      )
+      this.auth.logIn(this.email,this.password)
     }
     else{
       this.valid = false;

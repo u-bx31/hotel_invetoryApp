@@ -8,14 +8,14 @@
     [opened]="(isHandset$ | async) === false"
   >
     <mat-toolbar>Menu</mat-toolbar>
-    <mat-nav-list>
+    <mat-nav-list [ngSwitch]="role">
       <a mat-list-item [routerLink]="''" class="my-3 ">
         <div class="d-flex flex-row c-item px-3 py-3">
           <mat-icon aria-hidden="false" fontIcon="home" class="me-2"></mat-icon
           >Home
         </div>
       </a>
-      <a mat-list-item [routerLink]="'rooms'" class="my-3 ">
+      <a mat-list-item [routerLink]="'rooms'" class="my-3" *ngSwitchCase="role === 'chief maitenance engineer'||role === 'manager'? role : ''">
         <div class="d-flex flex-row c-item px-3 py-3 ">
           <mat-icon
             aria-hidden="false"
@@ -25,7 +25,7 @@
           >Rooms
         </div>
       </a>
-      <a mat-list-item [routerLink]="'reservation'" class="my-3 ">
+      <a mat-list-item [routerLink]="'reservation'" class="my-3 " >
         <div class="d-flex flex-row c-item px-3 py-3">
           <mat-icon
             aria-hidden="false"
@@ -35,7 +35,7 @@
           >Reservation
         </div>
       </a>
-      <a mat-list-item class="my-3 " [routerLink]="'employes'" >
+      <a mat-list-item class="my-3 " [routerLink]="'employes'" *ngSwitchCase="role === 'chief maitenance engineer'||role === 'manager'? role : ''">
         <div class="d-flex flex-row c-item px-3 py-3 ">
           <mat-icon aria-hidden="false" fontIcon="badge" class="me-2"></mat-icon
           >Employe's

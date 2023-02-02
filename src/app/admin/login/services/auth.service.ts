@@ -24,33 +24,36 @@ export class AuthService {
   employe1: any = {};
   setToken = (token: string): void => {
     this.Cookie.set('token', token, { expires: 1, sameSite: 'Lax' });
+    // localStorage.setItem('token',token)
   };
 
   getToken = (): string | null => {
-    return this.Cookie.get('token');
+    return this.Cookie.get('token')
   };
 
   isLoggedIn = (): any => {
-    return this.getToken() != '';
+    return this.getToken() != "";
   };
 
   logOut = () => {
     this.Cookie.delete('token');
+    // localStorage.removeItem('token')
     this.employe1 = [];
     this.router.navigate(['admin']);
+    console.log(this.Cookie.get('token'));
   };
-  logIn = (email: string, password: string): Observable<any> => {
+  
+
+  logIn = (email: string, password: string): void=> {
     this.employe1 = this.employe.find((val: any) => {
       return val.email === email && val.password === password;
     });
-    if (Object.keys(this.employe1).length !== 0) {
-      console.log(this.getToken());
+    if(Object.keys(this.employe1 || {}).length !== 0) {
       this.setToken('dgdkjfhgjdhgadmingfdjsfhdf');
-      this.employe1 = {};
-      return of([]);
+      this.router.navigate(['/admin/management'])
     }
     else{
-      return throwError(new Error('Faild to Login'));
+      alert('Faild To Login')
     }
 
   };
