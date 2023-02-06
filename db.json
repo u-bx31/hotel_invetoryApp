@@ -10,7 +10,8 @@
         "Lunch",
         "free Spa"
       ],
-      "date_added": "11-Nov-2021"
+      "date_added": "11-Nov-2021",
+      "avaible": false
     },
     {
       "id": "2",
@@ -171,39 +172,48 @@
       "checkinTime": "2023-01-26T23:00:00.000Z",
       "checkoutTime": "2023-01-27T23:00:00.000Z",
       "id": "mm_RyA6"
-    }
-  ]
-  ,"employes":[
-    {
-      "id":"jf_KF22",
-      "firstName" : "user_firstName",
-      "lastName" : "user_lastName",
-      "phoneNumber": 2303238482,
-      "email" : "user@gmail.com",
-      "password" : "user#2144",
-      "role" : "concierge",
-      "date_started" : "2009-01-25T23:00:00.000Z"
     },
     {
-      "id":"jf_hsF23",
-      "firstName" : "manager_firstName",
-      "lastName" : "manager_lastName",
-      "phoneNumber": 2303238482,
-      "email" : "manager@gmail.com",
-      "password" : "manager#2144",
-      "role" : "manager",
-      "date_started" : "2009-01-25T23:00:00.000Z"
+      "room_id": "1",
+      "user_email": "asdsa@dsfdsf",
+      "user_firstName": "fgdfg",
+      "user_lastName": "dfsdf",
+      "user_phoneNumber": 324234,
+      "checkinTime": "2023-02-05T23:00:00.000Z",
+      "checkoutTime": "2023-02-07T23:00:00.000Z",
+      "id": "r-RiWQG"
     }
-    ,
+  ],
+  "employes": [
     {
-      "id":"jf_lg24",
-      "firstName" : "_firstName",
-      "lastName" : "_lastName",
+      "id": "jf_KF22",
+      "firstName": "user_firstName",
+      "lastName": "user_lastName",
       "phoneNumber": 2303238482,
-      "email" : "admin@gmail.com",
-      "password" : "admin321",
-      "role" : "chief maitenance engineer",
-      "date_started" : "2009-01-25T23:00:00.000Z"
+      "email": "user@gmail.com",
+      "password": "user#2144",
+      "role": "concierge",
+      "date_started": "2009-01-25T23:00:00.000Z"
+    },
+    {
+      "id": "jf_hsF23",
+      "firstName": "manager_firstName",
+      "lastName": "manager_lastName",
+      "phoneNumber": 2303238482,
+      "email": "manager@gmail.com",
+      "password": "manager#2144",
+      "role": "manager",
+      "date_started": "2009-01-25T23:00:00.000Z"
+    },
+    {
+      "id": "jf_lg24",
+      "firstName": "_firstName",
+      "lastName": "_lastName",
+      "phoneNumber": 2303238482,
+      "email": "admin@gmail.com",
+      "password": "admin321",
+      "role": "chief maitenance engineer",
+      "date_started": "2009-01-25T23:00:00.000Z"
     }
   ]
 }

@@ -1,1 +1,34 @@
-@import '../../app.component.scss' ;
+
+
+
+#mainNavigation a {
+    font-family: 'Cabin', sans-serif;
+    font-size:14px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    
+  }
+   
+  .nav-item a{
+    color:#dfdfdf;
+  }
+  .nav-item a:hover {
+    color:#fff
+  }
+  .nav-item{
+    min-width:11vw;
+  }
+  #mainNavigation {
+    position:static;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:123;
+    padding-bottom:5px;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+100;Neutral+Density */
+    background-color: rgba(92, 64, 37, 0.973);
+  }
+  #navbarNavDropdown.collapsing .navbar-nav,
+  #navbarNavDropdown.show .navbar-nav{
+    padding:12px;
+  }

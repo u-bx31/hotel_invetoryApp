@@ -1,4 +1,88 @@
-@import '../../app.component.scss' ;;
+$color-alpha: #e8c088;
+
+.image-head-wrapper{
+
+    img{
+        width: 100%;
+        object-fit: cover;
+        height:450px;
+        filter: blur(1.1px) contrast(50%);
+        
+    }
+    position: relative;
+    .box {
+        box-shadow: rgba(255, 255, 255, 0.2) 0px 7px 29px 0px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+        background-color: rgba(rgb(166, 166, 166), 0.3);
+        width: 100%;
+        max-width: 500px;
+        padding: 5px;
+        border: 2px solid $color-alpha;
+        &:before, &:after {
+          content: "•";
+          position: absolute;
+          width: 14px;
+          height: 14px;
+          font-size: 14px;
+          color: $color-alpha;
+          border: 2px solid $color-alpha;
+          line-height: 12px;
+          top: 5px;
+          text-align: center;
+        }
+        &:before {
+          left: 5px;
+        }
+        &:after {
+          right: 5px;
+        }
+        .inner-wrapper {
+
+          position: relative;
+          border: 2px solid $color-alpha;
+          padding: 40px;
+          &:before, &:after {
+            content: "•";
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            font-size: 14px;
+            color: $color-alpha;
+            border: 2px solid $color-alpha;
+            line-height: 12px;
+            bottom: -2px;
+            text-align: center;
+          }
+          &:before {
+            left: -2px;
+          }
+          &:after {
+            right: -2px;
+          }
+
+          h1{
+            text-align: center;
+            color: rgb(255, 255, 255);
+        }
+        }
+      }
+    // .inner-wrapper{
+    //     display: flex;
+    //     align-items: center;
+    //     position: absolute;
+    //     top: 0;
+    //     bottom: 0;
+    //     left: 50%;
+    //     h1{
+    //         color: white;
+    //     }
+    // }
+}
+
+
 .c-crd{
     img{
         height: 200px;
@@ -8,3 +92,4 @@
 .c-iconFilter{
     cursor: pointer;
 }
+

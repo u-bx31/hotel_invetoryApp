@@ -16,7 +16,6 @@ export default class LoginComponent implements OnInit {
   
   constructor(private router: Router,private auth : AuthService) { }
   ngOnInit(): void {
-    
     if(this.auth.isLoggedIn()){
       this.router.navigate(['/admin/management'])
     }
@@ -25,6 +24,7 @@ export default class LoginComponent implements OnInit {
   login(loginForm : NgForm){
     if(loginForm.valid){
       this.auth.logIn(this.email,this.password)
+      loginForm.reset();
     }
     else{
       this.valid = false;
