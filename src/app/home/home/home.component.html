@@ -1,23 +1,32 @@
 <div id="page">
-
-  <!--end-->
-  <div id="myCarousel1" class="carousel slide" data-ride="carousel">
+  <div id="myCarousel1" class="carousel slide min-vh-100" data-ride="carousel">
     <!-- Indicators -->
-
-    <ngb-carousel >
+    <div class="header-main">
+      <h1 class="text-center pe-5 mb-4">
+        The Best Hotel <span>With The Best Deals</span>
+      </h1>
+    </div>
+    <ngb-carousel>
       <ng-template ngbSlide>
         <div class="picsum-img-wrapper">
-          <img src="/assets/images/banner.png" class="w-100" alt="Random first slide" />
+          <img
+            src="/assets/images/banner.png"
+            class="w-100 min-vh-100"
+            alt="Random first slide"
+          />
         </div>
         <div class="carousel-caption">
-          <h2>Welcome To Our Hotel</h2>
           <!-- 
           <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p> -->
         </div>
       </ng-template>
       <ng-template ngbSlide>
         <div class="picsum-img-wrapper">
-          <img src="/assets/images/banner2.png" class="w-100" alt="Random second slide" />
+          <img
+            src="/assets/images/banner2.png"
+            class="w-100 min-vh-100"
+            alt="Random second slide"
+          />
         </div>
         <div class="carousel-caption">
           <!-- <h2>Second slide label</h2>
@@ -26,7 +35,11 @@
       </ng-template>
       <ng-template ngbSlide>
         <div class="picsum-img-wrapper">
-          <img src="/assets/images/banner3.png" class="w-100" alt="Random third slide" />
+          <img
+            src="/assets/images/banner3.png"
+            class="w-100 min-vh-100"
+            alt="Random third slide"
+          />
         </div>
         <div class="carousel-caption">
           <!-- <h2>Third slide label</h2>
@@ -34,13 +47,33 @@
         </div>
       </ng-template>
     </ngb-carousel>
-    
   </div>
-  <div class="clearfix"></div>
+  <section class="grating container py-3 "> 
+    <div class="row align-items-center h-100">
+      <div class="col-5 grating_txt">
+        <h1 class="pb-4">Welcome to Our hotel</h1>
+        <p class="pb-4">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+          minima, harum fuga, ipsam officia temporibus, nostrum et tempore
+          consequuntur beatae consectetur. Necessitatibus minima, dignissimos
+          quas ea soluta mollitia ab distinctio.
+        </p>
+        <button>Reade More -></button>
+      </div>
+
+      <div class="col-7 grating_picture ">
+        <img
+          alt="image"
+          class="img-responsive"
+          src="/assets/images/room1.png"
+        />
+      </div>
+    </div>
+  </section>
 
   <!--service block--->
-  <section class="service-block">
-    <div class="container c-services" >
+  <section class="service-block ">
+    <div class="container c-services">
       <div class="row">
         <div class="col-md-3 col-sm-3 col-xs-6 width-50">
           <div class="service-details text-center">
@@ -97,7 +130,12 @@
   <!--gallery block--->
   <section class="gallery-block gallery-front">
     <div class="container">
-      <div class="row">
+      <div class="hedr text-center py-4">
+        <h1>Our Best Rooms</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae dolor illo consequatur deserunt reiciendis, sint nulla adipisci laudantium dignissimos sequi.</p> 
+      </div>
+      
+      <div class="row py-4">
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
           <div class="gallery-image">
             <img class="w-100" src="/assets/images/room1.png" />
@@ -106,8 +144,8 @@
                 class="info pop example-image-link img-responsive"
                 href="/assets/images/room1.png"
                 data-lightbox="example-1"
-                ><mat-icon>search</mat-icon
-              ></a>
+                ><mat-icon>search</mat-icon></a
+              >
               <p><a>delux room</a></p>
             </div>
           </div>
@@ -120,8 +158,8 @@
                 class="info pop example-image-link img-responsive"
                 href="/assets/images/room2.png"
                 data-lightbox="example-1"
-                ><mat-icon>search</mat-icon
-              ></a>
+                ><mat-icon>search</mat-icon></a
+              >
               <p><a>super room</a></p>
             </div>
           </div>
@@ -131,11 +169,11 @@
             <img class="w-100" src="/assets/images/room3.png" />
             <div class="overlay">
               <a
-                class="info pop example-image-link "
+                class="info pop example-image-link"
                 href="/assets/images/room3.png"
                 data-lightbox="example-1"
-                ><mat-icon>search</mat-icon
-              ></a>
+                ><mat-icon>search</mat-icon></a
+              >
               <p><a>single room</a></p>
             </div>
           </div>
@@ -148,8 +186,8 @@
                 class="info pop example-image-link img-responsive"
                 href="/assets/images/room4.png"
                 data-lightbox="example-1"
-                ><mat-icon>search</mat-icon
-              ></a>
+                ><mat-icon>search</mat-icon></a
+              >
               <p><a>double room</a></p>
             </div>
           </div>
@@ -205,7 +243,7 @@
                 nulla, ornare eu felis luctus non maximus vitae, portt neque.
                 ipsum dolor sit amet, consec adipiscing elit.
               </p>
-              <div class="links"><a >Read more</a></div>
+              <div class="links"><a>Read more</a></div>
             </div>
           </div>
         </div>
@@ -228,7 +266,7 @@
                 nulla, ornare eu felis luctus non maximus vitae, portt neque.
                 ipsum dolor sit amet, consec adipiscing elit.
               </p>
-              <div class="links"><a >Read more</a></div>
+              <div class="links"><a>Read more</a></div>
             </div>
           </div>
         </div>
@@ -242,7 +280,7 @@
                 nulla, ornare eu felis luctus non maximus vitae, portt neque.
                 ipsum dolor sit amet, consec adipiscing elit.
               </p>
-              <div class="links"><a >Read more</a></div>
+              <div class="links"><a>Read more</a></div>
             </div>
             <div class="product-thumb">
               <div class="image txt-rgt">
@@ -267,7 +305,7 @@
                 nulla, ornare eu felis luctus non maximus vitae, portt neque.
                 ipsum dolor sit amet, consec adipiscing elit.
               </p>
-              <div class="links"><a >Read more</a></div>
+              <div class="links"><a>Read more</a></div>
             </div>
             <div class="product-thumb txt-rgt">
               <div class="image">
@@ -287,7 +325,7 @@
   </section>
 
   <!---footer--->
-  
+
   <!-- back to top-
     <a style="display: none;" href="javascript:void(0);" class="scrollTop back-to-top" id="back-to-top">
         <span><i aria-hidden="true" class="fa fa-angle-up fa-lg"></i></span>

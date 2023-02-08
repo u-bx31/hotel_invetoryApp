@@ -43,14 +43,14 @@
       </div>
     </div>
     <div class="row row-cols-3">
-      <div class="col" *ngFor="let room of roomList">
+      <div class="col" *ngFor="let room of roomList,let odd = odd,let even = even">
         <div class="card shadow-sm c-crd m-2">
           <img class="img card-img-top" src="{{ room.picture }}" />
           <div class="card-body">
             <h2 class="card-text">
               {{ room.roomType }}
             </h2>
-            <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex flex-row-reverse justify-content-between align-items-center">
               <div class="btn-group">
                 <a
                   [routerLink]="['/rooms/', room.id]"

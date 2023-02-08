@@ -1,2 +1,64 @@
 @import '../../app.component.scss' ;
 
+.carousel{
+    position: relative;
+
+}
+.header-main{
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 50%;
+    bottom: 50%;
+    h1{
+        padding-top: 80px;
+        color: white;
+        font-size: 4rem;
+        line-height: 5rem;
+        font-weight: bolder;
+        width: 80%;
+        span{
+            display: block;
+            margin-left: 500px;
+        }
+    }
+}
+.grating{
+    height: 500px;
+    
+    &_txt{
+        h1{
+            font-weight: 900;
+            font-size: 3rem;
+        }
+        button{
+            padding: 20px 20px ;
+            color: white;
+            background-color: #E3CAA5;
+            border: none;
+            border-radius: 5px;
+        }
+    }
+}
+
+.service-block{
+    background-color: white;
+    padding: 50px 0;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+    .service-image{
+        img{
+            filter: invert(90%) sepia(70%) saturate(4411%) hue-rotate(308deg) brightness(108%) contrast(87%);
+        }
+    }
+}
+.hedr{
+    h1{
+        font-size: 2.5rem;
+        font-weight: 700;
+        padding-bottom: 30px;
+    }
+}
+
