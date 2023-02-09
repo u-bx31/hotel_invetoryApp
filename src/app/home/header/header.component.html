@@ -1,31 +1,44 @@
-
-<div  [ngClass]="scrolled ? 'mainNavigation scrole' : 'mainNavigation scr' ">
+<div [ngClass]="scrolled ? 'mainNavigation scrolle' : 'mainNavigation'">
   <nav role="navigation">
-    <div class="py-4 text-center border-bottom">
-      <img src="/assets/svgs/Hotel_Heaven2.svg" alt="" class="invert">
+    <div class="py-3 text-center border-bottom">
+      <img src="/assets/svgs/Hotel_Heaven2.svg" alt="" class="invert" />
+    </div>
+    <div class="navbar-expand-md">
+      <div class="navbar-dark text-center my-md-0 my-2">
+        <button
+          class="navbar-toggler w-75"
+          type="button"
+          (click)="isCollapsed = !isCollapsed"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="align-middle text-white">Menu</span
+          ><span class="navbar-toggler-icon ms-2 ms-lg-0"></span>
+        </button>
+      </div>
+      <div
+        class="text-center my-md-1 my-3 collapse navbar-collapse"
+        id="navbarNavDropdown"
+        [ngbCollapse]="isCollapsed"
+      >
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="'about'">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="'rooms'">Rooms</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="'contact'">Contact</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </nav>
-  <div class="navbar-expand-md">
-    <div class="navbar-dark text-center my-md-0 my-2">
-      <button class="navbar-toggler w-75" type="button" (click)="isCollapsed = !isCollapsed" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span> <span class="align-middle">Menu</span>
-      </button>
-    </div>
-    <div class="text-center my-md-1 my-3 collapse navbar-collapse" id="navbarNavDropdown" [ngbCollapse]="isCollapsed">
-      <ul class="navbar-nav mx-auto ">
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="'about'">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="'rooms'">Rooms</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="'contact'">Contact Us</a>
-        </li>
-      </ul>
-    </div>
-  </div>
 </div>

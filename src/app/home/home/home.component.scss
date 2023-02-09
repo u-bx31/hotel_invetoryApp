@@ -1,7 +1,21 @@
-@import '../../app.component.scss' ;
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Andika:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;700;800&display=swap');
+@import '../../app.component.scss';
+//main
 .carousel{
     position: relative;
+}
+*{
+    p{
+        font-family: 'Andika', sans-serif ;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.4rem;
+    }
+
 
 }
 .header-main{
@@ -16,9 +30,8 @@
     h1{
         padding-top: 80px;
         color: white;
-        font-size: 4rem;
+        font-size: 3rem;
         line-height: 5rem;
-        font-weight: bolder;
         width: 80%;
         span{
             display: block;
@@ -26,13 +39,17 @@
         }
     }
 }
+
+//grating section
 .grating{
     height: 500px;
     
     &_txt{
         h1{
-            font-weight: 900;
+            font-family: 'Montserrat Alternates', sans-serif;
+            font-weight: 600;
             font-size: 3rem;
+            
         }
         button{
             padding: 20px 20px ;
@@ -42,23 +59,71 @@
             border-radius: 5px;
         }
     }
+    &_picture{
+        position: relative;
+        .c-img1{
+            border-radius: 15px;
+            height: 310px;
+            width: 550px;
+            object-fit: cover;
+            box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+        }
+        
+        .second-img{
+            position: absolute;
+            top: -30px;
+            right: 0 ;  
+            .c-img2{
+                border-radius: 15px;
+                object-fit: cover;
+                width: 400px;
+                height: 240px;
+                box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+            }
+        }
+    }
 }
 
+
+//service
 .service-block{
     background-color: white;
     padding: 50px 0;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
     .service-image{
         img{
-            filter: invert(90%) sepia(70%) saturate(4411%) hue-rotate(308deg) brightness(108%) contrast(87%);
+            // filter: invert(90%) sepia(70%) saturate(4411%) hue-rotate(308deg) brightness(108%) contrast(87%);
         }
     }
 }
-.hedr{
-    h1{
-        font-size: 2.5rem;
-        font-weight: 700;
-        padding-bottom: 30px;
+
+
+//gallery
+.gallery-front  {
+    .hedr{
+        h1{
+            
+            font-family: 'Montserrat Alternates', sans-serif ;
+            font-size: 2.5rem;
+            font-weight: 700;
+            padding-bottom: 30px;
+        }
+        p{
+            font-size: 1.3rem;
+            line-height: 1.7rem
+        }
+    }
+    .gallery-image{
+        border-radius: 5px;
+        box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+        img{
+            border-radius: 5px;
+        }
+        .overlay{
+            border-radius: 5px;
+        }
+        &:hover{
+            box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+        }
     }
 }
-

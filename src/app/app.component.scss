@@ -1,24 +1,4 @@
 
-h1,h2,h3,h4,h5,h6,p{
-    margin: 0
-}
-
-html, html a {
-    -webkit-font-smoothing: antialiased;
-    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
-
-}
-a, button {
-    text-decoration: none;
-    cursor: pointer;
-}
-a{
-    color: #2b2b2b;
-}
-a, a:hover, a:focus, button:hover, button:focus {
-    outline: 0 none !important;
-    text-decoration: none;
-}
 a:focus ,a:hover{
     color: #ff4157;
 }
@@ -39,29 +19,7 @@ ul{
 .offspace-45{
     margin-top: 45px;
 }
-/*top header*/
-.top-header {
-    background: #000 none repeat scroll 0 0;
-    padding: 12px 0;
-}
-.social-grid li a {
-    color: #fff;
-    display: inline-block;
-    font-size: 16px;
-    text-align: center;
-}
-.social-grid li a:hover{
-    color: #ff4157;
-}
-.social-grid li + li{
-    margin-left: 25px;
-}
-.info-block{
-    color: #fff;
-}
-.info-block .fa {
-    margin-right: 15px;
-}
+
 /*navbar*/
 .navbar-default {
     background-color: rgba(0,0,0,0);
@@ -75,123 +33,14 @@ ul{
     display: inline;
     position: relative;
 }
-/*.navigation .nav1 li a {
-    color: #000;
-    display: inline-block;
-    font-size: 14px;
-    font-weight: 400;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}*/
 
-/*carousel*/
-#myCarousel1 .carousel-caption {
-    bottom: auto;
-    color: #fff;
-    left: 50%;
-    position: absolute;
-    right: auto;
-    text-align: center;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    z-index: 0;
-}
-#myCarousel1 .carousel-caption h1 {
-    color: #fff;
-    font-family: "exotc350_dmbd_btdemi-bold";
-    font-size: 85px;
-    letter-spacing: 2px;
 
-    text-transform: capitalize;
-}
 
 /*common*/
 .service-block, .gallery-block, .vacation-offer-block, .resort-overview-block, .blog-block, .blog-block-slider, .about-block, .contact-block, .blog{
     padding: 70px 0 0 0;
 }
 
-/*social link*/
-.social-grid ul li{
-    display: inline;
-}
-.top-row{
-    padding: 35px 0;
-}
-#logo > a {
-    color: #ff4157;
-    font-size: 32px;
-    font-weight: 700;
-    letter-spacing: -5px;
-}
-#logo > a span {
-    color: #000;
-    font-size: 50px;
-}
-.book-now-btn {
-    background: #ff4157 none repeat scroll 0 0;
-    border: medium none;
-    color: #fff;
-    font-size: 16px;
-    font-weight: 700;
-    letter-spacing: 0;
-    padding: 8px 15px;
-    text-transform: uppercase;
-}
-.book-now-btn:hover, .vacation-offer-details .btn.btn-default:hover{
-    background: #162541;
-}
-
-.cl-effect-10 a::before, .cl-effect-10 a.active::before {
-    background: #ff4157;
-    color: #fff;
-    content: attr(data-hover);
-    height: 100%;
-    left: 0;
-    padding: 10px 15px;
-    position: absolute;
-    top: 0;
-    transition: transform 0.3s ease 0s;
-    width: 100%;
-    z-index: -1;
-}
-.cl-effect-10 a.active::before{
-    z-index: 1;
-
-}
-.cl-effect-10 a:hover span, .cl-effect-10 a:focus span {
-    transform: translateX(100%);
-}
-.cl-effect-10 a:hover::before, .cl-effect-10 a:focus::before {
-    transform: translateX(0%);
-}
-.cl-effect-10 a.active{
-    color: #fff;
-}
-.cl-effect-10 {
-    position: relative;
-    z-index: 1;
-}
-.cl-effect-10 a {
-    overflow: hidden;
-    color: #000;
-    display: inline-block;
-    font-size: 14px;
-    font-weight: 400;
-    letter-spacing: 1px;
-    /*margin: 15px 25px;*/
-    outline: none;
-    position: relative;
-    text-decoration: none;
-    text-transform: uppercase;
-}
-.cl-effect-10 a span {
-    background: #fff none repeat scroll 0 0;
-    display: block;
-    padding: 10px 15px;
-    transition: transform 0.3s ease 0s;
-}
 /*service block*/
 .service-image {
     border: 2px solid #ddd;
@@ -240,23 +89,6 @@ ul{
     color: #fff;
     font-size: 25px;
 }
-/*.gallery-image a.info {
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    font-size: 22px;
-    font-weight: 600;
-    height: 100%;
-    justify-content: center;
-    letter-spacing: 5px;
-    opacity: 1;
-    position: absolute;
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: all 0.2s ease-in-out 0s;
-    width: 100%;
-}*/
 .gallery-image img {
     margin-left: auto;
     margin-right: auto;

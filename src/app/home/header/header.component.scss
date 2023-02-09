@@ -14,6 +14,9 @@
 .nav-item {
   min-width: 11vw;
 }
+.navbar-toggler{
+  border: none;
+}
 .nav-item a {
   text-decoration: none;
   color: white;
@@ -39,13 +42,12 @@
 }
 
 .mainNavigation {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 123;
-  padding-bottom: 5px;
-  padding-bottom: 120px;
+  padding-bottom: 50px;
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+100;Neutral+Density */
   /* IE6-9 */
   background: -moz-linear-gradient(
@@ -64,11 +66,31 @@
     rgba(0, 0, 0, 0) 100%
   ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 );
-  .scrole{
-    background-image: radial-gradient( circle 622px at 48.7% 129%,  rgba(202,150,92,1) 0%, rgba(135,100,69,1) 90% );
+
+}
+.scrolle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-bottom: 10px;
+  background-position: center;
+  background-image: radial-gradient(circle farthest-corner at 60.6% 175.9%, rgb(120 92 71) 0%, rgb(122 89 60) 90%);
+  transform: translateY(-200px);
+  animation: fadeDown .5s ease-in-out;
+  transform: translateY(0);
+}
+@keyframes fadeDown {
+  0%{
+    transform: translateY(-200px);
+  }
+  100%{
+    transform: translateY(0);
   }
 }
 #navbarNavDropdown.collapsing .navbar-nav,
 #navbarNavDropdown.show .navbar-nav {
-  padding: 12px;
+  padding: 1px;
+  .mainNavigation{
+    padding-bottom: 150px;
+  }
 }
