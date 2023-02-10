@@ -56,77 +56,13 @@ ul{
     margin-top: 55px;
     text-transform: uppercase;
 }
-.gallery-front .gallery-image {
-    position: relative;
-    max-width: 263px;
-    margin-right: auto;
-    margin-left: auto;
-}
 .instagram-images .gallery-image{
     max-width: 171px;
     margin-left: auto;
     margin-right: auto;
     position: relative;
 }
-.gallery-image .overlay {
-    background-color: rgba(0, 0, 0, 0.5);
-    height: 100%;
-    left: 0;
-    opacity: 0;
-    overflow: hidden;
-    position: absolute;
-    top: 0;
-    transition: all 0.4s ease-in-out 0s;
-    width: 100%;
-}
-.gallery-image:hover .overlay {
-    opacity: 1;
-}
-.gallery-image:hover p {
-    bottom: 50px;
-}
-.overlay .info > i {
-    color: #fff;
-    font-size: 25px;
-}
-.gallery-image img {
-    margin-left: auto;
-    margin-right: auto;
-}
-.gallery-image a.info {
-    color: #fff;
-    font-size: 22px;
-    font-weight: 600;
-    left: 50%;
-    letter-spacing: 5px;
-    opacity: 1;
-    position: absolute;
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    transition: all 0.2s ease-in-out 0s;
-}
-.gallery-image a.info:hover, .gallery-image a.info > i:hover{
-    color: #e01931;
-}
-.overlay p {
-    bottom: 0;
-    font-size: 17px;
-    font-weight: 600;
-    left: 25%;
-    letter-spacing: 2px;
-    position: absolute;
-    text-transform: uppercase;
-    transition: bottom 0.9s ease 0s;
-}
-.overlay p a{
-    color: #fff;
-}
-.overlay p a:hover{
-    color: #ff4157;
-}
+
 .vacation-offer-bgbanner {
     background: rgba(0, 0, 0, 0) url("/assets/images/vacation-banner.png") no-repeat scroll center center / cover ;
     color: #fff;
