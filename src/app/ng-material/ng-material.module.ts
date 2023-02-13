@@ -12,6 +12,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import {MatChipsModule} from '@angular/material/chips'
+import {MatSliderModule} from '@angular/material/slider'
 
 @NgModule({
     declarations: [],
@@ -29,6 +30,7 @@ import {MatChipsModule} from '@angular/material/chips'
         MatRadioModule,
         MatChipsModule,
         MatButtonModule,
+        MatSliderModule
     ],
     exports: [
         CommonModule,
@@ -43,6 +45,7 @@ import {MatChipsModule} from '@angular/material/chips'
         MatRadioModule,
         MatButtonModule,
         MatChipsModule,
+        MatSliderModule
     ]
 })
 export class NgMaterialModule { }

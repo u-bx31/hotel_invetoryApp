@@ -21,7 +21,7 @@
 .header-main{
     position: absolute;
     width: 100%;
-    z-index: 2;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -32,10 +32,11 @@
         color: white;
         font-size: 3rem;
         line-height: 5rem;
-        width: 80%;
+        font-weight: 700;
+
         span{
             display: block;
-            margin-left: 500px;
+            margin-left: 300px;
         }
     }
 }
@@ -95,7 +96,7 @@
 
 
 //gallery
-.gallery-front  {
+.gallery-front {
     .hedr{
         h1{
             
@@ -145,6 +146,28 @@
         }
     }
 }
+
+.lnk-play-video{
+    text-decoration: none;
+    cursor: pointer;
+    
+    img{
+        height: 50px;
+        width: 50px;
+        animation: Scaling 2s ease-in-out infinite;
+    }
+}
+@keyframes Scaling {
+    0%{
+        transform: scale(1) ;
+    }
+    50%{
+        transform: scale(1.2) ;
+    } 
+    100%{
+        transform: scale(1) ;
+    } 
+}
 @keyframes animation1 {
     0%{
         filter: brightness(100%) contrast(75%) ;
@@ -152,6 +175,36 @@
     100%{
         
         filter: brightness(100%) contrast(50%); ;
+    } 
+}
+
+// mediaQueries
+
+@media (max-width: 1200px) {
+    .header-main{
+        h1{
+            padding-top: 80px;
+            font-size: 2.5rem;
+            line-height: 4rem;
+            font-weight: 700;
+            span{
+                display: block;
+                margin-left: 100px;
+            }
+        }
     }
-    
+}
+@media (max-width: 768px) {
+    .header-main{
+        h1{
+            padding-top: 70px;
+            font-size: 2rem;
+            line-height: 3rem;
+            font-weight: 700;
+            span{
+                display: block;
+                margin-left: 0
+            }
+        }
+    }
 }

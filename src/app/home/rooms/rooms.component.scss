@@ -1,95 +1,141 @@
 $color-alpha: #e8c088;
 
-.image-head-wrapper{
-
-    img{
-        width: 100%;
-        object-fit: cover;
-        height:450px;
-        filter: blur(1.1px) contrast(50%);
-        
+.image-head-wrapper {
+  img {
+    width: 100%;
+    object-fit: cover;
+    height: 550px;
+    filter: brightness(50%);
+  }
+  position: relative;
+  .box {
+    box-shadow: rgba(255, 255, 255, 0.2) 0px 7px 29px 0px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    background-color: rgba(rgb(166, 166, 166), 0.3);
+    width: 100%;
+    max-width: 500px;
+    padding: 5px;
+    border: 2px solid $color-alpha;
+    &:before,
+    &:after {
+      content: "•";
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      font-size: 14px;
+      color: $color-alpha;
+      border: 2px solid $color-alpha;
+      line-height: 12px;
+      top: 5px;
+      text-align: center;
     }
-    position: relative;
-    .box {
-        box-shadow: rgba(255, 255, 255, 0.2) 0px 7px 29px 0px;
+    &:before {
+      left: 5px;
+    }
+    &:after {
+      right: 5px;
+    }
+    .inner-wrapper {
+      position: relative;
+      border: 2px solid $color-alpha;
+      padding: 40px;
+      &:before,
+      &:after {
+        content: "•";
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate3d(-50%, -50%, 0);
-        background-color: rgba(rgb(166, 166, 166), 0.3);
-        width: 100%;
-        max-width: 500px;
-        padding: 5px;
+        width: 14px;
+        height: 14px;
+        font-size: 14px;
+        color: $color-alpha;
         border: 2px solid $color-alpha;
-        &:before, &:after {
-          content: "•";
-          position: absolute;
-          width: 14px;
-          height: 14px;
-          font-size: 14px;
-          color: $color-alpha;
-          border: 2px solid $color-alpha;
-          line-height: 12px;
-          top: 5px;
-          text-align: center;
-        }
-        &:before {
-          left: 5px;
-        }
-        &:after {
-          right: 5px;
-        }
-        .inner-wrapper {
-
-          position: relative;
-          border: 2px solid $color-alpha;
-          padding: 40px;
-          &:before, &:after {
-            content: "•";
-            position: absolute;
-            width: 14px;
-            height: 14px;
-            font-size: 14px;
-            color: $color-alpha;
-            border: 2px solid $color-alpha;
-            line-height: 12px;
-            bottom: -2px;
-            text-align: center;
-          }
-          &:before {
-            left: -2px;
-          }
-          &:after {
-            right: -2px;
-          }
-
-          h1{
-            text-align: center;
-            color: rgb(255, 255, 255);
-        }
-        }
+        line-height: 12px;
+        bottom: -2px;
+        text-align: center;
       }
-    // .inner-wrapper{
-    //     display: flex;
-    //     align-items: center;
-    //     position: absolute;
-    //     top: 0;
-    //     bottom: 0;
-    //     left: 50%;
-    //     h1{
-    //         color: white;
-    //     }
-    // }
-}
+      &:before {
+        left: -2px;
+      }
+      &:after {
+        right: -2px;
+      }
 
-
-.c-crd{
-    img{
-        height: 200px;
-        object-fit: cover;
+      h1 {
+        text-align: center;
+        color: rgb(255, 255, 255);
+      }
     }
+  }
+
+  // .inner-wrapper{
+  //     display: flex;
+  //     align-items: center;
+  //     position: absolute;
+  //     top: 0;
+  //     bottom: 0;
+  //     left: 50%;
+  //     h1{
+  //         color: white;
+  //     }
+  // }
 }
-.c-iconFilter{
-    cursor: pointer;
+.custom-shape-divider-top-1676300915 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
 }
 
+.custom-shape-divider-top-1676300915 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 83px;
+  transform: rotateY(180deg);
+}
+
+.custom-shape-divider-top-1676300915 .shape-fill {
+  fill: #7c5f4b66;
+}
+
+.c-crd {
+  img {
+    height: 250px;
+    object-fit: cover;
+  }
+}
+
+.c-filterSection{
+  .mat-icon{
+    color: rgb(100, 101, 101);
+  }
+  .filled{
+    color: #C58940;
+  }
+}
+.c-roomCard{
+  &_btnView{
+    background: rgb(254, 254, 254) ;
+    border-radius: 4px;
+    margin: 0 5px;
+    border: none;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    .mat-icon{
+      height: 35px;
+      display: flex;
+      align-items: center;
+
+    }
+  }
+}
+
+@media (max-width:300px) {
+  .mat-mdc-slider{
+    width: 200px;
+    margin:  0 auto;
+  }
+}

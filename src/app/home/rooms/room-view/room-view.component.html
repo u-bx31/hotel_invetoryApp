@@ -1,16 +1,19 @@
-<div class="container">
-  <div class="d-flex my-5">
-    <img [src]="room.picture" class="w-75 rounded  shadow" alt="" />
-    <div class="info px-5">
-      <h2>Room Type : {{ room.roomType }}</h2>
-      <h2>
-        ameneties : Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Provident nam iste nostrum consequatur pariatur nulla laudantium magni a
-        vero modi ipsa quis, dolores, deserunt et sequi minima magnam dolorem!
-        A.
-      </h2>
-      <h3>Pice : {{ room.price }}</h3>
-      <button class="btn btn-outline-dark w-100" (click)="openDialog()">Book Room</button>
+<section class="c-roomView">
+  <div class="container ">
+    <div class="d-flex my-5 ">
+      <img [src]="room.picture" class="w-75 rounded  shadow" alt="" />
+      <div class="info px-5">
+        <h2>Room Type : {{ room.roomType }}</h2>
+        <h2>
+          ameneties : Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Provident nam iste nostrum consequatur pariatur nulla laudantium magni a
+          vero modi ipsa quis, dolores, deserunt et sequi minima magnam dolorem!
+          A.
+        </h2>
+        <h3>Pice : {{ room.price }}</h3>
+        <button class="btn btn-outline-dark w-100" (click)="openDialog()">Book Room</button>
+      </div>
     </div>
   </div>
-</div>
+</section>
+

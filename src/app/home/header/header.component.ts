@@ -16,7 +16,7 @@ export class HeaderComponent {
       document.body.scrollTop ||
       0;
 
-      if(verticalOffset >= 200){
+      if(verticalOffset >= 150){
         this.scrolled = true;
       }
       else{
