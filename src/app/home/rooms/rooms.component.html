@@ -12,10 +12,8 @@
 
 
 <section class="c-rooms mt-5">
-  <div class="container">
+  <div class="container pb-4">
     <div class="row row-cols-1">
-
-
       <div class="col-xl-3 col c-filterSection bg-white shadow p-lg-4 rounded h-100">
         <div class="d-flex flex-column">
           <label class="my-2">Category:</label>
@@ -52,33 +50,48 @@
             <mat-error *ngIf="range.controls.start.hasError('matStartDateInvalid')">Invalid start date</mat-error>
             <mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')">Invalid end date</mat-error>
           </mat-form-field>
+
+          <button class="btn btn-outline-warning w-100 mt-3">Search</button>
         </div>
       </div>
 
 
       <div class="col-xl-9 c-roomCard">
-        <div class="d-flex justify-content-end m-3">
-          <button class="c-roomCard_btnView"><mat-icon>list</mat-icon></button>
-          <button class="c-roomCard_btnView"><mat-icon>grid_view</mat-icon></button>
+        <div class="d-flex justify-content-end mx-3 mb-3">
+          <button class="c-roomCard_btnView" (click)="cardFormat = true"><mat-icon>list</mat-icon></button>
+          <button class="c-roomCard_btnView" (click)="cardFormat = false"><mat-icon>grid_view</mat-icon></button>
         </div>
-        <div class="row row-cols-3 ">
+        <div [ngClass]="cardFormat==true ? 'row row-cols-1':'row row-cols-3'">
           <div class="col" *ngFor="let room of roomList">
-            <div class="card shadow-sm c-crd m-2">
-              <img class="img card-img-top" [src]="room.picture" />
-              <div class="card-body">
-                <h2 class="card-text">
-                  {{ room.roomType }}
-                </h2>
-                <div class="d-flex flex-row-reverse justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <a
+            <div class="shadow-sm c-crd m-2">
+              <div class="c-crd_top">
+                <img class="img c-crd_img" [src]="room.picture" />
+                <p class="c-crd_price" *ngIf="!cardFormat">{{room.price | currency}}</p>
+              </div>
+              
+              <div class="c-crd_body">
+                <div class="c-crd_body_text text-wrape">
+                  <h2 class="">
+                    {{ room.roomType }}
+                  </h2>
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo eaque quam quibusdam.</p>
+                </div>
+                
+                <div class="c-crd_body_amenties d-flex" *ngIf="cardFormat">
+                  <mat-icon>wifi</mat-icon>
+                  <mat-icon>wifi</mat-icon>
+                  <mat-icon>wifi</mat-icon>
+                  <mat-icon>wifi</mat-icon>
+                </div>
+                <div class="c-crd_body_btng d-flex flex-row-reverse justify-content-between align-items-center">
+                  <a
                       [routerLink]="['/rooms/', room.id]"
-                      class="btn btn-sm btn-outline-secondary"
+                      class="c-crd_body_btng_details"
                     >
-                      View
-                    </a>
-                  </div>
-                  <small class="text-muted"> {{ room.price | currency }}</small>
+                      View Details
+                  </a>
+                  <h2>{{room.rating}}<mat-icon >star</mat-icon></h2>
+                  <small class="c-crd_body_btng_price" *ngIf="cardFormat"> {{ room.price | currency }}</small>
                 </div>
               </div>
             </div>

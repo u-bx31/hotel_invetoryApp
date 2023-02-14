@@ -132,6 +132,48 @@ $color-alpha: #e8c088;
     }
   }
 }
+.c-crd{
+  background-color: white;
+  border-radius: 9px;
+  &_top{
+    position: relative;
+  }
+  &_img{
+    width: 100%;
+    border-radius: 9px;
+    height: 200px;
+    object-fit: cover;
+    
+  }
+  &_price{
+    position: absolute;
+    bottom: 0;
+    left: 5px;
+    font-size: 15px;
+        background-color: #C58940;
+        padding: 8px;
+        border-radius: 5px;
+  }
+  &_body{
+    padding: 10px;
+    &_btng{
+      &_details{
+        text-decoration: none;
+        color: #C58940;
+        &:hover{
+          color: #67461d;
+        }
+      }
+      &_price{
+        font-size: 15px;
+        background-color: #C58940;
+        padding: 8px;
+        border-radius: 5px;
+      }
+    }
+  }
+  
+}
 
 @media (max-width:300px) {
   .mat-mdc-slider{
