@@ -13,7 +13,8 @@
 
 <section class="c-rooms mt-5">
   <div class="container pb-4">
-    <div class="row row-cols-1">
+    <div class="row ">
+      <!-- filter Section -->
       <div class="col-xl-3 col c-filterSection bg-white shadow p-lg-4 rounded h-100">
         <div class="d-flex flex-column">
           <label class="my-2">Category:</label>
@@ -29,7 +30,7 @@
           </mat-slider>
   
           <label class="my-2">Rating:</label>
-          <ngb-rating [(rate)]="currentRate">
+          <ngb-rating [(rate)]="currentRate" [max]="5">
             <ng-template let-fill="fill" let-index="index">
               <mat-icon [ngClass]="fill === 100 ? 'filled' : ''" [class.filled]="fill === 100" [class.low]="index < 3">
                 star
@@ -54,52 +55,55 @@
           <button class="btn btn-outline-warning w-100 mt-3">Search</button>
         </div>
       </div>
-
-
+      <!-- End filter Section -->
+      
+      <!-- cardView Section -->
       <div class="col-xl-9 c-roomCard">
-        <div class="d-flex justify-content-end mx-3 mb-3">
+        <div class="d-flex justify-content-end mx-3 mb-3 mt-4 mt-lg-0">
           <button class="c-roomCard_btnView" (click)="cardFormat = true"><mat-icon>list</mat-icon></button>
           <button class="c-roomCard_btnView" (click)="cardFormat = false"><mat-icon>grid_view</mat-icon></button>
         </div>
         <div [ngClass]="cardFormat==true ? 'row row-cols-1':'row row-cols-3'">
           <div class="col" *ngFor="let room of roomList">
-            <div class="shadow-sm c-crd m-2">
+            <div [ngClass]="cardFormat ? 'shadow-sm c-crd m-2 d-flex':'shadow-sm c-crd m-2'">
               <div class="c-crd_top">
-                <img class="img c-crd_img" [src]="room.picture" />
+                <img class="img c-crd_img" [src]="room.picture" [ngClass]="{'list' : cardFormat , 'w-100' :!cardFormat}" />
                 <p class="c-crd_price" *ngIf="!cardFormat">{{room.price | currency}}</p>
               </div>
               
-              <div class="c-crd_body">
-                <div class="c-crd_body_text text-wrape">
-                  <h2 class="">
+              <div class="c-crd_body d-flex flex-column justify-content-between" [ngClass]="{'p-4' :cardFormat , 'p-3' :!cardFormat}">
+                <div class="c-crd_body_text mt-2">
+                  <h1 class="">
                     {{ room.roomType }}
-                  </h2>
-                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo eaque quam quibusdam.</p>
+                  </h1>
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo eaque quam quibusdam</p>
                 </div>
                 
-                <div class="c-crd_body_amenties d-flex" *ngIf="cardFormat">
-                  <mat-icon>wifi</mat-icon>
-                  <mat-icon>wifi</mat-icon>
-                  <mat-icon>wifi</mat-icon>
-                  <mat-icon>wifi</mat-icon>
+                <div class="c-crd_body_amenties d-flex pb-3" *ngIf="cardFormat">
+                  <div *ngFor="let amenties of room.ameneties" >
+                    <div *ngIf="checkAmenties(amenties)">
+                      <mat-icon>{{roomAmenties}}</mat-icon>
+                    </div>
+                  </div>
+                
                 </div>
-                <div class="c-crd_body_btng d-flex flex-row-reverse justify-content-between align-items-center">
-                  <a
-                      [routerLink]="['/rooms/', room.id]"
-                      class="c-crd_body_btng_details"
-                    >
-                      View Details
-                  </a>
-                  <h2>{{room.rating}}<mat-icon >star</mat-icon></h2>
-                  <small class="c-crd_body_btng_price" *ngIf="cardFormat"> {{ room.price | currency }}</small>
-                </div>
+              </div>
+              <div class="c-crd_btng d-flex p-3 justify-content-between align-items-center" [ngClass]="{'flex-column-reverse w-25':cardFormat , 'flex-row-reverse':!cardFormat}">
+                <a
+                    [routerLink]="['/rooms/', room.id]"
+                    class="c-crd_btng_details d-flex align-items-center"
+                  >
+                    <mat-icon class="me-1">play_circle</mat-icon>View Details
+                </a>
+                <h2 class="c-crd_btng_rating d-flex align-items-center m-0 p-0">{{room.rating | number : '1.1-1'}}<mat-icon >star</mat-icon></h2>
+                <small class="c-crd_btng_price mt-3" *ngIf="cardFormat"> {{ room.price | currency }}</small>
               </div>
             </div>
           </div>
         </div>
       </div>
-
+      <!-- End cardView Section -->
     </div>
- 
+    
   </div>
 </section>

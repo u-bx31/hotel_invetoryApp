@@ -12,7 +12,7 @@ export class RoomsComponent implements OnInit{
 
   roomList : RoomList[] = [];
   roomType : any[] = [];
-  cardFormat : boolean = false;
+  cardFormat : boolean = true;
   imgUrl : any[] =[];
   currentRate = 0;
   //value mat dateRangePicker
@@ -20,6 +20,8 @@ export class RoomsComponent implements OnInit{
     start: new FormControl<Date | null>(null),
     end: new FormControl<Date | null>(null),
   });
+
+  roomAmenties !: any;
 
   constructor(private service: RoomService){}
 
@@ -39,6 +41,29 @@ export class RoomsComponent implements OnInit{
     this.service.getRooms$.subscribe((parms)=>{
       this.roomList = parms;
     })
+
   }
+
+  checkAmenties(value : string | undefined){
+    switch(value){
+      case 'Lunch':{
+        return this.roomAmenties = 'restaurant'
+        
+      }
+      case 'Wifi' :{
+        return this.roomAmenties = 'wifi'
+      }
+      case 'Dinner' :{
+        return this.roomAmenties = 'dinner_dining'
+      }
+      default:{
+        return
+      }
+      
+    }
+
+    
+  }
+
 
 }
