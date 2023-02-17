@@ -111,10 +111,14 @@ $color-alpha: #e8c088;
 
 .c-filterSection {
   .mat-icon {
-    color: rgb(0 0 0 / 29%);
+    color: rgba(51, 51, 51, 0.29);
     font-size: 35px;
     height: auto;
     width: auto;
+  }
+  label{
+    font-size: 1.1rem;
+    font-weight: 500;
   }
   .filled {
     color: #c58940;
@@ -129,13 +133,32 @@ $color-alpha: #e8c088;
     --mdc-slider-with-tick-marks-inactive-container-color: #ebe0e000;
     --mat-mdc-slider-ripple-color: #c58940;
   }
+
   .mat-mdc-form-field .mat-mdc-form-field-subscript-wrapper{
       height: 0;
     
   }
-
+  
 }
 
+::ng-deep   .mat-mdc-form-field.mat-mdc-form-field.mat-mdc-form-field.mat-mdc-form-field.mat-mdc-form-field .mdc-notched-outline__notch{
+  border-left:0px solid transparent ;
+} 
+::ng-deep .mdc-notched-outline--notched {
+  .mdc-notched-outline{
+    &__leading, &__trailing{
+      border-color: #c58940 !important;
+    }
+    &__notch{
+      border-color: #c58940 !important;
+      .mdc-floating-label{
+        color: #a87333;
+      }
+    }
+  }
+
+
+}
 .c-roomCard {
   &_btnView {
     background: rgb(254, 254, 254);
