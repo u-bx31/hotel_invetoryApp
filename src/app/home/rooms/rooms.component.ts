@@ -12,7 +12,7 @@ export class RoomsComponent implements OnInit{
 
   roomList : RoomList[] = [];
   roomType : any[] = [];
-  cardFormat : boolean = true;
+  cardFormat : boolean = false;
   imgUrl : any[] =[];
   currentRate = 0;
   //value mat dateRangePicker

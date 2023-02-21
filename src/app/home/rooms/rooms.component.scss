@@ -1,5 +1,5 @@
 $color-alpha: #e8c088;
-
+//top
 .image-head-wrapper {
   img {
     width: 100%;
@@ -68,18 +68,6 @@ $color-alpha: #e8c088;
       }
     }
   }
-
-  // .inner-wrapper{
-  //     display: flex;
-  //     align-items: center;
-  //     position: absolute;
-  //     top: 0;
-  //     bottom: 0;
-  //     left: 50%;
-  //     h1{
-  //         color: white;
-  //     }
-  // }
 }
 .custom-shape-divider-top-1676300915 {
   position: absolute;
@@ -108,7 +96,7 @@ $color-alpha: #e8c088;
     object-fit: cover;
   }
 }
-
+//filter section
 .c-filterSection {
   .mat-icon {
     color: rgba(51, 51, 51, 0.29);
@@ -159,6 +147,8 @@ $color-alpha: #e8c088;
 
 
 }
+
+// room cards
 .c-roomCard {
   &_btnView {
     background: rgb(254, 254, 254);
@@ -225,6 +215,9 @@ $color-alpha: #e8c088;
       &:hover {
         color: #67461d;
       }
+      .mat-icon{
+        padding-right: 20px;
+      }
     }
     &_price {
       font-size: 15px;
@@ -246,9 +239,125 @@ $color-alpha: #e8c088;
   }
 }
 
+
+@media (max-width:765px) {
+.c-crd {
+  height: 200px;
+  .list{
+    height: 100%;
+  }
+  &_img {
+    width: 180px;
+  }
+  &_body {
+    &_text {
+      h1 {
+        font-weight: 800;
+        font-size: 1.4rem;
+        margin: 0;
+      }
+      p {
+        font-weight: 400;
+        font-size: 1.3rem;
+        margin: 0;
+        text-align: justify;
+      }
+    }
+    &_amenties {
+      .mat-icon {
+        margin: 2px;
+        font-size: 30px;
+      }
+    }
+  }
+  &_btng {
+    &_details {
+      font-size: 20px;
+      text-align: center;
+      .mat-icon{
+        text-align: start;
+        padding-right: 20px;
+      }
+    }
+    &_price {
+      text-align: center;
+      font-size: 20px;
+      width: 90px;
+    }
+    &_rating {
+      font-size: 20px;
+      .mat-icon {
+        height: 28px;
+        width: auto;
+        font-size: 25px;
+      }
+    }
+  }
+}
+}
+
+
+@media (max-width:540px) {
+  .c-crd {
+    height: 100%;
+    margin: 0 10px;
+    &_img {
+      width: 100%;
+      height: 230px !important;
+    }
+    &_body {
+      &_text {
+        h1 {
+          font-weight: 800;
+          font-size: 1.3rem;
+          margin: 0;
+        }
+        p {
+          font-weight: 400;
+          font-size: 1rem;
+          margin: 0;
+          text-align: justify;
+        }
+      }
+      &_amenties {
+        .mat-icon {
+          margin: 2px;
+          font-size: 30px;
+        }
+      }
+    }
+    &_btng {
+      &_details {
+        font-size: 15px;
+        text-align: center;
+        .mat-icon{
+          text-align: start;
+          padding-right: 20px;
+        }
+      }
+      &_price {
+        text-align: center;
+        font-size: 15px;
+        width: 90px;
+      }
+      &_rating {
+        font-size: 17px;
+        .mat-icon {
+          height: 28px;
+          width: auto;
+          font-size: 25px;
+        }
+      }
+    }
+  }
+}
+
+
 @media (max-width: 300px) {
   .mat-mdc-slider {
     width: 200px;
     margin: 0 auto;
   }
 }
+
+

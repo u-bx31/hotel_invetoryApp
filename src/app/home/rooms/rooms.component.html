@@ -14,9 +14,9 @@
       <!-- filter Section -->
       <!-- change col break point or change width scss -->
       <div
-        class="col-xl-3 col c-filterSection bg-white shadow p-lg-4 rounded h-100"
+        class="col-xl-3 col c-filterSection"
       >
-        <div class="d-flex flex-column">
+        <div class="d-lg-flex flex-column d-none bg-white shadow p-lg-4 p-md-3 p-2 rounded ">
           <div class="control-inputs mt-3 d-flex flex-column">
             <label class="mb-3">Category:</label>
             <mat-form-field appearance="outline" class="w-100" >
@@ -94,42 +94,52 @@
 
       <!-- cardView Section -->
       <div class="col-xl-9 c-roomCard">
-        <div class="d-flex justify-content-end mx-3 mb-3 mt-4 mt-lg-0">
-          <button class="c-roomCard_btnView" (click)="cardFormat = true">
-            <mat-icon>list</mat-icon>
-          </button>
-          <button class="c-roomCard_btnView" (click)="cardFormat = false">
-            <mat-icon>grid_view</mat-icon>
-          </button>
+        <div class="d-flex justify-content-lg-end justify-content-md-between justify-content-end  mx-3 mb-3 mt-2 mt-lg-0">
+          <div class="c-left d-md-flex d-none">
+            <button class="c-roomCard_btnView" (click)="cardFormat = true">
+              <mat-icon>list</mat-icon>
+            </button>
+            <button class="c-roomCard_btnView" (click)="cardFormat = false">
+              <mat-icon>grid_view</mat-icon>
+            </button>
+          </div>
+          <div class="c-right d-lg-none d-flex">
+            <button class="c-roomCard_btnView">
+              <mat-icon>filter</mat-icon>
+            </button>
+          </div>
+
         </div>
+
+        
         <div
-          [ngClass]="cardFormat == true ? 'row row-cols-1' : 'row row-cols-3'"
+          [ngClass]="cardFormat == true ? 'row row-cols-1 gy-md-2 gy-3' : 'row row-cols-lg-3 row-cols-md-2 row-cols-1 gx-2 gy-2'"
         >
           <div class="col" *ngFor="let room of roomList">
             <div
               [ngClass]="
                 cardFormat
-                  ? 'shadow-sm c-crd m-2 d-flex'
-                  : 'shadow-sm c-crd m-2'
+                  ? 'shadow-sm c-crd d-flex '
+                  : 'shadow-sm c-crd h-100'
               "
             >
               <div class="c-crd_top">
                 <img
                   class="img c-crd_img"
                   [src]="room.picture"
-                  [ngClass]="{ list: cardFormat, 'w-100': !cardFormat }"
+                  [ngClass]="{ 'list': cardFormat, 'w-100': !cardFormat }"
                 />
                 <p class="c-crd_price" *ngIf="!cardFormat">
                   {{ room.price | currency }}
                 </p>
               </div>
-
+              
               <div
-                class="c-crd_body d-flex flex-column justify-content-between"
-                [ngClass]="{ 'p-4': cardFormat, 'p-3': !cardFormat }"
+                class="c-crd_body d-flex flex-column justify-content-between "
+                [ngClass]="{ 'px-lg-4 py-lg-4 px-4 py-1 h-100': cardFormat, 'p-3': !cardFormat }"
               >
-                <div class="c-crd_body_text mt-2">
-                  <h1 class="">
+                <div class="c-crd_body_text mt-md-2 mt-3">
+                  <h1 class="pb-md-0 pb-2">
                     {{ room.roomType }}
                   </h1>
                   <p>
@@ -138,7 +148,14 @@
                   </p>
                 </div>
 
-                <div class="c-crd_body_amenties d-flex pb-3" *ngIf="cardFormat">
+                <div class="c-crd_body_amenties d-flex pb-md-3 pt-md-0 pt-3" *ngIf="cardFormat">
+                  <div *ngFor="let amenties of room.ameneties">
+                    <div *ngIf="checkAmenties(amenties)">
+                      <mat-icon>{{ roomAmenties }}</mat-icon>
+                    </div>
+                  </div>
+                </div>
+                <div class="c-crd_body_amenties d-md-none d-flex pb-md-3 pt-md-0 pt-3">
                   <div *ngFor="let amenties of room.ameneties">
                     <div *ngIf="checkAmenties(amenties)">
                       <mat-icon>{{ roomAmenties }}</mat-icon>
@@ -147,22 +164,22 @@
                 </div>
               </div>
               <div
-                class="c-crd_btng d-flex p-3 justify-content-between align-items-center"
+                class="c-crd_btng d-flex p-md-3 p-3 justify-content-between align-items-center"
                 [ngClass]="{
-                  'flex-column-reverse w-25': cardFormat,
+                  'flex-md-column-reverse w-25': cardFormat,
                   'flex-row-reverse': !cardFormat
                 }"
               >
                 <a
                   [routerLink]="['/rooms/', room.id]"
-                  class="c-crd_btng_details d-flex align-items-center"
+                  class="c-crd_btng_details d-flex align-items-center "
                 >
-                  <mat-icon class="me-1">play_circle</mat-icon>View Details
+                  <mat-icon>play_circle</mat-icon>View Details
                 </a>
-                <h2 class="c-crd_btng_rating d-flex align-items-center m-0 p-0">
+                <h2 class="c-crd_btng_rating d-flex align-items-center m-0 p-0  ">
                   {{ room.rating | number : "1.1-1" }}<mat-icon>star</mat-icon>
                 </h2>
-                <small class="c-crd_btng_price mt-3" *ngIf="cardFormat">
+                <small class="c-crd_btng_price  mt-3  " *ngIf="cardFormat">
                   {{ room.price | currency }}</small
                 >
               </div>
