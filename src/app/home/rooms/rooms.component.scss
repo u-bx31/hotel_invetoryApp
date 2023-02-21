@@ -179,7 +179,8 @@ $color-alpha: #e8c088;
     position: absolute;
     bottom: 0;
     left: 5px;
-    font-size: 15px;
+    font-size: 19px;
+    font-weight: 500;
     background-color: #c58940;
     padding: 8px;
     border-radius: 5px;
@@ -193,6 +194,7 @@ $color-alpha: #e8c088;
       p {
         font-weight: 400;
         font-size: 1rem;
+        
       }
     }
     &_amenties {
@@ -220,13 +222,16 @@ $color-alpha: #e8c088;
       }
     }
     &_price {
-      font-size: 15px;
+      font-size: 19px;
+      font-weight: 600;
       background-color: #c58940;
       padding: 10px;
       border-radius: 5px;
+      width: 120px !important;
+      text-align: center;
     }
     &_rating {
-      
+      font-weight: 600;
       .mat-icon {
         display: flex;
         align-items: center;
@@ -253,14 +258,14 @@ $color-alpha: #e8c088;
     &_text {
       h1 {
         font-weight: 800;
-        font-size: 1.4rem;
+        font-size: 1.3rem;
         margin: 0;
       }
       p {
         font-weight: 400;
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         margin: 0;
-        text-align: justify;
+        text-align: justify !important;
       }
     }
     &_amenties {
@@ -272,6 +277,7 @@ $color-alpha: #e8c088;
   }
   &_btng {
     &_details {
+      
       font-size: 20px;
       text-align: center;
       .mat-icon{
@@ -280,12 +286,9 @@ $color-alpha: #e8c088;
       }
     }
     &_price {
-      text-align: center;
-      font-size: 20px;
-      width: 90px;
+      width: 100px !important;
     }
     &_rating {
-      font-size: 20px;
       .mat-icon {
         height: 28px;
         width: auto;
@@ -306,46 +309,20 @@ $color-alpha: #e8c088;
       height: 230px !important;
     }
     &_body {
-      &_text {
-        h1 {
-          font-weight: 800;
-          font-size: 1.3rem;
-          margin: 0;
-        }
-        p {
-          font-weight: 400;
-          font-size: 1rem;
-          margin: 0;
-          text-align: justify;
-        }
-      }
       &_amenties {
         .mat-icon {
           margin: 2px;
-          font-size: 30px;
+          font-size: 40px;
         }
       }
     }
     &_btng {
       &_details {
-        font-size: 15px;
+        font-size: 17px;
         text-align: center;
         .mat-icon{
           text-align: start;
           padding-right: 20px;
-        }
-      }
-      &_price {
-        text-align: center;
-        font-size: 15px;
-        width: 90px;
-      }
-      &_rating {
-        font-size: 17px;
-        .mat-icon {
-          height: 28px;
-          width: auto;
-          font-size: 25px;
         }
       }
     }
@@ -353,6 +330,14 @@ $color-alpha: #e8c088;
 }
 
 
+
+
+
+
+
+
+
+//slider 
 @media (max-width: 300px) {
   .mat-mdc-slider {
     width: 200px;
