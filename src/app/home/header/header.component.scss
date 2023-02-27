@@ -4,7 +4,9 @@
   text-transform: uppercase;
   letter-spacing: 2px;
 }
-
+nav{
+  min-width: 280px;
+}
 .nav-item a {
   color: #dfdfdf;
 }
@@ -42,6 +44,7 @@
 }
 
 .mainNavigation {
+  min-width: 280px;
   position: absolute;
   top: 0;
   left: 0;

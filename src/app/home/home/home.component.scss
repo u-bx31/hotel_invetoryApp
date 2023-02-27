@@ -52,6 +52,9 @@
             font-size: 3rem;
             
         }
+        p{
+            font-size: 1.2rem;
+        }
         button{
             padding: 20px 20px ;
             color: white;
@@ -91,6 +94,11 @@
     background-color: white;
     padding: 50px 0;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+    .service-details{
+        h4{
+            margin-top: 30px;
+        }
+    }
 
 }
 
@@ -114,6 +122,7 @@
 
         img{
             height: 250px;
+            width: 100%;
             object-fit: cover;
         }
         &_info{
@@ -180,30 +189,232 @@
 
 // mediaQueries
 
-@media (max-width: 1200px) {
-    .header-main{
-        h1{
-            padding-top: 80px;
-            font-size: 2.5rem;
-            line-height: 4rem;
-            font-weight: 700;
-            span{
-                display: block;
-                margin-left: 100px;
+@media (max-width: 1400px) {
+    .grating{
+        &_txt{
+            h1{
+                font-size: 2.2rem;            
+            }
+            p{
+                font-size: 1.2rem;
+            }
+        }
+        &_picture{
+            .c-img1{
+                border-radius: 15px;
+                height: 310px;
+                width: 500px;
+                object-fit: cover;
+                box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+            }
+            
+            .second-img{
+                position: absolute;
+                top: -30px;
+                right: 0 ;  
+                .c-img2{
+                    border-radius: 15px;
+                    object-fit: cover;
+                    width: 400px;
+                    height: 240px;
+                    box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+                }
             }
         }
     }
 }
-@media (max-width: 768px) {
+
+@media (max-width: 1200px) {
     .header-main{
         h1{
             padding-top: 70px;
-            font-size: 2rem;
+            font-size: 2.4rem;
             line-height: 3rem;
             font-weight: 700;
             span{
                 display: block;
+                margin-left: 100px
+            }
+        }
+    }
+    .vacation-offer-block{
+        padding: 20px 0;
+        .vacation-offer-bgbanner{
+            padding: 113px 0;
+        }
+    }
+}
+@media (max-width: 1000px) {
+    .header-main{
+        h1{
+            padding-top: 70px;
+            font-size: 2.4rem;
+            line-height: 3rem;
+            font-weight: 700;
+            span{
                 margin-left: 0
+            }
+        }
+    }
+
+    .grating{
+        height: 100%;
+        margin: 50px auto;
+        &_picture{
+            margin-top:20px ;
+        }
+    }
+
+
+}
+@media (max-width: 768px) {
+    .grating{
+        &_txt{
+            h1{
+                font-size: 2rem;                
+            }
+            p{
+                font-size: 1rem;
+            }
+        }
+        &_picture{
+            .c-img1{
+                border-radius: 15px;
+                height: 270px;
+                width: 100%;
+            }
+            
+            .second-img{
+                display: none;
+            }
+        }
+    }
+    .service-block{
+        .service-details{
+            .service-image{
+                padding: 20px;
+                img{
+                    height: 40px;
+                }
+            }
+            h4{
+                font-size: 14px;
+            }
+        }
+    }
+    .gallery-front{
+        .hedr{
+            h1{
+                font-size: 2rem;
+                padding-bottom: 20px;
+            }
+            p{
+                font-size: 1rem;
+            }
+        }
+    }
+    .vacation-offer-block{
+        .vacation-offer-bgbanner{
+            padding: 80px 0;
+           
+        }
+        .vacation-offer-details{
+            h1{
+                font-size: 27px;
+            }
+        }
+    }
+}
+@media (max-width: 700px) {
+    .vacation-offer-block{
+        .vacation-offer-bgbanner{
+            padding: 80px 0;
+            &::before {
+                height: 100%;
+                left: 0;
+                position: absolute;
+                top: 0;
+                transform:none;
+                width: 100%;
+            }
+        }
+        .vacation-offer-details{
+            display: none;
+        }
+        .lnk-play-video{
+            margin: 0 auto !important;
+        }
+    }
+}
+@media (max-width: 375px) {
+    .header-main{
+        h1{
+            padding-top: 70px;
+            font-size: 1.7rem;
+            line-height: 2.5rem;
+            font-weight: 700;
+            span{
+                display: block;
+                margin-left: 0
+            }
+        }
+    }
+
+    .grating{
+        &_picture{
+            .c-img1{
+                border-radius: 15px;
+                height: 270px;
+                width: 100%;
+            }
+            
+            .second-img{
+                display: none;
+            }
+        }
+    }
+    
+}
+@media (max-width: 280px) {
+    .header-main{
+        h1{
+            padding-top: 70px;
+            font-size: 1.3rem;
+            line-height: 2rem;
+            font-weight: 800;
+            span{
+                display: block;
+                margin-left: 0
+            }
+        }
+    }
+    .grating{
+        &_txt{
+            text-align: center;
+            h1{
+                font-size: 1.5rem;                
+            }
+            p{
+                font-size: 1rem;
+                
+            }
+        }
+        &_picture{
+            .c-img1{
+                border-radius: 15px;
+                height: 270px;
+                width: 100%;
+            }
+            
+            .second-img{
+                display: none;
+            }
+        }
+    }
+    .gallery-front{
+        .hedr{
+            h1{
+                font-size: 1.5rem;
             }
         }
     }
