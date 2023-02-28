@@ -187,6 +187,32 @@
     } 
 }
 
+
+
+.resort-overview-block{
+    .product-thumb{
+        img{
+            width: 315px;
+            height: 300px;
+            object-fit: cover;
+        }
+    }
+    .product-desc-side{
+        height: 100%;
+        h3{
+            font-size: 20px;
+        }
+        p{
+            margin: 15px 0;
+        }
+        .links{
+            a{
+                cursor: pointer;
+            }
+        }
+    }
+}
+
 // mediaQueries
 
 @media (max-width: 1400px) {
@@ -241,6 +267,24 @@
         padding: 20px 0;
         .vacation-offer-bgbanner{
             padding: 113px 0;
+        }
+    }
+    .resort-overview-block{
+        .product-thumb{
+            img{
+                width: 250px;
+                height: fit-content;
+            }
+        }
+        .product-desc-side{
+            padding: 0 0 0 13px;
+            h3{
+                padding-bottom:3px ;
+                font-size: 18px;
+            }
+            p{
+                margin: 0 0 9px 0;
+            }
         }
     }
 }
@@ -343,6 +387,46 @@
         }
         .lnk-play-video{
             margin: 0 auto !important;
+        }
+    }
+    .gallery-front{
+        .gallery-image{
+            img{
+                height: 200px;
+            }
+        }
+    }
+}
+@media (max-width:575px) {
+    .resort-overview-block{
+        padding: 40px 0  ;
+        .product-thumb{
+
+            img{
+
+                height: 200px;
+                object-fit: cover;
+            }
+        }
+        .product-desc-side{
+            padding: 0 0 0 13px;
+            h3{
+                text-align: center;
+                padding-top: 4px;
+                padding-bottom:3px ;
+                font-size: 18px;
+            }
+            p{
+                margin: 0 0 9px 0;
+                text-align: justify;
+            }
+            .links{
+                a{
+                    cursor: pointer;
+                    display: block;
+                    text-align: center;
+                }
+            }
         }
     }
 }
