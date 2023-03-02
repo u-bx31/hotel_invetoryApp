@@ -16,7 +16,7 @@
       <div
         class="col-xl-3 col c-filterSection"
       >
-        <div class="d-lg-flex flex-column d-none bg-white shadow p-lg-4 p-md-3 p-2 rounded ">
+        <div class="d-xl-flex flex-column d-none bg-white shadow p-lg-4 p-md-3 p-2 rounded ">
           <div class="control-inputs mt-3 d-flex flex-column">
             <label class="mb-3">Category:</label>
             <mat-form-field appearance="outline" class="w-100" >
@@ -94,7 +94,7 @@
 
       <!-- cardView Section -->
       <div class="col-xl-9 c-roomCard">
-        <div class="d-flex justify-content-lg-end justify-content-md-between justify-content-end  mx-3 mb-3 mt-2 mt-lg-0">
+        <div class="d-flex justify-content-xl-end justify-content-md-between justify-content-end  mx-3 mb-3 mt-2 mt-lg-0">
           <div class="c-left d-md-flex d-none">
             <button class="c-roomCard_btnView" (click)="cardFormat = true">
               <mat-icon>list</mat-icon>
@@ -103,9 +103,9 @@
               <mat-icon>grid_view</mat-icon>
             </button>
           </div>
-          <div class="c-right d-lg-none d-flex">
-            <button class="c-roomCard_btnView">
-              <mat-icon>filter</mat-icon>
+          <div class="c-right d-xl-none d-flex">
+            <button class="c-roomCard_btnView" (click)="open()">
+              <mat-icon>filter_list</mat-icon>
             </button>
           </div>
 
@@ -191,3 +191,5 @@
     </div>
   </div>
 </section>
+
+

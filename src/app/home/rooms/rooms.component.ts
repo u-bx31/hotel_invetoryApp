@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { RoomList } from 'src/app/admin/managment/rooms/room';
 import { RoomService } from 'src/app/admin/managment/rooms/service/room.service';
-import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormControl, FormGroup } from '@angular/forms';
+import { ModalComponent } from './modal/modal.component';
 @Component({
   selector: 'app-rooms',
   templateUrl: './rooms.component.html',
@@ -22,8 +23,8 @@ export class RoomsComponent implements OnInit{
   });
 
   roomAmenties !: any;
-
-  constructor(private service: RoomService){}
+  closeResult = '';
+  constructor(private service: RoomService,private modalService: NgbModal){}
 
   // value of mat Slider
   formatLabel(value: number): string {
@@ -64,6 +65,11 @@ export class RoomsComponent implements OnInit{
 
     
   }
+  open() {
+		const modalRef = this.modalService.open(ModalComponent,{ centered: true });
+		modalRef.componentInstance.name = 'World';
+		modalRef.componentInstance.data = this.roomList;
+	}
 
 
 }

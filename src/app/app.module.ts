@@ -21,6 +21,7 @@ import { SpinnerComponent } from './spinner/spinner.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Page404Component } from './page404/page404.component';
 import { CookieService } from 'ngx-cookie-service';
+import { ModalComponent } from './home/rooms/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { CookieService } from 'ngx-cookie-service';
     RoomViewComponent,
     DialogBoxComponent,
     SpinnerComponent,
-    Page404Component
+    Page404Component,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
