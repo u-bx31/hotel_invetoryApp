@@ -19,18 +19,17 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 ## About Project:
 
-
 this Project have to side:
 
 |-| Mangment Team |-|User/Client  |
-
-|:-----|:-----|:-----|:-----|
+|:-----|:-----:|:-----:|:-----:|
 |-|   Concierge   | Manger  |    |
 |Room Crud Operation |-|x|-|
 |Room Type Crud Operation |-|x|-|
 |handle Resevation| x | x|-|
 |booked Room|x | x | x|
 |see All Rooms| x | x | x|
+
 
 #### for managment side : 
 - only manamgent team can have acces to it ;
