@@ -46,6 +46,7 @@ this Project have to side:
 
 ## screenshot:
 - DesktopScreens: 
+https://user-images.githubusercontent.com/104906043/222773690-589c5ca6-90cc-4d74-a399-04369901fd0d.mp4
 
 [picture] `will added soon`
 - MobileScreens:
@@ -71,4 +72,9 @@ this Project have to side:
 
 ## Author 
 - this app created by : [u-bx31](https://github.com/u-bx31)
+
+
+
+
+
 
