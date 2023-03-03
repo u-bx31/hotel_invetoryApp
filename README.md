@@ -1,18 +1,17 @@
 # 🏨 Hotel Website & App
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ## Table of contents
 
 - [Overview](#overview)
-  - [About Project](#about)
+  - [About Project](#about-project)
   - [ScreenShots](#screenshot)
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
+  - [Developemnt Server](#development-server)
+  - [Json DataBase](#json-database)
 - [Author](#author)
 
 # overview
@@ -44,18 +43,21 @@ this Project have to side:
 - user can create his acount to have discount on each reservation he/she did;`this feature not avaiable for the moment but it will be added soon`
 
 
-## screenshot:
+## Screenshot:
 - DesktopScreens: 
-
 
 https://user-images.githubusercontent.com/104906043/222773690-589c5ca6-90cc-4d74-a399-04369901fd0d.mp4
 
 [picture] `will added soon`
-- MobileScreens:
+
+- MobileScreens :
+
+https://user-images.githubusercontent.com/104906043/222776815-c17d217d-2321-46f6-86de-23d7f777eca4.mp4
 
 [picture]`will added soon`
 
-## Links :
+
+## Links:
 [HotelHeaven Url]('#') : Not Avaible for this moment
 
 ## My Process:
@@ -70,6 +72,13 @@ https://user-images.githubusercontent.com/104906043/222773690-589c5ca6-90cc-4d74
  - TypeScript 
  - Framer Motion : will added Soon.
  - git 
+ #### Development server
+ 
+  Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+    
+ #### Json DataBase
+
+  Run `json-server --watch db.json` for a db server. Navigate to `http://localhost:3000/`.will display db json and show all the end-points;
 
 
 ## Author 
