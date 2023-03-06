@@ -1,3 +1,81 @@
 .c-roomView{
     margin-top: 140px;
+    &_top{
+        position: relative;
+        &_Img{
+            height: 350px;
+            object-fit: cover;
+            object-position: center;
+        }
+        &_info1{
+            height: 100%;
+            width: 40%;
+            position: absolute;
+            top: 0;
+            right: 0px;
+            background-color: #cc842bee;
+            border-radius: 0 5px 5px 0;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 12% 100%);
+            &_rating{
+                font-size: 2rem;
+                margin-bottom: 50px;
+                .mat-icon {
+                    display: flex;
+                    align-items: center;
+                    height: 28px;
+                    width: fit-content;
+                    height: fit-content;
+                    font-size: 50px;
+                    color: #f7ea00;
+                  }
+            }
+            &_price{
+                font-size: 2rem;
+            }
+        }
+    }
+    &_info{
+        h2{
+            margin: 0;
+            font-size: 2.2rem;
+            font-weight: 500;
+        }
+        &_header{
+            h2{
+                margin: 0;
+                font-size: 2.5rem;
+                font-weight: 600;
+            }
+        }
+        &_description{
+            font-size: 1rem;
+            font-weight: 400;
+            letter-spacing: 1.8px;
+            line-height: 1.4rem;
+        }
+        &_services{
+            .mat-icon{
+                font-size: 3rem;
+                width: fit-content;
+                height: fit-content;
+                color: #efae5e;
+                
+            }
+            p{
+                font-size: 1.6rem;
+                font-weight: 400;
+            }
+        }
+        &_pictures{
+            img{
+                object-fit: cover;
+                object-position: center;
+                width: 100%;
+                height: 250px;
+            }
+            .view1{
+                height: 400px;
+            }
+        }
+    }
 }

@@ -1,19 +1,163 @@
 <section class="c-roomView">
-  <div class="container ">
-    <div class="d-flex my-5 ">
-      <img [src]="room.picture" class="w-75 rounded  shadow" alt="" />
-      <div class="info px-5">
-        <h2>Room Type : {{ room.roomType }}</h2>
-        <h2>
-          ameneties : Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Provident nam iste nostrum consequatur pariatur nulla laudantium magni a
-          vero modi ipsa quis, dolores, deserunt et sequi minima magnam dolorem!
-          A.
+  <div class="container my-5">
+    <div class="c-roomView_top">
+      <img
+        src="/assets/images/banner.jpg"
+        class="rounded w-100 c-roomView_top_Img shadow"
+        alt=""
+      />
+      <div
+        class="c-roomView_top_info1 d-flex flex-column justify-content-center align-items-center"
+      >
+        <h2 class="c-roomView_top_info1_rating d-flex align-items-center">
+          {{ room.rating | number : "1.1-1" }}<mat-icon>star</mat-icon>
         </h2>
-        <h3>Pice : {{ room.price }}</h3>
-        <button class="btn btn-outline-dark w-100" (click)="openDialog()">Book Room</button>
+        <h2 class="c-roomView_top_info1_price">{{ room.price | currency }}</h2>
       </div>
     </div>
+
+    <div class="c-roomView_info px-md-5 py-4">
+      <div
+        class="c-roomView_info_header d-flex justify-content-between align-items-center mb-5"
+      >
+        <h2>{{ room.roomType }}</h2>
+        <div class="d-flex flex-column text-center">
+          <button class="btn btn-outline-dark w-100" (click)="openDialog()">
+            Book Room
+          </button>
+        </div>
+      </div>
+
+      <div class="c-roomView_info_description mb-5">
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia magni
+          magnam non suscipit nulla doloremque id possimus cupiditate. Neque
+          tenetur dolor maxime laboriosam aperiam voluptatibus! Nostrum error
+          quisquam expedita fugit assumenda alias similique eos id adipisci
+          recusandae perferendis ad quos corporis, doloribus tenetur blanditiis
+          incidunt enim. Libero autem, laborum voluptas a illo ea non
+          consectetur saepe esse alias consequatur, incidunt iure commodi
+          placeat molestiae dolore? Reiciendis, obcaecati. Labore omnis facere
+          voluptatibus, consectetur at minima dignissimos unde commodi amet
+          nihil optio officia error non. Impedit vel laboriosam velit eaque, aut
+          ipsa! Culpa, voluptas eveniet. Ab corporis incidunt quisquam delectus
+          tenetur placeat quidem fuga nostrum voluptatibus, ut accusamus beatae
+          provident reiciendis explicabo, aspernatur facere itaque rerum!
+          Perspiciatis esse fugiat suscipit soluta quam quibusdam dolorem
+          adipisci eos cum, tempora aliquam vel quia qui explicabo quaerat
+          aliquid laborum facere ipsum quas ipsam totam, molestiae numquam!
+          Ratione quis doloremque et mollitia magnam repudiandae animi
+          blanditiis delectus.
+        </p>
+      </div>
+
+      <h2>Services :</h2>
+      <div
+        class="c-roomView_info_services row row-cols-4 gy-4 gx-2  my-5"
+      >
+        <div class="col">
+          <div class="d-flex justify-content-center align-items-end">
+            <mat-icon>wifi</mat-icon>
+            <p class="ps-3">Wifi</p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="d-flex justify-content-center align-items-end">
+            <mat-icon>wifi</mat-icon>
+            <p class="ps-3">Wifi</p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="d-flex justify-content-center align-items-end">
+            <mat-icon>wifi</mat-icon>
+            <p class="ps-3">Wifi</p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="d-flex justify-content-center align-items-end">
+            <mat-icon>wifi</mat-icon>
+            <p class="ps-3">Wifi</p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="d-flex justify-content-center align-items-end">
+            <mat-icon>wifi</mat-icon>
+            <p class="ps-3">Wifi</p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="d-flex justify-content-center align-items-end">
+            <mat-icon>wifi</mat-icon>
+            <p class="ps-3">Wifi</p>
+          </div>
+        </div>
+      </div>
+
+      <h2>Pictures :</h2>
+      <div
+        class="c-roomView_info_pictures row row-cols-3 gy-4 my-4"
+        data-masonry='{"percentPosition": true }'
+      >
+        <div class="col">
+          <div class="card">
+            <img
+              src="/assets/images/banner.jpg"
+              class="rounded c-roomView_mainImg shadow"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img
+              src="/assets/images/room1.png"
+              class="rounded c-roomView_mainImg shadow view1"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img
+              src="/assets/images/banner3.jpg"
+              class="rounded c-roomView_mainImg shadow"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img
+              src="/assets/images/room3.png"
+              class="rounded c-roomView_mainImg shadow view1"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img
+              src="/assets/images/banner2.jpg"
+              class="rounded c-roomView_mainImg"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img
+              src="/assets/images/banner2.jpg"
+              class="rounded c-roomView_mainImg"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-outline-dark mt-3" (click)="openDialog()">
+        Book Room
+      </button>
+    </div>
+    <hr />
+    <div class="c-roomView_reviews">here add reviews</div>
   </div>
 </section>
-
