@@ -9,10 +9,8 @@
       <div
         class="c-roomView_top_info1 d-flex flex-column justify-content-center align-items-center"
       >
-        <h2 class="c-roomView_top_info1_rating d-flex align-items-center">
-          {{ room.rating | number : "1.1-1" }}<mat-icon>star</mat-icon>
-        </h2>
-        <h2 class="c-roomView_top_info1_price">{{ room.price | currency }}</h2>
+        <h2 class="c-roomView_top_info1_rating d-flex align-items-center"><span>Rating : </span> {{ room.rating | number : "1.1-1" }} <mat-icon>star</mat-icon></h2>
+        <h2 class="c-roomView_top_info1_price"><span>Price : </span> {{ room.price | currency }}</h2>
       </div>
     </div>
 
@@ -22,8 +20,8 @@
       >
         <h2>{{ room.roomType }}</h2>
         <div class="d-flex flex-column text-center">
-          <button class="btn btn-outline-dark w-100" (click)="openDialog()">
-            Book Room
+          <button class="custom-btn btn-6" (click)="openDialog()">
+            <span>Book Room</span>
           </button>
         </div>
       </div>
@@ -93,71 +91,26 @@
         </div>
       </div>
 
+
+      
       <h2>Pictures :</h2>
-      <div
-        class="c-roomView_info_pictures row row-cols-3 gy-4 my-4"
-        data-masonry='{"percentPosition": true }'
-      >
-        <div class="col">
-          <div class="card">
+      <ngx-masonry>
+        <div
+        class="c-roomView_info_pictures row row-cols-md-3 row-col-2 gy-4 my-4">
+        <div class="col" ngxMasonryItem *ngFor="let image of masonryImages" >
+          <a>
             <img
-              src="/assets/images/banner.jpg"
+              [src]="image"
               class="rounded c-roomView_mainImg shadow"
               alt=""
             />
-          </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <img
-              src="/assets/images/room1.png"
-              class="rounded c-roomView_mainImg shadow view1"
-              alt=""
-            />
-          </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <img
-              src="/assets/images/banner3.jpg"
-              class="rounded c-roomView_mainImg shadow"
-              alt=""
-            />
-          </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <img
-              src="/assets/images/room3.png"
-              class="rounded c-roomView_mainImg shadow view1"
-              alt=""
-            />
-          </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <img
-              src="/assets/images/banner2.jpg"
-              class="rounded c-roomView_mainImg"
-              alt=""
-            />
-          </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <img
-              src="/assets/images/banner2.jpg"
-              class="rounded c-roomView_mainImg"
-              alt=""
-            />
-          </div>
+          </a>
         </div>
       </div>
-      <button class="btn btn-outline-dark mt-3" (click)="openDialog()">
-        Book Room
-      </button>
+      </ngx-masonry>
+      
     </div>
     <hr />
-    <div class="c-roomView_reviews">here add reviews</div>
+    <div class="c-roomView_reviews">reviews</div>
   </div>
 </section>

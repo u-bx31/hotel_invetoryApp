@@ -23,7 +23,9 @@
     "@ng-bootstrap/ng-bootstrap": "^14.0.0",
     "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.2.3",
+    "masonry-layout": "^4.2.2",
     "ngx-cookie-service": "^15.0.0",
+    "ngx-masonry": "^14.0.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"

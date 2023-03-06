@@ -22,7 +22,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { Page404Component } from './page404/page404.component';
 import { CookieService } from 'ngx-cookie-service';
 import { ModalComponent } from './home/rooms/modal/modal.component';
-
+import { NgxMasonryModule } from 'ngx-masonry';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +47,8 @@ import { ModalComponent } from './home/rooms/modal/modal.component';
     NgbModule,
     BrowserAnimationsModule,
     FormsModule,
-    NgMaterialModule
+    NgMaterialModule,
+    NgxMasonryModule
   ],
   providers :[CookieService],
   bootstrap: [AppComponent]

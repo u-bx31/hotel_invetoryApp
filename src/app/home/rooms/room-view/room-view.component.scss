@@ -1,81 +1,181 @@
-.c-roomView{
-    margin-top: 140px;
-    &_top{
-        position: relative;
-        &_Img{
-            height: 350px;
-            object-fit: cover;
-            object-position: center;
-        }
-        &_info1{
-            height: 100%;
-            width: 40%;
-            position: absolute;
-            top: 0;
-            right: 0px;
-            background-color: #cc842bee;
-            border-radius: 0 5px 5px 0;
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 12% 100%);
-            &_rating{
-                font-size: 2rem;
-                margin-bottom: 50px;
-                .mat-icon {
-                    display: flex;
-                    align-items: center;
-                    height: 28px;
-                    width: fit-content;
-                    height: fit-content;
-                    font-size: 50px;
-                    color: #f7ea00;
-                  }
-            }
-            &_price{
-                font-size: 2rem;
-            }
-        }
+.c-roomView {
+    .masonry-item { width: 200px; }
+  margin-top: 140px;
+  &_top {
+    position: relative;
+    &_Img {
+      height: 350px;
+      object-fit: cover;
+      object-position: center;
     }
-    &_info{
-        h2{
-            margin: 0;
-            font-size: 2.2rem;
-            font-weight: 500;
+    &_info1 {
+      height: 100%;
+      width: 40%;
+      position: absolute;
+      top: 0;
+      right: 0px;
+      background-color: #E3CAA5;
+      border-radius: 0 5px 5px 0;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 12% 100%);
+      
+      &_rating {
+        font-size: 2rem;
+        margin-bottom: 50px;
+        font-size: 2rem;
+        font-weight: 400;
+        .mat-icon {
+          display: flex;
+          align-items: center;
+          height: 28px;
+          width: fit-content;
+          height: fit-content;
+          font-size: 50px;
+          color: #f7ea00;
         }
-        &_header{
-            h2{
-                margin: 0;
-                font-size: 2.5rem;
-                font-weight: 600;
-            }
+        span{
+            font-size: 2.1rem;
+            font-weight: 600;
         }
-        &_description{
-            font-size: 1rem;
-            font-weight: 400;
-            letter-spacing: 1.8px;
-            line-height: 1.4rem;
+      }
+      &_price {
+        font-size: 2rem;
+        font-weight: 400;
+        span{
+            font-size: 2.1rem;
+            font-weight: 600;
         }
-        &_services{
-            .mat-icon{
-                font-size: 3rem;
-                width: fit-content;
-                height: fit-content;
-                color: #efae5e;
-                
-            }
-            p{
-                font-size: 1.6rem;
-                font-weight: 400;
-            }
-        }
-        &_pictures{
-            img{
-                object-fit: cover;
-                object-position: center;
-                width: 100%;
-                height: 250px;
-            }
-            .view1{
-                height: 400px;
-            }
-        }
+      }
     }
+  }
+  &_info {
+    h2 {
+      margin: 0;
+      font-size: 2.2rem;
+      font-weight: 500;
+    }
+    &_header {
+      h2 {
+        margin: 0;
+        font-size: 2.5rem;
+        font-weight: 600;
+      }
+    }
+    &_description {
+      font-size: 1rem;
+      font-weight: 400;
+      letter-spacing: 1.8px;
+      line-height: 1.4rem;
+    }
+    &_services {
+      .mat-icon {
+        font-size: 3rem;
+        width: fit-content;
+        height: fit-content;
+        color: #AD8B73;
+      }
+      p {
+        font-size: 1.6rem;
+        font-weight: 400;
+      }
+    }
+    &_pictures {
+      img {
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+        height: fit-content;
+      }
+      .view1 {
+        height: 400px;
+      }
+    }
+  }
+
+  .custom-btn {
+    width: 200px;
+    height: 40px;
+    padding: 10px 25px;
+    border: 2px solid #cc842b;
+    font-family: "Lato", sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+  }
+
+  .btn-6 {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background: #AD8B73;
+    color: #fff;
+    line-height: 42px;
+    font-size: 1.2rem;
+    padding: 0;
+    border: none;
+  }
+  .btn-6 span {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .btn-6:before,
+  .btn-6:after {
+    position: absolute;
+    content: "";
+    height: 0%;
+    width: 2px;
+    background: #cc842b;
+  }
+  .btn-6:before {
+    right: 0;
+    top: 0;
+    transition: all 500ms ease;
+  }
+  .btn-6:after {
+    left: 0;
+    bottom: 0;
+    transition: all 500ms ease;
+  }
+  .btn-6:hover {
+    color: #000000;
+    font-weight: 600;
+    background: transparent;
+    
+  }
+  .btn-6:hover:before {
+    transition: all 500ms ease;
+    height: 100%;
+  }
+  .btn-6:hover:after {
+    transition: all 500ms ease;
+    height: 100%;
+  }
+  .btn-6 span:before,
+  .btn-6 span:after {
+    position: absolute;
+    content: "";
+    background: #cc842b;
+  }
+  .btn-6 span:before {
+    left: 0;
+    top: 0;
+    width: 0%;
+    height: 2px;
+    transition: all 500ms ease;
+  }
+  .btn-6 span:after {
+    right: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    transition: all 500ms ease;
+  }
+  .btn-6 span:hover:before {
+    width: 100%;
+  }
+  .btn-6 span:hover:after {
+    width: 100%;
+  }
 }

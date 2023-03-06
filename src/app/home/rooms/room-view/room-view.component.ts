@@ -6,6 +6,7 @@ import {MatDialog} from '@angular/material/dialog';
 import { RoomList } from 'src/app/admin/managment/rooms/room';
 import { RoomService } from 'src/app/admin/managment/rooms/service/room.service';
 import { DialogBoxComponent } from '../dialog-box/dialog-box.component';
+import { NgxMasonryModule, NgxMasonryOptions } from 'ngx-masonry';
 
 @Component({
   selector: 'app-room-view',
@@ -18,9 +19,22 @@ export class RoomViewComponent implements OnInit {
   room !: any; 
   roomType: any[] = [];
   constructor(public dialog: MatDialog,private parm:ActivatedRoute,private service : RoomService,){}
-  
 
+  masonryImages :any = [];
+  public masonryOptions: NgxMasonryOptions = {
+    gutter: 10,
+    
+  };
+  limit = 15;
   ngOnInit(){
+    this.masonryImages = [
+      "/assets/images/banner.jpg",
+      "/assets/images/room1.png",
+      "/assets/images/banner3.jpg",
+      "/assets/images/room3.png",
+      "/assets/images/banner2.jpg",
+      "/assets/images/banner4.jpg"
+    ]
     this.service.getRoomsType$.subscribe((parms)=>{
       this.roomType = parms;
     })
