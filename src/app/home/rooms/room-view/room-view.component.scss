@@ -1,6 +1,13 @@
 .c-roomView {
-    .masonry-item { width: 200px; }
+  .masonry-item {
+    width: 200px;
+  }
   margin-top: 140px;
+  h2 {
+    margin: 0;
+    font-size: 2.2rem;
+    font-weight: 500;
+  }
   &_top {
     position: relative;
     &_Img {
@@ -14,10 +21,10 @@
       position: absolute;
       top: 0;
       right: 0px;
-      background-color: #E3CAA5;
+      background-color: #e3caa5;
       border-radius: 0 5px 5px 0;
       clip-path: polygon(0 0, 100% 0, 100% 100%, 12% 100%);
-      
+
       &_rating {
         font-size: 2rem;
         margin-bottom: 50px;
@@ -32,27 +39,22 @@
           font-size: 50px;
           color: #f7ea00;
         }
-        span{
-            font-size: 2.1rem;
-            font-weight: 600;
+        span {
+          font-size: 2.1rem;
+          font-weight: 600;
         }
       }
       &_price {
         font-size: 2rem;
         font-weight: 400;
-        span{
-            font-size: 2.1rem;
-            font-weight: 600;
+        span {
+          font-size: 2.1rem;
+          font-weight: 600;
         }
       }
     }
   }
   &_info {
-    h2 {
-      margin: 0;
-      font-size: 2.2rem;
-      font-weight: 500;
-    }
     &_header {
       h2 {
         margin: 0;
@@ -71,7 +73,7 @@
         font-size: 3rem;
         width: fit-content;
         height: fit-content;
-        color: #AD8B73;
+        color: #ad8b73;
       }
       p {
         font-size: 1.6rem;
@@ -90,7 +92,88 @@
       }
     }
   }
+  &_reviews {
+    li {
+      list-style: none;
+    }
+    &_review {
+      background-color: white;
+      border-radius: 5px;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      padding: 15px;
+      .user {
+        &_img {
+          img {
+            object-fit: cover;
+            width: 60px;
+            height: 60px;
+          }
+        }
+        &_info {
+          padding-left: 10px;
+          h3 {
+            margin: 0;
+            font-weight: 600;
+          }
+          h4 {
+            margin: 0;
+            font-weight: 400;
+          }
+        }
+        &_hederRate {
+          margin: 0;
+          font-weight: 600;
+        }
+        &_rate {
+          h4 {
+            margin: 0;
+            font-weight: 400;
+          }
+        }
+      }
+      p {
+        font-size: 1rem;
+        padding: 15px;
+      }
+      hr{
+        margin: 0px 12px;
+      }
+      .btns{
+        &_left{
+          button{
+            position: relative;
+            padding: 9px;
+            cursor: pointer;
+            border: none;
+            background: none;
+            color:#ad8b73;
+            font-weight: 500;
+          }
+          &_react{
+            display: flex;
+            align-items: center;
+            p{
+              color: gray;
+              margin: 0;
+              padding: 0;
+            }
+          }
+        }
+        &_right{
+          &_date{
+            font-size: .9rem;
+            color: gray;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+    .c-comment{
+      margin-top: 15px;
+    }
+  }
 
+  // custom button style
   .custom-btn {
     width: 200px;
     height: 40px;
@@ -107,7 +190,7 @@
 
   .btn-6 {
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    background: #AD8B73;
+    background: #ad8b73;
     color: #fff;
     line-height: 42px;
     font-size: 1.2rem;
@@ -142,7 +225,6 @@
     color: #000000;
     font-weight: 600;
     background: transparent;
-    
   }
   .btn-6:hover:before {
     transition: all 500ms ease;
