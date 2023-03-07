@@ -3,11 +3,13 @@
     width: 200px;
   }
   margin-top: 140px;
+  //headers 
   h2 {
     margin: 0;
     font-size: 2.2rem;
     font-weight: 500;
   }
+  //top content
   &_top {
     position: relative;
     &_Img {
@@ -54,6 +56,7 @@
       }
     }
   }
+  //content section 
   &_info {
     &_header {
       h2 {
@@ -76,7 +79,7 @@
         color: #ad8b73;
       }
       p {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
         font-weight: 400;
       }
     }
@@ -126,8 +129,18 @@
         }
         &_rate {
           h4 {
+            display: flex;
+            align-items: center;
             margin: 0;
             font-weight: 400;
+            .mat-icon {
+              display: flex;
+              align-items: center;
+              width: fit-content;
+              height: fit-content;
+              font-size: 26px;
+              color: #e4d901;
+            }
           }
         }
       }
@@ -148,6 +161,9 @@
             background: none;
             color:#ad8b73;
             font-weight: 500;
+            &:hover{
+              color:#a2704c;
+            }
           }
           &_react{
             display: flex;
