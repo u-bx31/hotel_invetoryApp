@@ -40,6 +40,7 @@ export class RoomsComponent implements OnInit{
     })
     
     this.service.getRooms$.subscribe((parms)=>{
+      console.log('rooms',parms);
       this.roomList = parms;
     })
 
