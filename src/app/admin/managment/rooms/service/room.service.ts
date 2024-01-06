@@ -18,7 +18,7 @@ export class RoomService {
     catchError((err)=>{
       console.log('error',err.message);
       return of([]);
-    })
+    }),
   );
 
 

@@ -1,4 +1,4 @@
 export const environment = {
     production : false,
-    apiEndpoint : 'http://localhost:3000'
+    apiEndpoint : 'https://hotel-api-topaz.vercel.app'
 }

@@ -18,6 +18,8 @@
     "importHelpers": true,
     "target": "ES2022",
     "module": "ES2022",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
     "useDefineForClassFields": false,
     "types": [
       "@angular/localize"

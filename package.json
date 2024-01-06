@@ -23,6 +23,7 @@
     "@ng-bootstrap/ng-bootstrap": "^14.0.0",
     "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.2.3",
+    "fs": "^0.0.1-security",
     "masonry-layout": "^4.2.2",
     "ngx-cookie-service": "^15.0.0",
     "ngx-masonry": "^14.0.1",

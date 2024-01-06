@@ -10,11 +10,11 @@
 
 <section class="c-rooms mt-5">
   <div class="container pb-4">
-    <div class="row ">
+    <div class="row position-relative ">
       <!-- filter Section -->
       <!-- change col break point or change width scss -->
       <div
-        class="col-xl-3 col c-filterSection"
+        class="col-xl-3 col c-filterSection" #filterSection
       >
         <div class="d-xl-flex flex-column d-none bg-white shadow p-lg-4 p-md-3 p-2 rounded ">
           <div class="control-inputs mt-3 d-flex flex-column">
@@ -111,15 +111,19 @@
 
         </div>
 
+        <div *ngIf="loading" class="text-center ">
+          <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+          <h2>Loading Rooms....</h2>
+        </div>
         
-        <div
+        <div *ngIf="!loading"
           [ngClass]="cardFormat == true ? 'row row-cols-1 gy-md-2 gy-3' : 'row row-cols-lg-3 row-cols-md-2 row-cols-1 gx-2 gy-2'"
         >
           <div class="col" *ngFor="let room of roomList">
             <div
               [ngClass]="
                 cardFormat
-                  ? 'shadow-sm c-crd d-flex '
+                  ? 'shadow-sm c-crd d-flex'
                   : 'shadow-sm c-crd h-100'
               "
             >
