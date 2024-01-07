@@ -23,6 +23,7 @@ import { Page404Component } from './page404/page404.component';
 import { CookieService } from 'ngx-cookie-service';
 import { ModalComponent } from './home/rooms/modal/modal.component';
 import { NgxMasonryModule } from 'ngx-masonry';
+import { MatSliderModule } from '@angular/material/slider';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +39,7 @@ import { NgxMasonryModule } from 'ngx-masonry';
     SpinnerComponent,
     Page404Component,
     ModalComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -48,6 +50,7 @@ import { NgxMasonryModule } from 'ngx-masonry';
     BrowserAnimationsModule,
     FormsModule,
     NgMaterialModule,
+    MatSliderModule,
     NgxMasonryModule
   ],
   providers :[CookieService],

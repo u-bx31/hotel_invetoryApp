@@ -16,12 +16,13 @@
       <div
         class="col-xl-3 col c-filterSection" #filterSection
       >
-        <div class="d-xl-flex flex-column d-none bg-white shadow p-lg-4 p-md-3 p-2 rounded ">
+        <form (ngSubmit)="onSubmit($event)" class="d-xl-flex flex-column d-none bg-white shadow p-lg-4 p-md-3 p-2 rounded " [formGroup]="roomsForm">
+
           <div class="control-inputs mt-3 d-flex flex-column">
             <label class="mb-3">Category:</label>
             <mat-form-field appearance="outline" class="w-100" >
               <mat-label>Room</mat-label>
-              <input matInput placeholder="Room" />
+              <input formControlName="room_type" matInput placeholder="Room" />
             </mat-form-field>
           </div>
 
@@ -29,19 +30,20 @@
             <label class="mb-3">Price:</label>
             <mat-slider
               min="0"
-              max="500"
+              max="600"
+              formControlName="price"
               showTickMarks
               discrete
               [displayWith]="formatLabel"
             >
-              <input matSliderStartThumb />
-              <input matSliderEndThumb />
+              <input formControlName="min_price" matSliderStartThumb />
+              <input formControlName="max_price" matSliderEndThumb />
             </mat-slider>
           </div>
 
           <div class="control-inputs mt-3 d-flex flex-column">
             <label class="mb-3">Rating:</label>
-            <ngb-rating [(rate)]="currentRate" [max]="5">
+            <ngb-rating [(rate)]="currentRate" formControlName="rating" [max]="5">
               <ng-template let-fill="fill" let-index="index">
                 <mat-icon
                   [ngClass]="fill === 100 ? 'filled' : ''"
@@ -87,8 +89,12 @@
             </mat-form-field>
           </div>
 
-          <button class="btn btn-outline-warning w-100 mt-3">Search</button>
-        </div>
+          <button type="submit" class="btn btn-outline-warning w-100 mt-3"
+          >Search</button>
+          <button class="btn btn-outline-secondary  w-100 mt-3"
+          (click)="clear()"
+          >Clear</button>
+        </form>
       </div>
       <!-- End filter Section -->
 
@@ -115,11 +121,14 @@
           <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
           <h2>Loading Rooms....</h2>
         </div>
+        <div *ngIf="notFound" class="text-center ">
+          <h2>Not Found</h2>
+        </div>
         
-        <div *ngIf="!loading"
+        <div *ngIf="!loading && !notFound"
           [ngClass]="cardFormat == true ? 'row row-cols-1 gy-md-2 gy-3' : 'row row-cols-lg-3 row-cols-md-2 row-cols-1 gx-2 gy-2'"
         >
-          <div class="col" *ngFor="let room of roomList">
+          <div class="col" *ngFor="let room of (filterRooms.length > 0 ? filterRooms : roomList)">
             <div
               [ngClass]="
                 cardFormat
