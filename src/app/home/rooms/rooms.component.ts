@@ -22,9 +22,10 @@ export class RoomsComponent implements OnInit {
   roomType: any[] = [];
   cardFormat: boolean = false;
   imgUrl: any[] = [];
+  reservation: any[] = [];
   currentRate = 0;
   //value mat dateRangePicker
-  
+
   range = new FormGroup({
     start: new FormControl<Date | null>(null),
     end: new FormControl<Date | null>(null),
@@ -49,7 +50,7 @@ export class RoomsComponent implements OnInit {
     const offset = this.filterSection.nativeElement.getBoundingClientRect().top;
 
     // Check the offset to determine if the filter section should be fixed
-    if (offset <= 0 && this.roomList.length || this.filterRooms.length > 3) {
+    if ((offset <= 0 && this.roomList.length) || this.filterRooms.length > 3) {
       this.renderer.addClass(this.filterSection.nativeElement, 'fixed-filter');
     } else {
       this.renderer.removeClass(
@@ -71,6 +72,9 @@ export class RoomsComponent implements OnInit {
       max_price: [''],
       min_price: [''],
       rating: [''],
+    });
+    this.service.getReservation$.subscribe((res) => {
+      this.reservation = res;
     });
     this.service.getRoomsType$.subscribe((parms) => {
       this.roomType = parms;
@@ -105,10 +109,9 @@ export class RoomsComponent implements OnInit {
 
   onSubmit(e: Event) {
     e.preventDefault();
-    let { room_type, min_price ,max_price, rating } = this.roomsForm.value;
+    let { room_type, min_price, max_price, rating } = this.roomsForm.value;
     this.loading = true;
-    console.log('price' ,this.roomsForm.value);
-    
+
     if (room_type !== '' || max_price !== '' || rating !== '') {
       // Use a temporary array for filtering
       let filteredRooms = [...this.roomList];
@@ -118,16 +121,28 @@ export class RoomsComponent implements OnInit {
           (item: any) => item.roomType === room_type
         );
       }
-      if (max_price !== '' || 0 && min_price !== '' ||0) {
+      if (max_price !== '' || (0 && min_price !== '') || 0) {
         filteredRooms = filteredRooms.filter(
           (item: any) => item.price >= min_price && item.price <= max_price
         );
       }
       if (rating !== '') {
         filteredRooms = filteredRooms.filter(
-          (item: any) => item.rating  >= parseFloat(rating)
+          (item: any) => item.rating >= parseFloat(rating)
         );
       }
+      // if(this.range.value.start?.toString() != '' && this.range.value.end?.toString() != ''){
+      //   const reservedRooms = this.reservation.filter((reservation) => {
+      //     return (
+      //       Date.parse(String(reservation.checkinTime)) !=
+      //       Date.parse(String(this.range.value.start)) && Date.parse(String(reservation.checkoutTime)) !=
+      //       Date.parse(String(this.range.value.end))
+      //     );
+      //   })
+
+
+      // }
+
       // Update the roomList with the filtered results
       this.filterRooms = filteredRooms;
 
@@ -150,11 +165,12 @@ export class RoomsComponent implements OnInit {
     });
   }
 
-  clear(){
-    this.roomsForm.reset()
-    this.roomsForm.value.max_price = 0 
-    this.roomsForm.value.min_price = 0 
+
+  clear() {
+    this.roomsForm.reset();
+    this.roomsForm.value.max_price = 0;
+    this.roomsForm.value.min_price = 0;
     this.loading = true;
-    this.getAllRooms()
+    this.getAllRooms();
   }
 }

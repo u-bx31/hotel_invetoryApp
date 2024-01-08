@@ -18,8 +18,9 @@ const year = today.getFullYear();
   styleUrls: ['./dialog-box.component.scss'],
 })
 export class DialogBoxComponent implements OnInit {
-  valid: string = 'show';
+  valid: string = 'hide';
   success!: boolean;
+  loading: boolean = false;
   showed: string = 'hide';
   avaible: boolean = true;
   roomState!: string;
@@ -72,7 +73,6 @@ export class DialogBoxComponent implements OnInit {
       }
     });
     setTimeout(() => {
-      this.valid = 'hide';
       this.showed = 'show';
     }, 3000);
   }
@@ -82,51 +82,42 @@ export class DialogBoxComponent implements OnInit {
   myFilter = (d: Date): boolean => {
     // Prevent dates in ranges from being selected.
     return (
-      !(d >= this.resrvation.checkinTime && d <= this.resrvation.checkoutTime) &&
+      !(
+        d >= this.resrvation.checkinTime && d <= this.resrvation.checkoutTime
+      ) &&
       !(d >= this.resrvation.checkinTime && d <= this.resrvation.checkoutTime)
     );
   };
   addReservation() {
+    this.loading = true;
+
     this.service.getReservation$.subscribe((values) => {
-      let Roomvalues: any[] = values;
-      let roomInfo = Roomvalues.filter(
-        (val) => val.room_id == this.data.room_id
+      const roomInfo = values.filter(
+        (val: any) => val.room_id == this.data.room_id
       );
-      roomInfo.map((res) => {
-        if (
+
+      const isRoomUnavailable = roomInfo.some(
+        (res: any) =>
           Date.parse(this.bookForm.value.checkinTime) >=
             Date.parse(res.checkinTime) &&
           Date.parse(this.bookForm.value.checkinTime) <=
             Date.parse(res.checkoutTime)
-        ) {
-          this.roomState = 'Not Avaible Room';
-          this.avaible = false;
-          setTimeout(() => {
-            this.avaible = true;
-          }, 2000);
-        }
-      });
-      if (this.avaible === true && this.bookForm.valid) {
-        this.service.addReservation(this.bookForm.value).subscribe({
-          next: () => {
-            this.checkStateMessage = 'Adding you reservation please wait ...';
-            this.valid = 'show';
-            this.showed = 'hide';
-            setTimeout(() => {
-              this.valid = 'hide';
-              this.data.room.avaible = false;
-              this.service
-                .editRooms(this.data.room)
-                .subscribe((parms) => console.log(parms));
-              this.success = true;
-            }, 3000);
-          },
-          complete: () => {
-            setTimeout(() => {
-              this.onCancel();
-            }, 4000);
-          },
-        });
+      );
+
+      if (isRoomUnavailable) {
+        this.roomState = 'Not Available Room';
+        this.avaible = false;
+        setTimeout(() => {
+          this.avaible = true;
+        }, 2000);
+      }
+
+      if (this.bookForm.valid && !isRoomUnavailable) {
+        this.checkStateMessage = 'Adding your reservation, please wait...';
+        this.service.addReservation(this.bookForm.value).subscribe((res) => {});
+        setTimeout(() => {
+          this.onCancel();
+        }, 2000);
       }
     });
   }

@@ -1,5 +1,5 @@
-<div class="container h-100">
-  <div class="top d-flex justify-content-end mb-md-5 pb-md-5 mb-5 pb-5">
+<div class="container">
+  <div class="top d-flex justify-content-end">
     <a (click)="onCancel()"
       ><mat-icon
         class="icons"
@@ -10,11 +10,12 @@
     ></a>
   </div>
   <div class="d-flex justify-content-center align-items-center h-75">
-    <div [className]="valid">
-      <div class="d-flex flex-column justify-content-center align-items-center">
-        <app-spinner></app-spinner>
-        <h2 class="mt-2">{{ checkStateMessage }}</h2>
-      </div>
+    <div
+      *ngIf="loading"
+      class="d-flex flex-column justify-content-center align-items-center "
+    >
+      <app-spinner></app-spinner>
+      <h2 class="mt-2">{{ checkStateMessage }}</h2>
     </div>
 
     <div *ngIf="success" class="text-center mx-auto py-5">
@@ -26,7 +27,7 @@
       ></mat-icon>
       <h2>room successfully Booked</h2>
     </div>
-    <div [ngClass]="showed">
+    <div *ngIf="!loading" class="w-100">
       <h2 class="ms-3">Your information :</h2>
       <div *ngIf="avaible" class="p-md-3 w-100">
         <form [formGroup]="bookForm">
@@ -94,7 +95,6 @@
                   [min]="currentDate"
                 >
                   <input
-                       
                     matStartDate
                     formControlName="checkinTime"
                     name="dateStart"
@@ -121,7 +121,6 @@
         </form>
         <button
           class="btn btn-outline-dark w-100 mt-5"
-          [disabled]="bookForm.invalid"
           (click)="addReservation()"
         >
           Book Now
