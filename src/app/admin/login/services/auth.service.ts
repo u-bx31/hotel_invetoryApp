@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
-import { Observable, of, throwError } from 'rxjs';
 import { RoomService } from '../../managment/rooms/service/room.service';
 
 @Injectable({
@@ -9,52 +8,77 @@ import { RoomService } from '../../managment/rooms/service/room.service';
 })
 export class AuthService {
   valid: boolean = false;
-
+  loading: boolean = false;
+  employeesFetched : boolean = false;
+  
   constructor(
     private router: Router,
     private Cookie: CookieService,
-    private service: RoomService
+    private service: RoomService,
   ) {
-    this.service.getEmployes$.subscribe((res) => {
-      this.employe = res
-    });
+    this.getEmployes();
   }
 
   employe: any = [];
-  employe1: any = {};
+  currentUser: any = {};
   setToken = (token: string): void => {
     this.Cookie.set('token', token, { expires: 1, sameSite: 'Lax' });
-    // localStorage.setItem('token',token)
   };
 
   getToken = (): string | null => {
-    return this.Cookie.get('token')
+    return this.Cookie.get('token');
   };
 
-  isLoggedIn = (): any => {
-    return this.getToken() != "";
-  };
+  isLoggedIn(): boolean {
+    return !!this.getToken();
+  }
 
   logOut = () => {
-    this.Cookie.delete('token');
-    // localStorage.removeItem('token')
-    this.employe1 = [];
-    this.router.navigate(['admin']);
-    console.log(this.Cookie.get('token'));
+    if (this.Cookie.get('token')) {
+      this.Cookie.delete('token');
+      this.router.navigate(['admin']);
+      this.clearObject(this.currentUser);
+    } else {
+      console.error('Auth object is not defined.');
+    }
   };
-  
 
-  logIn = (email: string, password: string): void=> {
-    this.employe1 = this.employe.find((val: any) => {
+  clearObject(obj: any) {
+    for (let prop in obj) {
+      if (obj.hasOwnProperty(prop)) {
+        delete obj[prop];
+      }
+    }
+  }
+  getEmployes() {
+    this.service.getEmployes$.subscribe({
+      next: (res) => {
+        if (res) {
+          this.loading = false;
+          this.employe = res;
+          this.employeesFetched = true;
+        } else {
+          throw new Error('Something Wrong');
+        }
+      },
+      error: (error) => {
+        console.error('Error fetching employees:', error);
+      },
+    });
+  }
+
+  logIn = (email: string, password: string): void => {
+    this.getEmployes();
+
+    this.currentUser = this.employe.find((val: any) => {
       return val.email === email && val.password === password;
     });
-    if(Object.keys(this.employe1 || {}).length !== 0) {
-      this.setToken('dgdkjfhgjdhgadmingfdjsfhdf');
-      this.router.navigate(['/admin/management'])
-    }
-    else{
-      alert('Faild To Login')
-    }
 
+    if (Object.keys(this.currentUser || {}).length !== 0) {
+      this.setToken(`user_jkls${this.currentUser.id}}`);
+      this.router.navigate(['/admin/management']);
+    } else {
+      alert('Faild To Login');
+    }
   };
 }

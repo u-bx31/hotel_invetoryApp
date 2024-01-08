@@ -81,8 +81,16 @@ export class RoomService {
     })
   );
 
+  getCurrentEmployee(id : any){
+    return this.service.get<any>(`${this.url}/employes/${id}`).pipe(
+      catchError((err) => {
+        console.log('Error:', err.message);
+        return of(null); // You can return any default value or handle the error as needed
+      })
+    );
+  }
   editEmployes(employes : any){
-    return this.service.put<any>(`${this.url}/Employes/${employes.id}`,employes);
+    return this.service.put<any>(`${this.url}/employes/${employes.id}`,employes);
   }
   deleteEmployes(id : string){
     return this.service.delete<any>(`${this.url}/employes/${id}`);

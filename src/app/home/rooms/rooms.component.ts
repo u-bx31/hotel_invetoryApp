@@ -24,7 +24,6 @@ export class RoomsComponent implements OnInit {
   imgUrl: any[] = [];
   currentRate = 0;
   //value mat dateRangePicker
-
   
   range = new FormGroup({
     start: new FormControl<Date | null>(null),
@@ -69,7 +68,6 @@ export class RoomsComponent implements OnInit {
   ngOnInit(): void {
     this.roomsForm = this.fb.group({
       room_type: [''],
-      price: [''],
       max_price: [''],
       min_price: [''],
       rating: [''],
@@ -144,7 +142,6 @@ export class RoomsComponent implements OnInit {
   }
   getAllRooms() {
     this.service.getRooms$.subscribe((parms) => {
-      console.log('rooms', parms);
       this.roomList = parms;
       if (this.roomList) {
         this.loading = false;
@@ -154,8 +151,10 @@ export class RoomsComponent implements OnInit {
   }
 
   clear(){
-    this.loading = true;
     this.roomsForm.reset()
+    this.roomsForm.value.max_price = 0 
+    this.roomsForm.value.min_price = 0 
+    this.loading = true;
     this.getAllRooms()
   }
 }
