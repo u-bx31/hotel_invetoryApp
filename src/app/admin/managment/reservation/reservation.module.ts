@@ -7,13 +7,15 @@ import { ReservationAddComponent } from './reservation-add/reservation-add.compo
 import { NgMaterialModule } from 'src/app/ng-material/ng-material.module';
 import { ReservationComponent } from './reservation.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SpinnerComponent } from 'src/app/spinner/spinner.component';
 
 
 @NgModule({
   declarations: [
     ReservationComponent,
     ReservationListComponent,
-    ReservationAddComponent
+    ReservationAddComponent,
+    SpinnerComponent,
   ],
   imports: [
     CommonModule,

@@ -8,21 +8,27 @@ import { RoomService } from '../rooms/service/room.service';
 })
 export class ReservationComponent implements OnInit{
   numberRooms : number = 0;
+  loading : boolean = false;
   Reservation !: any[];
   constructor(private service :RoomService){}
 
   ngOnInit(): void {
+    this.loading = true;
     this.getAllReservation();
   }
 
   getAllReservation = ()=>{
     this.service.getReservation$.subscribe((values)=>{
       this.Reservation = values;
-      this.numberRooms = this.Reservation.length
+      if(this.Reservation ){
+        this.loading = false
+        this.numberRooms = this.Reservation.length
+      }
     })
   }
 
   handleDelete = (id: string) => {
+    this.loading = true;
     this.service.deleteReservation(id).subscribe();
     this.getAllReservation();
   };
