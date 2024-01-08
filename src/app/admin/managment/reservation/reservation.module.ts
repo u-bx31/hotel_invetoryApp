@@ -15,7 +15,6 @@ import { SpinnerComponent } from 'src/app/spinner/spinner.component';
     ReservationComponent,
     ReservationListComponent,
     ReservationAddComponent,
-    SpinnerComponent,
   ],
   imports: [
     CommonModule,

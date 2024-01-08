@@ -8,7 +8,16 @@
     *ngIf="loading"
     class="d-flex flex-column justify-content-center align-items-center"
   >
-    <app-spinner></app-spinner>
+    <div class="lds-roller text-center">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
   </div>
   <div *ngIf="!loading" class="">
     <h2>Rooms Count : {{ numberRooms }}</h2>
