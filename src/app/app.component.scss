@@ -581,8 +581,10 @@ footer a{
 }
 /*single page image*/
 .image-head-wrapper {
-    background: rgba(0, 0, 0, 0) url("/src/assets/images/inner-banner.png") no-repeat scroll center top;
-    height: 450px;
+    background: rgba(0, 0, 0, 0) url("/src/assets/images/inner-banner.png") no-repeat ;
+    background-size: cover;
+    background-position: top;
+    height: 550px;
     position: relative;
 }
 .inner-wrapper {
@@ -596,7 +598,6 @@ footer a{
     width: 60%;
 }
 .inner-wrapper h1{
-    font-family: "exotc350_dmbd_btdemi-bold";
 }
 
 /*instafeed images*/
