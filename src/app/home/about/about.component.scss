@@ -87,6 +87,10 @@
         background-color: white;
         border-radius: 8px;
         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        img{
+          width: 50px;
+          height: 50px;
+        }
         h2 {
           font-size: 20px;
           color: rgb(122, 89, 60);
@@ -152,11 +156,66 @@
       }
     }
   }
-&_test{
-  width: 50%;
-
-}
-
+  &_testHeder {
+    margin-top: 60px;
+    text-align: center;
+    h1 {
+      font-size: 28px;
+      font-weight: 900;
+      color: rgb(122, 89, 60);
+      position: relative;
+    }
+    p{
+      font-size: 20px;
+      font-weight: 600;
+    }
+  }
+  &_test {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    &_user {
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      width: 400px;
+      background-color: white;
+      border-radius: 6px;
+      padding: 20px;
+      &_top {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        align-items: center;
+        img {
+          width: 60px;
+          height: 60px;
+        }
+        &_info {
+          h2 {
+            font-size: 17px;
+            color: rgb(122, 89, 60);
+            font-weight: 800;
+            margin: 0;
+          }
+          .mat-icon {
+            color: #e8c088;
+            font-size: 20px;
+            height: auto;
+            width: auto;
+            display: flex;
+            align-items: center;
+          }
+        }
+      }
+      p {
+        margin-top: 12px;
+        padding: 10px;
+        font-size: 16px;
+        font-weight: 400;
+      }
+    }
+  }
 }
 
 @media (max-width: 992px) {
@@ -227,6 +286,31 @@
         width: 50%;
       }
     }
+    &_test {
+      gap: 10px;
+      &_user {
+        width: 300px;
+        padding: 17px;
+        &_top {
+          img {
+            width: 50px;
+            height: 50px;
+          }
+          &_info {
+            h2 {
+              font-size: 16px;
+              color: rgb(122, 89, 60);
+            }
+            .mat-icon {
+              font-size: 18px;
+            }
+          }
+        }
+        p {
+          padding: 5px;
+        }
+      }
+    }
   }
 }
 @media (max-width: 768px) {
@@ -249,6 +333,31 @@
       }
       &_img {
         width: 100%;
+      }
+    }
+    &_test {
+      &_user {
+        width: 100%;
+        padding: 17px;
+        &_top {
+          img {
+            width: 50px;
+            height: 50px;
+          }
+          &_info {
+            h2 {
+              font-size: 16px;
+              color: rgb(122, 89, 60);
+            }
+            .mat-icon {
+              font-size: 18px;
+            }
+          }
+        }
+        p {
+          padding: 5px;
+          font-size: 16px;
+        }
       }
     }
   }
